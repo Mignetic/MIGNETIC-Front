@@ -3,6 +3,7 @@ import { markerdata } from '../components/markerData';
 import '../css/Map.css';
 
 import pf from '../images/pf.png';
+import mibun from '../images/mirim-bunsick.png';
 import markerbtn from '../images/marker-btn.png';
 
 function Map() {
@@ -139,6 +140,7 @@ function Map() {
                                 {/* 마커 제목 및 내용 */}
                                 <p className="marker-title">{activeMarker.title}</p>
                                 <div className="marker-img-detail">
+                                    <img scr={mibun} className="marker-img"/>
                                     <li className="marker-detail">
                                         여기는 미림분식에 대한 글을 써주세요 여기는 미림분식에 대한 글을 써주세dy
                                     </li>
@@ -153,6 +155,38 @@ function Map() {
                                 <p className="recommendation"> 추천글 </p>
                                 {/* 개발자 정보 */}
                                 <div className="developer-collection">
+                                    <div className="developer">
+                                        <img src={pf} className="developer-profile" />
+                                        <div className="developer-name-review">
+                                            <p className="developer-name">양지아</p>
+                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
+                                            <hr className="developer-hr"></hr>
+                                        </div>
+                                    </div>
+                                    <div className="developer">
+                                        <img src={pf} className="developer-profile" />
+                                        <div className="developer-name-review">
+                                            <p className="developer-name">양지아</p>
+                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
+                                            <hr className="developer-hr"></hr>
+                                        </div>
+                                    </div>
+                                    <div className="developer">
+                                        <img src={pf} className="developer-profile" />
+                                        <div className="developer-name-review">
+                                            <p className="developer-name">양지아</p>
+                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
+                                            <hr className="developer-hr"></hr>
+                                        </div>
+                                    </div>
+                                    <div className="developer">
+                                        <img src={pf} className="developer-profile" />
+                                        <div className="developer-name-review">
+                                            <p className="developer-name">양지아</p>
+                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
+                                            <hr className="developer-hr"></hr>
+                                        </div>
+                                    </div>
                                     <div className="developer">
                                         <img src={pf} className="developer-profile" />
                                         <div className="developer-name-review">

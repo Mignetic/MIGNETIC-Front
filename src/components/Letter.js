@@ -8,8 +8,14 @@ function Letter(){
 
     const handleTransmission = () =>{
 
-        const letterText = document.querySelector('.letterInputText').value
-        console.log(letterText)
+        //편지 내용
+        if(window.confirm("편지를 전송하시겠습니까?")){
+            alert("전송 완료!")
+            const letterText = document.querySelector('.letterInputText').value
+            console.log(letterText)
+        }else{
+
+        }
 
     }
 
