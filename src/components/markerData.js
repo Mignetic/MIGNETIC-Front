@@ -9,7 +9,7 @@ export const markerdata = [
         title: "미림분식",
         lat: 37.4670709608898,
         lng: 126.931356351122,
-        value: "맛집",
+        value: "음식점",
     },
     {
         title: "메가커피",
@@ -27,6 +27,6 @@ export const markerdata = [
         title: "미인브레드",
         lat: 37.4709457968065,
         lng: 126.934116438944,
-        value: "디져트",
+        value: "디저트",
     },
 ];

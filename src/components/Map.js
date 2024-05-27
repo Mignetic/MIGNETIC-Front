@@ -104,29 +104,29 @@ function Map() {
             <div className="btns">
                     <div className={activeButton === '학교' ? 'active' : undefined}></div>
                     <button
+                        className={activeButton === '음식점' ? 'active' : ''}
+                        onClick={() => handleButtonClick('음식점')}
+                    >
+                        음식점
+                    </button>
+                    <button
                         className={activeButton === '카페' ? 'active' : ''}
                         onClick={() => handleButtonClick('카페')}
                     >
                         카페
                     </button>
+                    <div className="btn-margin"></div>
                     <button
                         className={activeButton === '편의점' ? 'active' : ''}
                         onClick={() => handleButtonClick('편의점')}
                     >
                         편의점
                     </button>
-                    <div className="btn-margin"></div>
                     <button
-                        className={activeButton === '디져트' ? 'active' : ''}
-                        onClick={() => handleButtonClick('디져트')}
+                        className={activeButton === '디저트' ? 'active' : ''}
+                        onClick={() => handleButtonClick('디저트')}
                     >
                         디져트
-                    </button>
-                    <button
-                        className={activeButton === '맛집' ? 'active' : ''}
-                        onClick={() => handleButtonClick('맛집')}
-                    >
-                        맛집
                     </button>
                 </div>
                 <div className="place">
