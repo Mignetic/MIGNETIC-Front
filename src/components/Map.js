@@ -140,7 +140,7 @@ function Map() {
                                 {/* 마커 제목 및 내용 */}
                                 <p className="marker-title">{activeMarker.title}</p>
                                 <div className="marker-img-detail">
-                                    <img scr={mibun} className="marker-img"/>
+                                    <img src={mibun} className="marker-img"/>
                                     <li className="marker-detail">
                                         여기는 미림분식에 대한 글을 써주세요 여기는 미림분식에 대한 글을 써주세dy
                                     </li>
