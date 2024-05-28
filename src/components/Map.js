@@ -6,11 +6,15 @@ import pf from '../images/pf.png';
 import mibun from '../images/mirim-bunsick.png';
 import markerbtn from '../images/marker-btn.png';
 
+import restaurant from '../images/restaurant.png';
+import cafe from '../images/cafe.png';
+import dessert from '../images/dessert.png';
+import convenienceStore from '../images/convenience-store.png';
+import school from '../images/school.png';
+
 function Map() {
-    // 카카오 맵 API를 사용할 수 있도록 선언
     const { kakao } = window;
 
-    // State 선언
     const [activeButton, setActiveButton] = useState(null);
     const [map, setMap] = useState(null);
     const [mapZoom, setMapZoom] = useState(2);
@@ -26,14 +30,8 @@ function Map() {
 
     useEffect(() => {
         setFilteredMarkerData(markerdata);
-        updateMap();
         mapscript();
     }, []);
-
-    const marker = new kakao.maps.Marker({
-        map: map,
-        position: new kakao.maps.LatLng(37.4667835831981, 126.932529286133),
-    });
 
     const mapscript = () => {
         if (window.kakao) {
@@ -44,49 +42,60 @@ function Map() {
             };
             const newMap = new kakao.maps.Map(container, options);
             setMap(newMap);
+            updateMap(newMap);
         } else {
-            // Kakao 지도 API가 아직 로드되지 않았을 때, 1초 뒤에 다시 시도
             setTimeout(mapscript, 1000);
         }
     };
 
-    const updateMap = () => {
-        if (!map) return;
+    const createMarkerImage = (src) => {
+        const imageSrc = src;
+        const imageSize = new kakao.maps.Size(24, 35);
+        return new kakao.maps.MarkerImage(imageSrc, imageSize);
+    };
 
+    const updateMap = (newMap) => {
+        if (!map && !newMap) return;
+
+        const mapInstance = map || newMap;
+        
         markers.forEach(marker => marker.setMap(null));
 
         const newMarkers = filteredMarkerData.map((el) => {
+            const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : convenienceStore;
             const marker = new kakao.maps.Marker({
-                map: map,
+                map: mapInstance,
                 position: new kakao.maps.LatLng(el.lat, el.lng),
+                image: createMarkerImage(imageSrc),
             });
 
-            // 마커 클릭 이벤트 등록
             kakao.maps.event.addListener(marker, 'click', () => {
-                setActiveMarker(el); // 클릭한 마커 데이터 설정
+                setActiveMarker(el);
             });
 
             return marker;
         });
 
-        setMarkers(newMarkers);
+        const schoolMarker = new kakao.maps.Marker({
+            map: mapInstance,
+            position: new kakao.maps.LatLng(37.4667835831981, 126.932529286133),
+            image: createMarkerImage(school),
+        });
+
+        setMarkers([...newMarkers, schoolMarker]);
     };
 
-
     const handleButtonClick = (buttonValue) => {
-        // 현재 activeButton과 새로 클릭된 버튼의 값이 같으면 모든 마커를 보여줌
         if (activeButton === buttonValue) {
             setFilteredMarkerData(markerdata);
             closeActiveMarker();
-            setActiveButton(null); // 버튼 상태를 초기화
+            setActiveButton(null);
         } else {
             setActiveButton(buttonValue);
             setFilteredMarkerData(markerdata.filter(data => data.value === buttonValue));
         }
     };
 
-
-    // 닫기 버튼 클릭 시 activeMarker를 null로 설정하여 사라지게 함
     const closeActiveMarker = () => {
         const markerContainer = document.querySelector('.click-marker-container');
         if (markerContainer) {
@@ -97,11 +106,10 @@ function Map() {
         }
     };
 
-
     return (
         <div className="hot-place">
             <div className="full-display">
-            <div className="btns">
+                <div className="btns">
                     <div className={activeButton === '학교' ? 'active' : undefined}></div>
                     <button
                         className={activeButton === '음식점' ? 'active' : ''}
@@ -126,7 +134,7 @@ function Map() {
                         className={activeButton === '디저트' ? 'active' : ''}
                         onClick={() => handleButtonClick('디저트')}
                     >
-                        디져트
+                        디저트
                     </button>
                 </div>
                 <div className="place">
@@ -134,13 +142,11 @@ function Map() {
                 </div>
                 {activeMarker && (
                     <div className="click-marker-container">
-                        {/* activeMarker */}
                         <div className="click-marker">
                             <div className="marker-setting">
-                                {/* 마커 제목 및 내용 */}
                                 <p className="marker-title">{activeMarker.title}</p>
                                 <div className="marker-img-detail">
-                                    <img src={mibun} className="marker-img"/>
+                                    <img src={mibun} className="marker-img" />
                                     <li className="marker-detail">
                                         여기는 미림분식에 대한 글을 써주세요 여기는 미림분식에 대한 글을 써주세dy
                                     </li>
@@ -151,9 +157,7 @@ function Map() {
                                         여기는 미림분식에 대한 글을 써주세요 여기는 미림분식에 대한 글을 써주세요
                                     </li>
                                 </div>
-                                {/* 추천글 */}
                                 <p className="recommendation"> 추천글 </p>
-                                {/* 개발자 정보 */}
                                 <div className="developer-collection">
                                     <div className="developer">
                                         <img src={pf} className="developer-profile" />
@@ -195,12 +199,9 @@ function Map() {
                                             <hr className="developer-hr"></hr>
                                         </div>
                                     </div>
-
-
                                 </div>
                             </div>
                         </div>
-                        {/* 닫기 버튼 */}
                         <button className="close-btn" onClick={() => closeActiveMarker()}><img src={markerbtn} alt="Close" /></button>
                     </div>
                 )}
