@@ -2,8 +2,7 @@ import ask from '../images/test-askbtn.png';
 import arrowBtn from '../images/icons/test-arrowBtn.png';
 import '../css/Question.css';
 import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useState } from 'react';
-
+import React, { useState, useRef, useEffect } from 'react';
 
 const questions_student = [
     {
@@ -156,21 +155,38 @@ function Question() {
     const shuffledQuestions = questionList([...questionssss])
 
     const [selectedAnswers, setSelectedAnswers] = useState(Array(shuffledQuestions.length).fill(null))
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+
+    const questionRefs = useRef([])
 
     const handleAnswerClick = (questionIndex, answerIndex) => {
         const updatedAnswers = [...selectedAnswers]
         updatedAnswers[questionIndex] = answerIndex
         setSelectedAnswers(updatedAnswers)
+
+        if (questionIndex < shuffledQuestions.length - 1) {
+            setCurrentQuestionIndex(questionIndex + 1);
+            questionRefs.current[questionIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
     }
 
     const handleNextBtn = () => {
         navigate('/result')
     }
 
+    useEffect(() => {
+        questionRefs.current[0].scrollIntoView({ behavior: 'smooth' });
+    }, [])
+
     return (
         <div>
             {shuffledQuestions.map((item, questionIndex) => (
-                <div className="Question" key={questionIndex}>
+                <div
+                    className={`Question ${currentQuestionIndex === questionIndex ? 'active' : ''}`}
+                    key={questionIndex}
+                    ref={(el) => (questionRefs.current[questionIndex] = el)}
+
+                >
                     <div className='askContainer'>
                         <img src={ask} />
                         <p>{item.question}</p>
