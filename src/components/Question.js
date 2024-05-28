@@ -175,8 +175,10 @@ function Question() {
     }
 
     useEffect(() => {
-        questionRefs.current[0].scrollIntoView({ behavior: 'smooth' });
-    }, [])
+        if (currentQuestionIndex > 0) {
+            questionRefs.current[currentQuestionIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }, [currentQuestionIndex]);
 
     return (
         <div>
