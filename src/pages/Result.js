@@ -7,7 +7,7 @@ import '../css/Result.css'
 import Footer from '../components/Footer'
 
 import React, { useEffect } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 
 
 function Result() {
@@ -79,22 +79,31 @@ function Result() {
                             <div className='friend-graph-container'>
                                 <div className='friend-graph friend-graph-1'>
                                     <p className='answer answer-num-1'>9개</p>
-                                    <div className='graph graph-1'></div>
+                                    {<Link to='/letterwrite'>
+                                        <div className='graph graph-1'></div>
+                                    </Link>}
+
                                     <p className='friend-name friend-name-1'>윤서</p>
                                 </div>
                                 <div className='friend-graph friend-graph-2'>
                                     <p className='answer answer-num-2'>8개</p>
-                                    <div className='graph graph-2'></div>
+                                    {<Link to='/letterwrite'>
+                                        <div className='graph graph-2'></div>
+                                    </Link>}
                                     <p className='friend-name friend-name-2'>엉덩이</p>
                                 </div>
                                 <div className='friend-graph friend-graph-3'>
                                     <p className='answer answer-num-3'>4개</p>
-                                    <div className='graph graph-3'></div>
+                                    {<Link to='/letterwrite'>
+                                        <div className='graph graph-3'></div>
+                                    </Link>}
                                     <p className='friend-name friend-name-3'>뿡뿡</p>
                                 </div>
                                 <div className='friend-graph friend-graph-4'>
                                     <p className='answer answer-num-4'>2개</p>
-                                    <div className='graph graph-4'></div>
+                                    {<Link to='/letterwrite'>
+                                        <div className='graph graph-4'></div>
+                                    </Link>}
                                     <p className='friend-name friend-name-4'>빵구</p>
                                 </div>
                             </div>
@@ -118,7 +127,7 @@ function Result() {
                 </div>
             </div>
             <div className='footer'>
-                <Footer />
+                <Footer position={"result"} />
 
             </div>
         </div>
