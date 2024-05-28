@@ -6,6 +6,11 @@ import pf from '../images/pf.png';
 import mibun from '../images/mirim-bunsick.png';
 import markerbtn from '../images/marker-btn.png';
 
+import restaurant from '../images/restaurant.png';
+import cafe from '../images/cafe.png';
+import dessert from '../images/dessert.png'; 
+import convenienceStore from '../images/convenience-store.png';
+
 function Map() {
     // 카카오 맵 API를 사용할 수 있도록 선언
     const { kakao } = window;
@@ -26,14 +31,8 @@ function Map() {
 
     useEffect(() => {
         setFilteredMarkerData(markerdata);
-        updateMap();
         mapscript();
     }, []);
-
-    const marker = new kakao.maps.Marker({
-        map: map,
-        position: new kakao.maps.LatLng(37.4667835831981, 126.932529286133),
-    });
 
     const mapscript = () => {
         if (window.kakao) {
@@ -50,15 +49,35 @@ function Map() {
         }
     };
 
+    const getMarkerImage = (value) => {
+        switch (value) {
+            case '음식점':
+                return restaurant;
+            case '카페':
+                return cafe;
+            case '디저트':
+                return dessert;
+            case '편의점':
+                return convenienceStore;
+            default:
+                return null;
+        }
+    };
+
     const updateMap = () => {
         if (!map) return;
 
         markers.forEach(marker => marker.setMap(null));
 
         const newMarkers = filteredMarkerData.map((el) => {
+            const imageSrc = getMarkerImage(el.value); // 마커 이미지 경로
+            const imageSize = new kakao.maps.Size(24, 35); // 마커 이미지 크기
+            const markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+
             const marker = new kakao.maps.Marker({
                 map: map,
                 position: new kakao.maps.LatLng(el.lat, el.lng),
+                image: markerImage // 사용자 정의 마커 이미지 적용
             });
 
             // 마커 클릭 이벤트 등록
@@ -72,7 +91,6 @@ function Map() {
         setMarkers(newMarkers);
     };
 
-
     const handleButtonClick = (buttonValue) => {
         // 현재 activeButton과 새로 클릭된 버튼의 값이 같으면 모든 마커를 보여줌
         if (activeButton === buttonValue) {
@@ -85,7 +103,6 @@ function Map() {
         }
     };
 
-
     // 닫기 버튼 클릭 시 activeMarker를 null로 설정하여 사라지게 함
     const closeActiveMarker = () => {
         const markerContainer = document.querySelector('.click-marker-container');
@@ -97,11 +114,10 @@ function Map() {
         }
     };
 
-
     return (
         <div className="hot-place">
             <div className="full-display">
-            <div className="btns">
+                <div className="btns">
                     <div className={activeButton === '학교' ? 'active' : undefined}></div>
                     <button
                         className={activeButton === '음식점' ? 'active' : ''}
@@ -126,7 +142,7 @@ function Map() {
                         className={activeButton === '디저트' ? 'active' : ''}
                         onClick={() => handleButtonClick('디저트')}
                     >
-                        디져트
+                        디저트
                     </button>
                 </div>
                 <div className="place">
@@ -155,6 +171,14 @@ function Map() {
                                 <p className="recommendation"> 추천글 </p>
                                 {/* 개발자 정보 */}
                                 <div className="developer-collection">
+                                    <div className="developer">
+                                        <img src={pf} className="developer-profile" />
+                                        <div className="developer-name-review">
+                                            <p className="developer-name">양지아</p>
+                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
+                                            <hr className="developer-hr"></hr>
+                                        </div>
+                                    </div>
                                     <div className="developer">
                                         <img src={pf} className="developer-profile" />
                                         <div className="developer-name-review">
