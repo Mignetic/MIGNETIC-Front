@@ -2,12 +2,18 @@
 
 .PositionSelect {
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
+.PositionSelectContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
 .PositionSelectTitle {
+    margin-left: 60px;
     margin-top: 90px;
     display: flex;
     align-items: baseline;
@@ -34,28 +40,16 @@
 }
 
 .selectBtn {
-    position: relative; 
+    position: relative;
 }
 
 .selectBtn p {
-    position: absolute; 
-    top: 50%; 
-    left: 50%;
-    transform: translate(-50%, -50%); 
-    font-size: 70px;
-    color: black; 
-    margin: 0; 
-    font-family: 'AppleSDGothicNeo';   
-}
-
-.inputCheck + label::after {
-    content: '';
-    display: none;
-    width: 100%;
-    height: 100%;
-    background: url('../images/icons/heart.svg') no-repeat center center; /* Absolute path to heart image */
-    background-size: contain;
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 70px;
+    color: black;
+    margin: 0;
+    font-family: 'AppleSDGothicNeo';
 }
