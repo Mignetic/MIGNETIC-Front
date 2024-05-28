@@ -176,7 +176,7 @@
 }
 .btns button.active {
     background-color: #65FFE3;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .map-class{
