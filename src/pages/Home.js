@@ -1,5 +1,6 @@
 import '../css/common/Index.css'
 import '../css/Home.css'
+import '../css/common/Animation.css'
 
 import Main from '../components/homes/Main'
 import Secondary from '../components/homes/Secondary'

@@ -1,16 +1,13 @@
 
 import logo from '../../images/icons/home-logo.png'
-// import bgImg from '../../images/home-bg.png'
-import bgImg from '../../images/testPosition-bg.png'
-import Header from '../Header'
+import bgImg from '../../images/home-bg.png'
+import arrow from '../../images/icons/home-arrow.png'
 
 function Main() {
     return (
         <div className='Main' style={{ backgroundImage: `url(${bgImg})` }}>
-            <Header position={'home'} />
-            <div className="MainLogo">
-                <img src={logo} className='homeLogo' />
-            </div>
+            <img src={logo} className='mainLogo' />
+            <img src={arrow} className='mainarrow' />
         </div>
     )
 }
