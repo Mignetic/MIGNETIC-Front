@@ -35,10 +35,10 @@
     gap: 65px;
 }
 
-.liNav1 a{
-    color: #20CFE7;
+.liContainer.test a{
+    color: white;
 }
 
-.liNav2 a{
-    color: #E961FF;
+.liContainer.basic a{
+    color: black;
 }

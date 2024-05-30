@@ -14,15 +14,17 @@ function PositionSelect() {
 
     return (
         <div className='PositionSelect'>
-            <div className='PositionSelectTitle'>
-                <p className='selectTitle'>SELECT</p>
-                맞는 포지션을 선택해주세요
-            </div>
+            <div className='PositionSelectContainer'>
+                <div className='PositionSelectTitle'>
+                    <p className='selectTitle'>SELECT</p>
+                    맞는 포지션을 선택해주세요
+                </div>
 
-            <div className='selectContainer'>
-                <button className='selectBtn' onClick={() => { handleOnclilckPosition('school', 'student') }}><img src={btn} /><p>학생</p></button>
-                <button className='selectBtn' onClick={() => { handleOnclilckPosition('school', 'teacher') }}><img src={btn} /><p>선생님</p></button>
-                <button className='selectBtn' onClick={() => { handleOnclilckPosition('outsider') }}><img src={btn} /><p>외부인</p></button>
+                <div className='selectContainer'>
+                    <button className='selectBtn' onClick={() => { handleOnclilckPosition('school', 'student') }}><img src={btn} /><p>학생</p></button>
+                    <button className='selectBtn' onClick={() => { handleOnclilckPosition('school', 'teacher') }}><img src={btn} /><p>선생님</p></button>
+                    <button className='selectBtn' onClick={() => { handleOnclilckPosition('outsider') }}><img src={btn} /><p>외부인</p></button>
+                </div>
             </div>
         </div>
     )
