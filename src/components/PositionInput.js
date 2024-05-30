@@ -40,7 +40,7 @@ function PositionInput() {
             return
         }
         if (type1 === 'outsider' && !outsiderType) {
-            alert('연락처 유형을 선택해주세요.')
+            alert('외부인 유형을 선택해주세요.')
             return
         }
         if (!isPrivacyChecked) {

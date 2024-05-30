@@ -1,4 +1,5 @@
 import ask from '../images/test-askbtn.png';
+import ask2 from '../images/test-askbtn2.png'
 import arrowBtn from '../images/icons/test-arrowBtn.png';
 import '../css/Question.css';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -195,7 +196,7 @@ function Question() {
 
                 >
                     <div className='askContainer'>
-                        <img src={ask} />
+                        <img src={item.question.length >= 20 ? ask : ask2} alt="ask" />
                         <p>{item.question}</p>
                     </div>
 
