@@ -209,6 +209,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    overflow: hidden;
 
     font-family: 'AppleSDGothicNeoB';
     font-weight: bold;
@@ -259,10 +260,30 @@
 
 .graph {
     width: 72px;
+    height: 0; /* 초기 높이를 0으로 설정 */
     background: linear-gradient(#FF3FF7, #FF7EFA, #FFBBFC, #FFD6FD, #FFFFFF);
     border-radius: 15px 15px 0px 0px;
+    overflow: hidden; /* 내용이 넘치는 경우를 대비하여 overflow를 hidden으로 설정 */
+    transition: height 1s ease; /* 애니메이션 트랜지션 설정 */
+}
+.graph-animation {
+    animation: slideInFromLeft 1s ease forwards;
 }
 
+.answer-animation {
+    animation: slideInFromLeft 1s ease forwards;
+}
+
+@keyframes slideInFromLeft {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 .graph-1 {
     height: 557px;
 }
