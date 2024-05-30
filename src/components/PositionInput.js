@@ -1,5 +1,6 @@
 import Header from '../components/Header'
 import { useNavigate, useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
 import '../css/PositionInput.css'
 import bgImg from '../images/testPosition-bg.png'
 import btn from '../images/select-btn.png'
@@ -24,9 +25,32 @@ function PositionInput() {
     if (type1 === 'school') types = type2 === 'student' ? 'student' : 'teacher'
     else if (type1 === 'outsider') types = 'outsider'
 
+    const [studentName, setStudentName] = useState('')
+    const [studentSubject, setStudentSubject] = useState('')
+    const [outsiderType, setOutsiderType] = useState('')
+    const [isPrivacyChecked, setIsPrivacyChecked] = useState(false)
+
     const handleSubmit = () => {
-        navigate('/test', { state: {types} })
+        if (!studentName) {
+            alert('이름을 작성해주세요.')
+            return
+        }
+        if (type1 === 'school' && !studentSubject) {
+            alert(inputPlaceholder(type2) + '을 작성해주세요.')
+            return
+        }
+        if (type1 === 'outsider' && !outsiderType) {
+            alert('연락처 유형을 선택해주세요.')
+            return
+        }
+        if (!isPrivacyChecked) {
+            alert('개인정보동의를 체크해주세요.')
+            return
+        }
+
+        navigate('/test', { state: { types } })
     }
+
 
     return (
         <div>
@@ -35,25 +59,28 @@ function PositionInput() {
                 {
                     type1 === 'school' ? (
                         <div className="schoolInputContainer">
-                            <input className='inputText' type="text" placeholder='이름' id='studentName' autoComplete="off" />
-                            <input className='inputText' type="text" placeholder={inputPlaceholder(type2)} id='studentSubject' autoComplete="off" />
+                            <input className='inputText' type="text" placeholder='이름' id='studentName' autoComplete="off" value={studentName}
+                                onChange={(e) => setStudentName(e.target.value)} />
+                            <input className='inputText' type="text" placeholder={inputPlaceholder(type2)} id='studentSubject' autoComplete="off" value={studentSubject}
+                                onChange={(e) => setStudentSubject(e.target.value)} />
                         </div>
                     ) : type1 === 'outsider' ? (
                         <div className="outsiderInputContainer">
-                            <input className='inputText' type="text" placeholder="이름" id='studentName' autoComplete="off" />
+                            <input className='inputText' type="text" placeholder="이름" id='studentName' autoComplete="off" value={studentName}
+                                onChange={(e) => setStudentName(e.target.value)} />
 
                             <div className='radioContainer'>
                                 <div>
                                     <label className='radioLabel' htmlFor="contactChoice1">부모님</label>
-                                    <input type="radio" id="contactChoice1" name="contact" value="parent" />
+                                    <input type="radio" id="contactChoice1" name="contact" value="parent" onChange={(e) => setOutsiderType(e.target.value)} />
                                 </div>
                                 <div>
                                     <label className='radioLabel' htmlFor="contactChoice2">지인</label>
-                                    <input type="radio" id="contactChoice2" name="contact" value="friend" />
+                                    <input type="radio" id="contactChoice2" name="contact" value="friend" onChange={(e) => setOutsiderType(e.target.value)} />
                                 </div>
                                 <div>
                                     <label className='radioLabel' htmlFor="contactChoice3">회사 관계자</label>
-                                    <input type="radio" id="contactChoice3" name="contact" value="company" />
+                                    <input type="radio" id="contactChoice3" name="contact" value="company" onChange={(e) => setOutsiderType(e.target.value)} />
                                 </div>
                             </div>
                         </div>
@@ -61,7 +88,8 @@ function PositionInput() {
                 }
                 <div className='privacyContainer'>
                     개인정보동의
-                    <input className='inputCheck' type="checkbox" />
+                    <input className='inputCheck' type="checkbox" checked={isPrivacyChecked}
+                        onChange={(e) => setIsPrivacyChecked(e.target.checked)} />
                 </div>
                 <button className='testSubmitBtn' onClick={handleSubmit}><img src={btn} /><p>검사하기</p></button>
             </div>
