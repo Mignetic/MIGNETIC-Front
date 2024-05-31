@@ -15,43 +15,49 @@ function Secondary() {
     const containerRef = useRef(null);
 
     useEffect(() => {
-        const container = containerRef.current;
-        const onScroll = () => {
-            const scrollTop = container.scrollTop;
-            container.style.backgroundPositionX = `-${scrollTop}px`;
+        const container = containerRef.current
+        const onWheel = (e) => {
+            const maxScrollLeft = container.scrollWidth - container.clientWidth
+
+            if ((e.deltaY > 0 && container.scrollLeft < maxScrollLeft) || (e.deltaY < 0 && container.scrollLeft > 0)) {
+                e.preventDefault();
+                container.scrollLeft += e.deltaY
+            }
         };
-        container.addEventListener('scroll', onScroll);
+        container.addEventListener('wheel', onWheel)
 
         return () => {
-            container.removeEventListener('scroll', onScroll);
-        };
-    }, []);
+            container.removeEventListener('wheel', onWheel)
+        }
+    }, [])
 
     return (
         <div className="Secondary" ref={containerRef} style={{ backgroundImage: `url(${bgImg})` }}>
-            <div className='iconsContainer1'>
-                <div className='iconContainer1'>
-                    <div className='iconContainer1-1'>
-                        <img src={icon1} className='icon1' />
-                        <div className='iconContainer1-2'>
-                            <img src={icon2} className='icon2' />
-                            <img src={icon3} className='icon3' />
+            <div className='iconsContainer'>
+                <div className='iconsContainer1'>
+                    <div className='iconContainer1'>
+                        <div className='iconContainer1-1'>
+                            <img src={icon1} className='icon1' />
+                            <div className='iconContainer1-2'>
+                                <img src={icon2} className='icon2' />
+                                <img src={icon3} className='icon3' />
+                            </div>
+                        </div>
+                        <div className='iconContainer1-3'>
+                            <img src={icon4} className='icon4' />
+                            <img src={icon5} className='icon5' />
                         </div>
                     </div>
-                    <div className='iconContainer1-3'>
-                        <img src={icon4} className='icon4' />
-                        <img src={icon5} className='icon5' />
+                    <div className='iconContainer2'>
+                        <img src={icon6} className='icon6' />
                     </div>
                 </div>
-                <div className='iconContainer1-2'>
-                    <img src={icon6} className='icon6' />
-                </div>
-            </div>
 
-            <div className='iconsContainer2'>
-                <img src={icon3} className='icon3-1' />
-                <img src={icon7} className='icon7' />
-                <p>학교 안에서<img src={icon8} className='icon8' /><br /> 나의 메이트 찾기!</p>
+                <div className='iconsContainer2'>
+                    <img src={icon3} className='icon3-1' />
+                    <img src={icon7} className='icon7' />
+                    <p>학교 안에서<img src={icon8} className='icon8' /><br /> 나의 메이트 찾기!</p>
+                </div>
             </div>
         </div>
     )
