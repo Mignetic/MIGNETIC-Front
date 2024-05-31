@@ -1,4 +1,5 @@
 import ask from '../images/test-askbtn.png';
+import ask2 from '../images/test-askbtn2.png'
 import arrowBtn from '../images/icons/test-arrowBtn.png';
 import '../css/Question.css';
 import { useLocation, useNavigate } from 'react-router-dom';
@@ -171,7 +172,12 @@ function Question() {
     }
 
     const handleNextBtn = () => {
-        navigate('/result')
+        const allAnswered = selectedAnswers.every(answer => answer !== null);
+        if (allAnswered) {
+            navigate('/result');
+        } else {
+            alert('모든 질문에 답해주세요.');
+        }
     }
 
     useEffect(() => {
@@ -190,7 +196,7 @@ function Question() {
 
                 >
                     <div className='askContainer'>
-                        <img src={ask} />
+                        <img src={item.question.length >= 20 ? ask : ask2} alt="ask" />
                         <p>{item.question}</p>
                     </div>
 
@@ -209,7 +215,7 @@ function Question() {
                 </div>
             ))}
             <div className='nextContainer'>
-                <button className='nextBtn' onClick={handleNextBtn}>다음<img src={arrowBtn} /></button>
+                <button className='nextBtn' onClick={handleNextBtn} >다음<img src={arrowBtn} /></button>
             </div>
         </div>
     )
