@@ -1,13 +1,17 @@
 .HomeContainer {
+    overflow: hidden;
+    height: 100vh;
     scroll-snap-type: y mandatory;
+
+    /* scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; */
 }
 
-.HomeContainer>div {
-    scroll-snap-align: start;
+.HomeContainer > div {
     height: 100vh;
+    scroll-snap-align: start;
 }
 
 /* Main */
@@ -18,6 +22,8 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    height: 100vh;
+    width: 100vw;
 }
 
 .mainLogo {
@@ -40,7 +46,7 @@
     background-repeat: repeat-x;
     background-size: auto;
     width: 100vw;
-    height: auto;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
