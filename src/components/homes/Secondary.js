@@ -8,38 +8,37 @@ import icon6 from '../../images/icons/secondary-icon5.png';
 import icon7 from '../../images/icons/secondary-icon6.png';
 import icon8 from '../../images/icons/secondary-icon10.png';
 
-import bgImg from '../../images/secondary-bg.png'
-
+import bgImg from '../../images/secondary-bg.png';
 
 function Secondary() {
     const containerRef = useRef(null);
     const iconRefs = useRef([]);
 
-
     useEffect(() => {
-        const container = containerRef.current
+        const container = containerRef.current;
         const onWheel = (e) => {
-            const maxScrollLeft = container.scrollWidth - container.clientWidth
+            const maxScrollLeft = container.scrollWidth - container.clientWidth;
 
             if ((e.deltaY > 0 && container.scrollLeft < maxScrollLeft) || (e.deltaY < 0 && container.scrollLeft > 0)) {
                 e.preventDefault();
-                container.scrollLeft += e.deltaY
+                container.scrollLeft += e.deltaY;
             }
         };
-        container.addEventListener('wheel', onWheel)
+        container.addEventListener('wheel', onWheel);
 
         return () => {
-            container.removeEventListener('wheel', onWheel)
-        }
-    }, [])
+            container.removeEventListener('wheel', onWheel);
+        };
+    }, []);
 
     useEffect(() => {
-        const container = containerRef.current;
         const observer = new IntersectionObserver(
             (entries) => {
                 entries.forEach((entry) => {
                     if (entry.isIntersecting) {
-                        entry.target.classList.add('animate');
+                        setTimeout(() => {
+                            entry.target.classList.add('animate');
+                        }, 500); // 1.5초 뒤에 애니메이션 시작
                     }
                 });
             },
@@ -47,14 +46,15 @@ function Secondary() {
         );
 
         iconRefs.current.forEach((icon) => {
-            observer.observe(icon);
+            if (icon instanceof Element) {
+                observer.observe(icon);
+            }
         });
 
         return () => {
             observer.disconnect();
         };
     }, []);
-
 
     return (
         <div className="Secondary" ref={containerRef} style={{ backgroundImage: `url(${bgImg})` }}>
@@ -85,7 +85,7 @@ function Secondary() {
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Secondary;
