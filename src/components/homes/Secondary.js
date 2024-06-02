@@ -22,6 +22,8 @@ function Secondary() {
             if ((e.deltaY > 0 && container.scrollLeft < maxScrollLeft) || (e.deltaY < 0 && container.scrollLeft > 0)) {
                 e.preventDefault();
                 container.scrollLeft += e.deltaY;
+            } else {
+                window.scrollTo({ top: 0, behavior: 'smooth' }); // 스크롤이 맨 위에 도달하면 페이지의 맨 위로 스크롤
             }
         };
         container.addEventListener('wheel', onWheel);
