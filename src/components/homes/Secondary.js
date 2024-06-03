@@ -62,26 +62,27 @@ function Secondary() {
                 <div className='iconsContainer1'>
                     <div className='iconContainer1'>
                         <div className='iconContainer1-1'>
-                            <img src={icon1} className='icon1' ref={(el) => (iconRefs.current.push(el))}/>
+                            <img src={icon1} className='icon1' ref={(el) => (iconRefs.current.push(el))} />
                             <div className='iconContainer1-2'>
-                                <img src={icon2} className='icon2' ref={(el) => (iconRefs.current.push(el))}/>
-                                <img src={icon3} className='icon3' ref={(el) => (iconRefs.current.push(el))}/>
+                                <img src={icon2} className='icon2' ref={(el) => (iconRefs.current.push(el))} />
+                                <img src={icon3} className='icon3' ref={(el) => (iconRefs.current.push(el))} />
                             </div>
                         </div>
                         <div className='iconContainer1-3'>
-                            <img src={icon4} className='icon4' ref={(el) => (iconRefs.current.push(el))}/>
-                            <img src={icon5} className='icon5' ref={(el) => (iconRefs.current.push(el))}/>
+                            <img src={icon4} className='icon4' ref={(el) => (iconRefs.current.push(el))} />
+                            <img src={icon5} className='icon5' ref={(el) => (iconRefs.current.push(el))} />
                         </div>
                     </div>
                     <div className='iconContainer2'>
-                        <img src={icon6} className='icon6' ref={(el) => (iconRefs.current.push(el))}/>
+                        <img src={icon6} className='icon6' ref={(el) => (iconRefs.current.push(el))} />
                     </div>
                 </div>
 
                 <div className='iconsContainer2'>
-                    <img src={icon3} className='icon3-1' ref={(el) => (iconRefs.current.push(el))}/>
-                    <img src={icon7} className='icon7' ref={(el) => (iconRefs.current.push(el))}/>
-                    <p>학교 안에서<img src={icon8} className='icon8' ref={(el) => (iconRefs.current.push(el))}/><br /> 나의 메이트 찾기!</p>
+                    <img src={icon3} className='icon7' ref={(el) => (iconRefs.current.push(el))} />
+                    <img src={icon7} className='icon8' ref={(el) => (iconRefs.current.push(el))} />
+                    <img src={icon8} className='icon9' ref={(el) => (iconRefs.current.push(el))} />
+                    {/* <p className='icon9' ref={(el) => (iconRefs.current.push(el))}>학교 안에서<img src={icon8} /><br /> 나의 메이트 찾기!</p> */}
                 </div>
             </div>
         </div>
