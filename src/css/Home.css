@@ -87,23 +87,27 @@
     align-items: center;
 }
 
-.icon3-1 {
+.icon7 {
     width: 240px;
     height: 170px;
     transform: rotate(120deg);
     margin-right: 160px;
 }
 
-.icon7 {
+.icon8 {
     margin-right: 100px;
 }
 
-.iconsContainer2 p {
+.icon9 {
+    margin-top: 390px;
+}
+
+/* .iconsContainer2 p {
     font-size: 90px;
     white-space: nowrap;
     margin-top: 500px;
     margin-right: 80px;
-}
+} */
 
 /* Secondary + animation */
 
