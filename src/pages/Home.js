@@ -1,54 +1,54 @@
 import React, { useEffect } from 'react';
-import '../css/common/Index.css'
-import '../css/Home.css'
-import '../css/common/Animation.css'
+import '../css/common/Index.css';
+import '../css/Home.css';
+import '../css/common/Animation.css';
 
-import Main from '../components/homes/Main'
-import Secondary from '../components/homes/Secondary'
-import Last from '../components/homes/Last'
-import Footer from '../components/Footer'
+import Main from '../components/homes/Main';
+import Secondary from '../components/homes/Secondary';
+import Last from '../components/homes/Last';
 
 function Home() {
     useEffect(() => {
         let isScrolling = false;
 
         const handleScroll = (event) => {
-            if (isScrolling) return
-            isScrolling = true
-            event.preventDefault()
+            if (isScrolling) return;
+            isScrolling = true;
+            event.preventDefault();
 
             const { deltaY } = event;
-            const activeElement = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2)
+            const activeElement = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).closest('.snap-section');
             let nextElement;
 
             if (deltaY > 0) {
-                nextElement = activeElement.nextElementSibling
+                // Down scroll
+                nextElement = activeElement.nextElementSibling;
             } else {
-                nextElement = activeElement.previousElementSibling
+                // Up scroll
+                nextElement = activeElement.previousElementSibling;
             }
 
             if (nextElement) {
-                nextElement.scrollIntoView({ behavior: 'smooth' })
+                nextElement.scrollIntoView({ behavior: 'smooth' });
             }
 
             setTimeout(() => {
-                isScrolling = false
-            }, 1000)
-        }
+                isScrolling = false;
+            }, 1000);
+        };
 
-        window.addEventListener('wheel', handleScroll, { passive: false })
+        window.addEventListener('wheel', handleScroll, { passive: false });
 
         return () => {
-            window.removeEventListener('wheel', handleScroll)
-        }
-    }, [])
+            window.removeEventListener('wheel', handleScroll);
+        };
+    }, []);
 
     return (
         <div className="HomeContainer">
-            <Main />
-            <Secondary />
-            <Last />
-            <Footer position='home' />
+            <div className="snap-section"><Main /></div>
+            <div className="snap-section"><Secondary /></div>
+            <div className="snap-section"><Last /></div>
         </div>
     );
 }

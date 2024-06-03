@@ -2,14 +2,9 @@
     overflow: hidden;
     height: 100vh;
     scroll-snap-type: y mandatory;
-
-    /* scroll-snap-type: y mandatory;
-    overflow-y: scroll;
-    height: 100vh;
-    scroll-behavior: smooth; */
 }
 
-.HomeContainer>div {
+.snap-section {
     height: 100vh;
     scroll-snap-align: start;
 }
