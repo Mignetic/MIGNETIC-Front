@@ -50,7 +50,7 @@ function Map() {
 
     const createMarkerImage = (src) => {
         const imageSrc = src;
-        const imageSize = new kakao.maps.Size(24, 35);
+        const imageSize = new kakao.maps.Size(44, 55);
         return new kakao.maps.MarkerImage(imageSrc, imageSize);
     };
 
