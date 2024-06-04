@@ -34,7 +34,7 @@ function Home() {
 
             setTimeout(() => {
                 isScrolling = false;
-            }, 1000);
+            }, 500);
         };
 
         window.addEventListener('wheel', handleScroll, { passive: false });
