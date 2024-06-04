@@ -1,12 +1,12 @@
-import bgImg from '../images/result-bg.png'
-import logoimg from '../images/icons/logo.png'
-import stars from '../images/stars.png'
-import tipimg from '../images/icons/result-graph-tip.png'
+import bgImg from '../images/result-bg.png';
+import logoimg from '../images/icons/logo.png';
+import stars from '../images/stars.png';
+import tipimg from '../images/icons/result-graph-tip.png';
 
-import '../css/Result.css'
-import Footer from '../components/Footer'
+import '../css/Result.css';
+import Footer from '../components/Footer';
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 function Result() {
@@ -14,6 +14,47 @@ function Result() {
     const graphNum = ['9개', '8개', '4개', '2개'];
     const graphName = ['윤서', '엉덩이', '뿡뿡', '빵구'];
     const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
+    const types = ['False', 'True', 'Try', 'Catch', 'Setter', 'Getter'];
+    const [typeNameIndex, setTypeNameIndex] = useState(0);
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setTypeNameIndex(prevIndex => {
+                // 다음 인덱스로 변경
+                const nextIndex = prevIndex + 1;
+                // 배열의 끝까지 도달하면 첫 번째 인덱스로 돌아감
+                return nextIndex < types.length ? nextIndex : 0;
+            });
+        }, 200);
+
+        // 3초 후에 타입 이름을 고정값으로 변경
+        const timeout = setTimeout(() => {
+            clearInterval(interval);
+            setTypeNameIndex(0); // 고정값으로 변경
+        }, 3000);
+
+        return () => {
+            clearInterval(interval);
+            clearTimeout(timeout);
+        };
+    }, []);
+
+    const typeName = types[typeNameIndex];
+
+    const handleIntersection = (entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const index = graphRefs.findIndex(ref => ref.current === entry.target);
+                if (index !== -1) {
+                    requestAnimationFrame(() => {
+                        entry.target.style.height = graphHeights[index];
+                        entry.target.style.transition = 'height 1s ease';
+                    });
+                }
+                observer.unobserve(entry.target);
+            }
+        });
+    };
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -34,25 +75,12 @@ function Result() {
         };
     }, []);
 
-    const handleIntersection = (entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const index = graphRefs.findIndex(ref => ref.current === entry.target);
-                if (index !== -1) {
-                    requestAnimationFrame(() => {
-                        entry.target.style.height = graphHeights[index];
-                        entry.target.style.transition = 'height 1s ease';
-                    });
-                }
-                observer.unobserve(entry.target);
-            }
-        });
-    };
-
-    document.body.style.backgroundImage = `url(${bgImg})`;
-    document.body.style.backgroundAttachment = 'scroll';
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundRepeat = 'no-repeat';
+    useEffect(() => {
+        document.body.style.backgroundImage = `url(${bgImg})`;
+        document.body.style.backgroundAttachment = 'scroll';
+        document.body.style.backgroundSize = 'cover';
+        document.body.style.backgroundRepeat = 'no-repeat';
+    }, []);
 
     const navigate = useNavigate();
 
@@ -74,7 +102,7 @@ function Result() {
                     <div className='type-name-stars'>
                         <img src={stars} className="stars stars-first" />
                         <div className='type-name'>
-                            <p>Setter</p>
+                            <p>{typeName}</p>
                         </div>
                         <img src={stars} className="stars stars-end" />
                     </div>
