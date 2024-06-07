@@ -23,6 +23,8 @@
 
 .click-marker-container.fade-out {
     animation: fadeOutLeft 0.8s ease; 
+    margin: 0;
+    padding: 0
 }
 
 .click-marker-container {
@@ -94,13 +96,10 @@
     margin: 0px 62px;
     background-color: #E3FFFA;
     padding: 0px 39px   ;
+    flex-direction: column;
 
 }
-.developer-profile{
-    margin-top: 15px;
-    width: 35px;
-    height: 35px;
-}
+
 .developer-name-review{
     font-family: 'AppleSDGothicNeoR';
     margin: 0;
