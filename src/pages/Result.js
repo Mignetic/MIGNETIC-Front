@@ -2,6 +2,8 @@ import bgImg from '../images/result-bg.png';
 import logoimg from '../images/icons/logo.png';
 import stars from '../images/stars.png';
 import tipimg from '../images/icons/result-graph-tip.png';
+import heartPink from '../images/heart-pink.png'
+import heartBlue from '../images/heart-blue.png'
 
 import '../css/Result.css';
 import Footer from '../components/Footer';
@@ -16,6 +18,8 @@ function Result() {
     const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
     const types = ['False', 'True', 'Try', 'Catch', 'Setter', 'Getter'];
     const [typeNameIndex, setTypeNameIndex] = useState(0);
+    const defaultTypeNameIndex = 0; // 기본 타입 인덱스
+    // 백에서 index 값 넘겨주기
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -30,14 +34,14 @@ function Result() {
         // 3초 후에 타입 이름을 고정값으로 변경
         const timeout = setTimeout(() => {
             clearInterval(interval);
-            setTypeNameIndex(0); // 고정값으로 변경
+            setTypeNameIndex(defaultTypeNameIndex); // 고정값으로 변경
         }, 3000);
 
         return () => {
             clearInterval(interval);
             clearTimeout(timeout);
         };
-    }, []);
+    }, [defaultTypeNameIndex, types.length]);
 
     const typeName = types[typeNameIndex];
 
@@ -90,7 +94,6 @@ function Result() {
     const handleHotPlace = () => {
         navigate('/hotplace');
     };
-
     return (
         <div className='result'>
             <img src={logoimg} className="logoimg" />
@@ -124,6 +127,25 @@ function Result() {
                             여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기  <br></br>
                             여기는 타입의 설명을 쭉 쓰기
                         </li>
+                    </div>
+                    <div className='good-bad-friend-type'>
+                        <div className='friend-type good-friend-type'>
+                            <img src={heartPink} className='heart heart-pink' />
+                            <div className='type-name type-name-friend '>
+                                <p>Setter</p>
+                                <p></p>
+                                {/* 특정 작성 */}
+                            </div>
+                        </div>
+                        <div className='friend-type bad-friend-type'>
+                            <img src={heartBlue} className='heart heart-blue' />
+                            <div className='type-name type-name-friend type-name-friend-blue'>
+                                <p>Getter</p>
+                                <p></p>
+                                {/* 특정 작성 */}
+                            </div>
+
+                        </div>
                     </div>
                     <div className='finding-friend-graph'>
                         <div className='finding-friend'>

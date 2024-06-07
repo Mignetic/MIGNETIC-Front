@@ -30,17 +30,17 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     position: relative;
     margin-top: 178px;
     margin-bottom: 64px;
 }
 
-.your-type{
+.your-type {
     font-size: 64px;
     color: white;
 }
-.your-type > p{
+
+.your-type > p {
     margin: 0;
     padding: 0;
 }
@@ -59,7 +59,6 @@
     margin-right: 63px;
 }
 
-
 .type-name-stars {
     position: relative;
     display: flex;
@@ -72,8 +71,6 @@
 .type-name {
     width: 585px;
     height: 169px;
-
-
     background-color: #ffffff;
     border-radius: 100px;
     border: 2px solid black;
@@ -84,7 +81,6 @@
     margin: 0;
     padding: 0;
     margin-top: 12px;
-    
     font-size: 120px;
     color: #FD83FD;
     text-shadow: -2px -2px 0 #000,
@@ -145,6 +141,40 @@
     gap: 49px;
 }
 
+.good-bad-friend-type {
+    display: flex;
+    flex-direction: row;
+    gap: 79px;
+}
+
+.friend-type {
+    width: 606px;
+    height: 693px;
+    background-color: rgba(255, 255, 255, 0.250);
+    border: 4px solid black;
+    border-radius: 30px;
+}
+
+.friend-type > {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.type-name-friend {
+    width: 516px;
+    margin: 5px;
+}
+
+.type-name-friend-blue > p {
+    color: #90F1FA;
+}
+
+.heart {
+    margin-top: 65px;
+}
+
 .finding-friend-graph {
     display: flex;
     flex-direction: column;
@@ -155,7 +185,6 @@
 
 .friend-graph-name-container {
     margin-top: 14px;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -166,14 +195,11 @@
 .friend-graph-container {
     margin-top: 98px;
     height: 705px;
-
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: flex-end;
-
     gap: 186px;
-
     z-index: 100;
 }
 
@@ -185,11 +211,10 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-
     position: relative;
 }
 
-.friend-name-container>p {
+.friend-name-container > p {
     font-size: 40px;
 }
 
@@ -199,7 +224,6 @@
     width: 100%;
     margin: 0;
     padding: 0;
-
     margin-left: 218px;
     margin-top: 145px;
 }
@@ -212,7 +236,6 @@
     justify-content: center;
     align-items: center;
     overflow: hidden;
-
     font-family: 'AppleSDGothicNeoB';
     font-weight: bold;
     font-size: 40px;
@@ -225,7 +248,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     font-family: 'AppleSDGothicNeoB';
     font-weight: bold;
     font-size: 40px;
@@ -239,25 +261,22 @@
 
 .similar-friend {
     text-align: left;
-
 }
 
-.similar-friend>p {
+.similar-friend > p {
     font-size: 40px;
     margin: 0;
     padding: 0;
-
 }
 
 .same-answers {
     margin-top: auto;
 }
 
-.same-answers>p {
+.same-answers > p {
     font-size: 24px;
     margin: 0;
     padding: 0;
-
 }
 
 .graph {
@@ -269,11 +288,6 @@
     overflow: hidden; /* 내용이 넘치는 경우를 대비하여 overflow를 hidden으로 설정 */
     transition: height 1s ease; /* 애니메이션 트랜지션 설정 */
 }
-
-
-/* .graph-animation {
-    animation: slideInFromLeft 1s ease forwards;
-} */
 
 .answer-animation {
     animation: slideInFromLeft 1s ease forwards;
@@ -300,7 +314,6 @@
     background-color: rgba(255, 255, 255, 0.25);
     z-index: 0;
     top: 0;
-
     position: absolute;
 }
 
@@ -311,7 +324,6 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     width: 551px;
     height: 121px;
     background-color: white;
@@ -325,7 +337,6 @@
     height: 31px;
     left: 0;
     margin: 14px;
-
     top: 0;
 }
 
@@ -353,9 +364,7 @@
     border: 4px solid black;
     border-radius: 66px;
     box-shadow: 0px 5px 4px rgb(0, 0, 0);
-
     font-family: 'AppleSDGothicNeoB';
     font-weight: bold;
     margin-top: 106px;
-
 }
