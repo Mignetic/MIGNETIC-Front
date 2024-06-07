@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { markerdata } from '../components/markerData';
+import { markerdata } from '../components/markerData'; // markerData import
+
 import '../css/Map.css';
 
 import pf from '../images/pf.png';
@@ -58,23 +59,30 @@ function Map() {
         if (!map && !newMap) return;
 
         const mapInstance = map || newMap;
-        
+
         markers.forEach(marker => marker.setMap(null));
 
-        const newMarkers = filteredMarkerData.map((el) => {
-            const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : convenienceStore;
-            const marker = new kakao.maps.Marker({
-                map: mapInstance,
-                position: new kakao.maps.LatLng(el.lat, el.lng),
-                image: createMarkerImage(imageSrc),
-            });
+        const newMarkers = filteredMarkerData.flatMap((category) => {
+            if (Array.isArray(category)) { // 배열인지 확인
+                return category.map((el) => {
+                    const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : convenienceStore;
+                    const marker = new kakao.maps.Marker({
+                        map: mapInstance,
+                        position: new kakao.maps.LatLng(el.lat, el.lng),
+                        image: createMarkerImage(imageSrc),
+                    });
 
-            kakao.maps.event.addListener(marker, 'click', () => {
-                setActiveMarker(el);
-            });
+                    kakao.maps.event.addListener(marker, 'click', () => {
+                        setActiveMarker(el);
+                    });
 
-            return marker;
+                    return marker;
+                });
+            } else {
+                return []; // 배열이 아닌 경우 빈 배열 반환
+            }
         });
+
 
         const schoolMarker = new kakao.maps.Marker({
             map: mapInstance,
@@ -92,7 +100,14 @@ function Map() {
             setActiveButton(null);
         } else {
             setActiveButton(buttonValue);
-            setFilteredMarkerData(markerdata.filter(data => data.value === buttonValue));
+            setFilteredMarkerData(markerdata.map(category => {
+                if (Array.isArray(category)) {
+                    return category.filter(data => data.value === buttonValue);
+                }
+                return category;
+            }));
+            closeActiveMarker();
+            updateMap();
         }
     };
 
@@ -147,57 +162,22 @@ function Map() {
                                 <p className="marker-title">{activeMarker.title}</p>
                                 <div className="marker-img-detail">
                                     <img src={mibun} className="marker-img" />
-                                    <li className="marker-detail">
-                                        여기는 미림분식에 대한 글을 써주세요 여기는 미림분식에 대한 글을 써주세dy
-                                    </li>
-                                    <li className="marker-detail">
-                                        여기는 미림분식에 대한 글을 써주세요 여기는 미림분식에 대한 글을 써주세요
-                                    </li>
-                                    <li className="marker-detail">
-                                        여기는 미림분식에 대한 글을 써주세요 여기는 미림분식에 대한 글을 써주세요
-                                    </li>
+                                    <ul>
+                                        {activeMarker.details.map((detail, index) => (
+                                            <li key={index} className="marker-detail">{detail}</li>
+                                        ))}
+                                    </ul>
                                 </div>
                                 <p className="recommendation"> 추천글 </p>
                                 <div className="developer-collection">
                                     <div className="developer">
-                                        <img src={pf} className="developer-profile" />
-                                        <div className="developer-name-review">
-                                            <p className="developer-name">양지아</p>
-                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
-                                            <hr className="developer-hr"></hr>
-                                        </div>
-                                    </div>
-                                    <div className="developer">
-                                        <img src={pf} className="developer-profile" />
-                                        <div className="developer-name-review">
-                                            <p className="developer-name">양지아</p>
-                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
-                                            <hr className="developer-hr"></hr>
-                                        </div>
-                                    </div>
-                                    <div className="developer">
-                                        <img src={pf} className="developer-profile" />
-                                        <div className="developer-name-review">
-                                            <p className="developer-name">양지아</p>
-                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
-                                            <hr className="developer-hr"></hr>
-                                        </div>
-                                    </div>
-                                    <div className="developer">
-                                        <img src={pf} className="developer-profile" />
-                                        <div className="developer-name-review">
-                                            <p className="developer-name">양지아</p>
-                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
-                                            <hr className="developer-hr"></hr>
-                                        </div>
-                                    </div>
-                                    <div className="developer">
-                                        <img src={pf} className="developer-profile" />
-                                        <div className="developer-name-review">
-                                            <p className="developer-name">양지아</p>
-                                            <p className="developer-review">나보고어떡하라고어떻하라고어뜩하라고엉뜨켜라고우뚝하라고</p>
-                                            <hr className="developer-hr"></hr>
-                                        </div>
+                                        {activeMarker.reviews.map((review, index) => (
+                                            <div key={index} className="developer-name-review">
+                                                <p className="developer-name">{review.developer}</p>
+                                                <p className="developer-review">{review.review}</p>
+                                                <hr className="developer-hr" />
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
                             </div>
