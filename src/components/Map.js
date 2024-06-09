@@ -161,7 +161,13 @@ function Map() {
                             <div className="marker-setting">
                                 <p className="marker-title">{activeMarker.title}</p>
                                 <div className="marker-img-detail">
-                                    <img src={mibun} className="marker-img" />
+                                    {activeMarker.image ? (
+                                        <img src={activeMarker.image} className="marker-img" alt={activeMarker.title} />
+                                    ) : (
+                                        <div className="no-image-placeholder">
+                                            <p>이미지가 없습니다.</p>
+                                        </div>
+                                    )}
                                     <ul>
                                         {activeMarker.details.map((detail, index) => (
                                             <li key={index} className="marker-detail">{detail}</li>

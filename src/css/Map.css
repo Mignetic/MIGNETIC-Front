@@ -79,6 +79,17 @@
     height: 207px;
 }
 
+.no-image-placeholder {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width: 359px;
+    height: 207px;
+    background-color: #ffffff;
+}
+
 .marker-detail{
     margin-top: 16px;
 }
