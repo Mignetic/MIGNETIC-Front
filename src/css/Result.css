@@ -75,9 +75,13 @@
     border-radius: 100px;
     border: 2px solid black;
     box-shadow: inset 10px 10px 10px rgba(0, 0, 0, 0.25);
+    display: flex; /* 추가 */
+    justify-content: center; /* 추가 */
+    align-items: center; /* 추가 */
+    margin: 0 auto; /* 가로 정렬 */
 }
 
-.type-name > p {
+.type-name > .type-name-main {
     margin: 0;
     padding: 0;
     margin-top: 12px;
@@ -88,7 +92,6 @@
         -2px 2px 0 #000,
         2px 2px 0 #000;
 }
-
 .stars {
     width: 78px;
     height: 81px;
@@ -141,9 +144,46 @@
     gap: 49px;
 }
 
+
+.type-name-friend-good-bad{
+    margin: 0;
+    padding: 0;
+    margin-top: 12px;
+    font-size: 120px;
+    color: #FD83FD;
+    text-shadow: -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+
+}
+
+.type-good-bad-description{
+    margin: 0;
+    padding: 0;
+
+    margin-top: 8px;
+    font-family: 'AppleSDGothicNeoB';
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.type-details {
+    margin: 0 auto;
+    max-width: 100%; 
+    text-align: center;
+    position: absolute; 
+    bottom: 0; 
+    margin-bottom: 76px;
+    font-family: 'AppleSDGothicNeoB';
+    font-weight: bold;
+    font-size: 40px;
+}
 .good-bad-friend-type {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
     gap: 79px;
 }
 
@@ -153,6 +193,11 @@
     background-color: rgba(255, 255, 255, 0.250);
     border: 4px solid black;
     border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    position: relative;
 }
 
 .friend-type > {
