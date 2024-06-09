@@ -16,7 +16,7 @@ export const markerdata = [
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "리뷰 2" },
+                { developer: "양지아", review: "급식이 재미있고 수업이 맛있어요" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -39,11 +39,155 @@ export const markerdata = [
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "리뷰 2" },
+                { developer: "양지아", review: "미림인이라면 먹어봐야 하는 분식집. 회식하면 자주온다" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "춘리마라탕-신림점",
+            lat: 37.4690769280705,
+            lng: 126.936937258574,
+            value: "음식점",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F62241B1606474C8DB4BA6F49C2824699",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+                "제발 바뀌어라",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "맛있당" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "이름없는파스타-대학동점",
+            lat: 37.4704190975676,
+            lng: 126.93449718467,
+            value: "음식점",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocalfiy%2Fsearchregister_2006687744",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+                "제발 바뀌어라",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "정직유부-신림녹두점",
+            lat: 37.4693537636273,
+            lng: 126.934861096669,
+            value: "음식점",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2FC8109F86B67F470EA1CEDD7745C7A81C",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+                "제발 바뀌어라",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "커피더알",
+            lat: 37.4699036443046,
+            lng: 126.933555523701,
+            value: "음식점",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FED4D2297C9904BCE9A8C0A320A584DE5",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+                "제발 바뀌어라",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "이삭토스트-미림여고점",
+            lat: 37.4652824557525,
+            lng: 126.931670647461,
+            value: "음식점",
+            image: "",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+                "제발 바뀌어라",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "롯데리아 신림녹두점",
+            lat: 37.4704190975676,
+            lng: 126.93449718467,
+            value: "음식점",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F42CACF45FC25496F889BBA7B0C093C02",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+                "제발 바뀌어라",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "후후라운지",
+            lat: 37.4704836216592,
+            lng: 126.93387119754,
+            value: "음식점",
+            image: "",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+                "제발 바뀌어라",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
     ],
+
+
+
+
     // 디저트
     [
         {
@@ -61,11 +205,15 @@ export const markerdata = [
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "리뷰 2" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
     ],
+
+
+
+
     // 카페
     [
         {
@@ -83,11 +231,15 @@ export const markerdata = [
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "리뷰 2" },
+                { developer: "양지아", review: "테이크아웃 해서 가져갈 때 편하다" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
     ],
+
+
+
+
     // 편의점
     [
         {
@@ -105,7 +257,7 @@ export const markerdata = [
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "리뷰 2" },
+                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
