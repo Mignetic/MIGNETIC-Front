@@ -7,6 +7,7 @@ import heartBlue from '../images/heart-blue.png'
 
 import '../css/Result.css';
 import Footer from '../components/Footer';
+import ResultType from '../components/ResultType';
 
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
@@ -14,12 +15,20 @@ import { useNavigate, Link } from 'react-router-dom';
 function Result() {
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
     const graphNum = ['9개', '8개', '4개', '2개'];
-    const graphName = ['윤서', '엉덩이', '뿡뿡', '빵구'];
+    // 그래프 숫자 값 전달 받기
+    const graphName = ['권지수', '김수연', '김희영', '노승주'];
+    // 그래프에 들어가는 친구 이름 작성
     const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
     const types = ['False', 'True', 'Try', 'Catch', 'Setter', 'Getter'];
     const [typeNameIndex, setTypeNameIndex] = useState(0);
     const defaultTypeNameIndex = 0; // 기본 타입 인덱스
     // 백에서 index 값 넘겨주기
+
+    const goodFriend = "Setter";
+    // 백에서 값 전달해줘야 함
+    const badFriend = "Getter";
+    // 백에서 값 전달
+
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -86,6 +95,8 @@ function Result() {
         document.body.style.backgroundRepeat = 'no-repeat';
     }, []);
 
+
+
     const navigate = useNavigate();
 
     const handleTest = () => {
@@ -105,7 +116,7 @@ function Result() {
                     <div className='type-name-stars'>
                         <img src={stars} className="stars stars-first" />
                         <div className='type-name'>
-                            <p>{typeName}</p>
+                            <p className='type-name-main'>{typeName}</p>
                         </div>
                         <img src={stars} className="stars stars-end" />
                     </div>
@@ -131,20 +142,27 @@ function Result() {
                     <div className='good-bad-friend-type'>
                         <div className='friend-type good-friend-type'>
                             <img src={heartPink} className='heart heart-pink' />
-                            <div className='type-name type-name-friend '>
-                                <p>Setter</p>
-                                <p></p>
-                                {/* 특정 작성 */}
+                            <div className='type-name'>
+                                <p className=' type-name-friend-good-bad'>{goodFriend}</p>
                             </div>
+                            <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                            <p className='type-details good-type-details'>
+                                유형설명설명설명<br></br>
+                                유형설명설명설명<br></br>
+                                유형설명설명설명<br></br>
+                            </p>
                         </div>
                         <div className='friend-type bad-friend-type'>
                             <img src={heartBlue} className='heart heart-blue' />
-                            <div className='type-name type-name-friend type-name-friend-blue'>
-                                <p>Getter</p>
-                                <p></p>
-                                {/* 특정 작성 */}
+                            <div className='type-name '>
+                                <p className='type-name-friend-good-bad type-name-friend-blue'>{badFriend}</p>
                             </div>
-
+                            <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                            <p className='type-details bad-type-details'>
+                                유형설명설명설명<br></br>
+                                유형설명설명설명<br></br>
+                                유형설명설명설명<br></br>
+                            </p>
                         </div>
                     </div>
                     <div className='finding-friend-graph'>
