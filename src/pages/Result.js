@@ -140,29 +140,35 @@ function Result() {
                         </li>
                     </div>
                     <div className='good-bad-friend-type'>
-                        <div className='friend-type good-friend-type'>
-                            <img src={heartPink} className='heart heart-pink' />
-                            <div className='type-name'>
-                                <p className=' type-name-friend-good-bad'>{goodFriend}</p>
+                        <div className='good-bad-friend-type-container'>
+                            <p className='good-bad-friend good-friend'>잘 맞는 유형</p>
+                            <div className='friend-type good-friend-type'>
+                                <img src={heartPink} className='heart heart-pink' />
+                                <div className='type-name'>
+                                    <p className=' type-name-friend-good-bad'>{goodFriend}</p>
+                                </div>
+                                <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                                <p className='type-details good-type-details'>
+                                    유형설명설명설명<br></br>
+                                    유형설명설명설명<br></br>
+                                    유형설명설명설명<br></br>
+                                </p>
                             </div>
-                            <p className='type-good-bad-description'>간단한 한줄 설명</p>
-                            <p className='type-details good-type-details'>
-                                유형설명설명설명<br></br>
-                                유형설명설명설명<br></br>
-                                유형설명설명설명<br></br>
-                            </p>
                         </div>
-                        <div className='friend-type bad-friend-type'>
-                            <img src={heartBlue} className='heart heart-blue' />
-                            <div className='type-name '>
-                                <p className='type-name-friend-good-bad type-name-friend-blue'>{badFriend}</p>
+                        <div className='good-bad-friend-type-container'>
+                            <p className='good-bad-friend good-friend'>안 맞는 유형</p>
+                            <div className='friend-type bad-friend-type'>
+                                <img src={heartBlue} className='heart heart-blue' />
+                                <div className='type-name '>
+                                    <p className='type-name-friend-good-bad type-name-friend-blue'>{badFriend}</p>
+                                </div>
+                                <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                                <p className='type-details bad-type-details'>
+                                    유형설명설명설명<br></br>
+                                    유형설명설명설명<br></br>
+                                    유형설명설명설명<br></br>
+                                </p>
                             </div>
-                            <p className='type-good-bad-description'>간단한 한줄 설명</p>
-                            <p className='type-details bad-type-details'>
-                                유형설명설명설명<br></br>
-                                유형설명설명설명<br></br>
-                                유형설명설명설명<br></br>
-                            </p>
                         </div>
                     </div>
                     <div className='finding-friend-graph'>
@@ -171,7 +177,7 @@ function Result() {
                                 <p>나와 비슷한 친구</p>
                             </div>
                             <div className='same-answers'>
-                                <p>10개 중 같은 답을 선택한 개수</p>
+                                <p>(10개 중 같은 답을 선택한 개수)</p>
                             </div>
                         </div>
                         <div className='friend-graph-name-container'>

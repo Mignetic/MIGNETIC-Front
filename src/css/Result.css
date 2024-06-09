@@ -144,6 +144,34 @@
     gap: 49px;
 }
 
+.good-bad-friend-type {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 79px;
+    margin-top: 124px;
+}
+
+.good-bad-friend-type-container{
+    display: flex;
+    flex-direction: column;
+}
+
+.good-bad-friend{
+    font-family: 'AppleSDGothicNeoB';
+    font-weight: bold;
+    font-size: 40px;
+    
+    display: flex;
+    flex-direction: row;
+
+    margin: 0;
+    bottom: 0;
+
+    margin-bottom: 25px;
+    margin-left: 9px;
+}
 
 .type-name-friend-good-bad{
     margin: 0;
@@ -178,13 +206,6 @@
     font-family: 'AppleSDGothicNeoB';
     font-weight: bold;
     font-size: 40px;
-}
-.good-bad-friend-type {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 79px;
 }
 
 .friend-type {
@@ -316,6 +337,7 @@
 
 .same-answers {
     margin-top: auto;
+    margin-left: 10px;
 }
 
 .same-answers > p {
