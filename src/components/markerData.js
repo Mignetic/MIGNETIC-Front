@@ -30,9 +30,8 @@ export const markerdata = [
             value: "음식점",
             image: "https://lh5.googleusercontent.com/p/AF1QipMUVKImPjBJeTGdWr9N3MkL4Km42AE57udJ6Vfc=w408-h306-k-no",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "미림 건너편에 있는 분식집, 학교에서 회식하면 자주 온다.",
+                "마지막에 볶음밥을 먹어야 한다.",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -52,7 +51,6 @@ export const markerdata = [
             details: [
                 "미림분식에 대한 설명",
                 "메뉴, 가격 등",
-                "제발 바뀌어라",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -72,7 +70,6 @@ export const markerdata = [
             details: [
                 "미림분식에 대한 설명",
                 "메뉴, 가격 등",
-                "제발 바뀌어라",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -92,7 +89,6 @@ export const markerdata = [
             details: [
                 "미림분식에 대한 설명",
                 "메뉴, 가격 등",
-                "제발 바뀌어라",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -112,7 +108,6 @@ export const markerdata = [
             details: [
                 "미림분식에 대한 설명",
                 "메뉴, 가격 등",
-                "제발 바뀌어라",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -130,16 +125,15 @@ export const markerdata = [
             value: "음식점",
             image: "",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "학교 정문에서 올라가면 나온다.",
+                "사장님도 매우 친절하시고 간단하게 사먹기 좋다.",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "기본 메뉴도 맛있다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -152,14 +146,13 @@ export const markerdata = [
             details: [
                 "미림분식에 대한 설명",
                 "메뉴, 가격 등",
-                "제발 바뀌어라",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -172,7 +165,6 @@ export const markerdata = [
             details: [
                 "미림분식에 대한 설명",
                 "메뉴, 가격 등",
-                "제발 바뀌어라",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -195,7 +187,7 @@ export const markerdata = [
             lat: 37.4709457968065,
             lng: 126.934116438944,
             value: "디저트",
-            image: "URL 또는 이미지 경로",
+            image: "",
             details: [
                 "미인브레드에 대한 설명",
                 "디저트 종류, 추천 메뉴 등"
@@ -221,7 +213,7 @@ export const markerdata = [
             lat: 37.4707284091674,
             lng: 126.934001888571,
             value: "카페",
-            image: "URL 또는 이미지 경로",
+            image: "",
             details: [
                 "메가커피에 대한 설명",
                 "커피 종류, 분위기 등"
@@ -247,10 +239,10 @@ export const markerdata = [
             lat: 37.46559178791,
             lng: 126.9316965907,
             value: "편의점",
-            image: "URL 또는 이미지 경로",
+            image: "",
             details: [
-                "GS편의점에 대한 설명",
-                "제품 종류, 위치 등"
+                "학교에서 올라가면 바로 보이는 편의점이다.",
+                "급식을 먹고 간식을 사러 자주 이용한다.",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
