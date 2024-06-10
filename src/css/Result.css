@@ -108,6 +108,10 @@
 
 }
 
+.type-name > .type-name-friend-blue {
+    color: #90F1FA;
+}
+
 .stars {
     width: 78px;
     height: 81px;
@@ -185,12 +189,7 @@
     margin: 5px;
 }
 
-.type-name-friend-good-bad{
-}
 
-.type-name-friend-blue {
-    color: #90F1FA;
-}
 
 .heart {
     margin-top: 65px;
