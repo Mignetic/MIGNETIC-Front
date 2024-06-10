@@ -72,11 +72,12 @@
 
     margin-top: 28px;
     margin-left: 58px;
+    margin-right: 58px;
 }
 
 .marker-img{
     width: 359px;
-    height: 207px;
+    height: auto;
 }
 
 .no-image-placeholder {
