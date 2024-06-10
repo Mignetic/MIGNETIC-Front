@@ -9,7 +9,7 @@ export const markerdata = [
             image: "https://lh3.googleusercontent.com/p/AF1QipMXc0rFFaqJ3567dlONJ41rddslKY7-X0yhBrW3=s1360-w1360-h1020",
             details: [
                 "미림마이스터고. 현재 IT쇼(미림마이스터고 졸업 작품 전시회)가 진행 중인 곳이다.",
-                "학교 주변 정보 등"
+                "서울특별시 관악구 호암로 546"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -30,8 +30,8 @@ export const markerdata = [
             value: "음식점",
             image: "https://lh5.googleusercontent.com/p/AF1QipMUVKImPjBJeTGdWr9N3MkL4Km42AE57udJ6Vfc=w408-h306-k-no",
             details: [
-                "미림 건너편에 있는 분식집, 학교에서 회식하면 자주 온다.",
-                "마지막에 볶음밥을 먹어야 한다.",
+                "미림 건너편에 있는 분식집, 학교에서 회식하러 자주 온다.",
+                "서울특별시 관악구 신림동 298-3",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -49,8 +49,8 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F62241B1606474C8DB4BA6F49C2824699",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "학생들의 혈중 마라수치를 지키기 위해 틈틈히 섭취해야 한다.",
+                "서울특별시 관악구 대학6길 14",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -68,8 +68,8 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocalfiy%2Fsearchregister_2006687744",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "이름없는 파스타에 대한 설명",
+                "서울 관악구 신림로23길 16",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -87,8 +87,8 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2FC8109F86B67F470EA1CEDD7745C7A81C",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "정직유부에 대한 설명",
+                "서울, 관악구 대학6길 52",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -106,8 +106,8 @@ export const markerdata = [
             value: "음식점",
             image: "",
             details: [
-                "학교 정문에서 올라가면 나온다.",
-                "사장님도 매우 친절하시고 간단하게 사먹기 좋다.",
+                "학교 정문에서 올라가면 나오는 버스 정류장 옆에 있는 가게이다.",
+                "서울 관악구 호암로 534",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -125,15 +125,15 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F42CACF45FC25496F889BBA7B0C093C02",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "가성비 있고 간편하게 먹을 수 있어서 좋다.",
+                "서울 관악구 신림로23길 16",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "" },
+                { developer: "양지아", review: "토네이도, 소프트아이스크림 맛집" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -145,8 +145,7 @@ export const markerdata = [
             image: "",
             details: [
                 "피나치공에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "서울 관악구 호암로26가길 11",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -164,16 +163,15 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F12F5BDC8E4474E2196F9026F59687A97",
             details: [
-                "피나치공에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "노브랜드 버거에 대한 설명",
+                "서울 관악구 호암로 600",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "개인적으로 감자튀김이 맛있어서 좋았다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -184,16 +182,15 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Fcfile73.uf.daum.net%2Fimage%2F252E9D4B553767C42EDFB5",
             details: [
-                "피나치공에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "본죽 대한 설명",
+                "서울 관악구 호암로 598",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "낙지죽이 맛있다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -204,9 +201,8 @@ export const markerdata = [
             value: "음식점",
             image: "",
             details: [
-                "피나치공에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "김밥천국에 대한 설명",
+                "서울 관악구 호암로24길 1",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -224,9 +220,27 @@ export const markerdata = [
             value: "음식점",
             image: "",
             details: [
-                "피나치공에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "김밥천국에 대한 설명",
+                "서울 관악구 호암로 534",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "바로심김밥-2호점",
+            lat: 37.4704190975676,
+            lng: 126.93449718467,
+            value: "음식점",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FBFCC878B009B405D95380F980BD73B05",
+            details: [
+                "바로심김밥에 대한 설명",
+                "서울 관악구 신림로23길 16",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -244,16 +258,15 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F4B782E164BE04A8895F19728EBD74430",
             details: [
-                "피나치공에 대한 설명",
-                "메뉴, 가격 등",
-                "제발 바뀌어라",
+                "진마라탕에 대한 설명",
+                "서울 관악구 신림로23길 16",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "마라수혈하기 좋다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -271,7 +284,7 @@ export const markerdata = [
             value: "디저트",
             image: "",
             details: [
-                "미인브레드에 대한 설명",
+                "돈이 넉넉하지 않은 학생들이 사먹기에 좋은 빵집. 싸고 맛있다.",
                 "디저트 종류, 추천 메뉴 등"
             ],
             reviews: [
@@ -279,7 +292,7 @@ export const markerdata = [
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿 슈크림빵 추천해영." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -290,8 +303,8 @@ export const markerdata = [
             value: "디저트",
             image: "",
             details: [
-                "미인브레드에 대한 설명",
-                "디저트 종류, 추천 메뉴 등"
+                "아이스크림을 싼 가격에 먹을 수 있어서 좋다.",
+                "서울특별시 관악구 호암로 528"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -309,15 +322,15 @@ export const markerdata = [
             value: "디저트",
             image: "",
             details: [
-                "미인브레드에 대한 설명",
-                "디저트 종류, 추천 메뉴 등"
+                "탕후루 외에도 망고사고도 팔고 있어 가보는걸 추천한다. 하지만 건강을 위해 적당히 먹자.",
+                "서울 관악구 호암로26길 1"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "양지아", review: "통귤 탕후루와 스테비아 토마토를 추천한다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -328,15 +341,15 @@ export const markerdata = [
             value: "디저트",
             image: "",
             details: [
-                "미인브레드에 대한 설명",
-                "디저트 종류, 추천 메뉴 등"
+                "마카롱이나 케이크를 파는 가게이다. 케이크가 정말 귀엽다.",
+                "서울 관악구 호암로26가길 2"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "양지아", review: "마카롱이 맛있다(몬난이 마카롱은 가격이 더 싸다)." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -347,8 +360,8 @@ export const markerdata = [
             value: "디저트",
             image: "",
             details: [
-                "미인브레드에 대한 설명",
-                "디저트 종류, 추천 메뉴 등"
+                "호두과자가 먹고 싶을 때 조금만 사서 먹기 좋다.",
+                "서울특별시 관악구 신림동 호암로26가길 2"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -366,15 +379,15 @@ export const markerdata = [
             value: "디저트",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F5ADC118CA09647D5B4AAD2D05B03B654",
             details: [
-                "미인브레드에 대한 설명",
-                "디저트 종류, 추천 메뉴 등"
+                "꽈배기나 찹쌀도나츠를 판매하는 곳이다.",
+                "서울특별시 관악구 대학동 246-51"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -385,15 +398,15 @@ export const markerdata = [
             value: "디저트",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F8B89C600D1D84863AFA18F11EB204F40",
             details: [
-                "미인브레드에 대한 설명",
-                "디저트 종류, 추천 메뉴 등"
+                "보통 스승의 날이나 선생님 생신때 통학하는 친구가 케이크를 사오는 곳이다. 직원분들이 매우 친절하다.",
+                "서울특별시 관악구 호암로 602"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "양지아", review: "직원분들이 친절해서 좋았습니당" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -412,7 +425,7 @@ export const markerdata = [
             image: "",
             details: [
                 "메가커피에 대한 설명",
-                "커피 종류, 분위기 등"
+                "서울특별시 관악구 호암로26가길 2"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -420,6 +433,25 @@ export const markerdata = [
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
                 { developer: "양지아", review: "테이크아웃 해서 가져갈 때 편하다" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "카페여기",
+            lat: 37.46895586338,
+            lng: 126.934509878763,
+            value: "카페",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F90290364D1554CCEA934EB6C87D4A84D",
+            details: [
+                "카페여기에 대한 설명",
+                "커피 종류, 분위기 등"
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -430,15 +462,15 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "메가커피에 대한 설명",
-                "커피 종류, 분위기 등"
+                "학생들에게 부담없는 가격이라 좋다. 아이스크림도 판매하고 있다.",
+                "서울특별시 관악구 신림로23길 21"
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "테이크아웃 해서 가져갈 때 편하다" },
+                { developer: "양지아", review: "땡모반 맛있어용" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -449,15 +481,15 @@ export const markerdata = [
             value: "카페",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FED4D2297C9904BCE9A8C0A320A584DE5",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "더 커피 알에 대한 설명",
+                "서울 관악구 호암로24길 6",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -468,15 +500,15 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "후후라운지에 대한 설명",
+                "서울 관악구 호암로26가길 8",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -487,15 +519,15 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "컴포즈에 대한 설명",
+                "서울 관악구 호암로24길 32",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "생초코라떼가 정말 맛있었다. 민초 좋아하면 민초베이스 + 생초코도 추천한다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -506,15 +538,15 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "미림인들이 석식먹고 이용을 자주 하는 카페. 단 사람이 많이 몰려 메뉴가 늦게 나올 수 있다.",
+                "서울 관악구 호암로22길 21",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "모든 메뉴 찍먹해봐도 좋아용" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -525,15 +557,15 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "쥬씨에 대한 설명",
+                "서울 관악구 신림로23길 16",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "음료 외에도 다양한 디저트가 있다. 굿굿" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -544,15 +576,15 @@ export const markerdata = [
             value: "카페",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocalfiy%2FEDC93343D3F64DF9BF9662906A674343",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "카페앤밀치포리에 대한 설명",
+                "서울 관악구 호암로24길 17",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -563,15 +595,15 @@ export const markerdata = [
             value: "카페",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F2FFD4CC469C54251B3A6A4F34042920D",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "발루토에 대한 설명",
+                "서울 관악구 신림로23길 28",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -582,15 +614,15 @@ export const markerdata = [
             value: "카페",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F36370DACB03E407D93BE7C1B63801E84",
             details: [
-                "미림분식에 대한 설명",
-                "메뉴, 가격 등",
+                "카페스토어에 대한 설명",
+                "서울 관악구 호암로22길 11",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -608,8 +640,8 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "학교에서 올라가면 바로 보이는 편의점이다. 가끔 등교할 때 학교 친구를 마주칠 수 있다.",
+                "서울 관악구 호암로 538",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
@@ -627,15 +659,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "",
+                "서울 관악구 호암로18가길 1",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -646,15 +678,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "",
+                "서울 관악구 신림로23길 22",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -665,15 +697,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "",
+                "서울 관악구 호암로26길 9",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -688,15 +720,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "학교 아래로 내려가면 나오는 큰 편의점이다. 근처에서 퇴근하시는 선생님을 마주칠 수 있다.",
+                "서울 관악구 호암로20길 1",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "자리가 많아서 좋다." },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -707,15 +739,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "",
+                "서울 관악구 호암로20길 43",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -726,15 +758,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "관악동방점과 이름이 비슷하여 헷갈릴 수 있다.",
+                "서울 관악구 호암로26가길 43",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -745,15 +777,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "관악 동원점과 이름이 비슷하여 헷갈릴 수 있다.",
+                "서울 관악구 신림로23길 49",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -764,15 +796,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "",
+                "서울 관악구 호암로26가길 43",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -790,14 +822,14 @@ export const markerdata = [
             image: "",
             details: [
                 "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "서울 관악구 호암로22길 21",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
@@ -808,15 +840,15 @@ export const markerdata = [
             value: "편의점",
             image: "",
             details: [
-                "학교에서 올라가면 바로 보이는 편의점이다.",
-                "급식을 먹고 간식을 사러 자주 이용한다.",
+                "",
+                "서울 관악구 호암로24길 6",
             ],
             reviews: [
                 { developer: "권지수", review: "리뷰 1" },
                 { developer: "김수연", review: "리뷰 2" },
                 { developer: "노승주", review: "리뷰 2" },
                 { developer: "방윤서", review: "리뷰 2" },
-                { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
+                { developer: "양지아", review: "" },
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
