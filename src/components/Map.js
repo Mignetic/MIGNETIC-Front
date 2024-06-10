@@ -3,8 +3,6 @@ import { markerdata } from '../components/markerData';
 
 import '../css/Map.css';
 
-import pf from '../images/pf.png';
-import mibun from '../images/mirim-bunsick.png';
 import markerbtn from '../images/marker-btn.png';
 
 import restaurant from '../images/restaurant.png';
@@ -14,8 +12,6 @@ import convenienceStore from '../images/convenience-store.png';
 import school from '../images/school.png';
 
 function Map() {
-    const { kakao } = window;
-
     const [activeButton, setActiveButton] = useState(null);
     const [map, setMap] = useState(null);
     const [mapZoom, setMapZoom] = useState(2);
@@ -24,25 +20,42 @@ function Map() {
     const [activeMarker, setActiveMarker] = useState(null);
 
     useEffect(() => {
-        mapscript();
+        loadKakaoMapScript()
+            .then(mapscript)
+            .catch(error => {
+                console.error("Kakao map script failed to load:", error);
+            });
     }, []);
 
+    const loadKakaoMapScript = () => {
+        return new Promise((resolve, reject) => {
+            if (document.getElementById('kakao-map-script')) {
+                resolve();
+                return;
+            }
+            const script = document.createElement('script');
+            script.id = 'kakao-map-script';
+            script.src = "https://dapi.kakao.com/v2/maps/sdk.js?appkey=YOUR_APP_KEY&autoload=false";
+            script.onload = () => window.kakao.maps.load(resolve);
+            script.onerror = () => reject(new Error("Failed to load Kakao Map script"));
+            document.head.appendChild(script);
+        });
+    };
+
     const mapscript = () => {
-        if (window.kakao) {
-            const container = document.getElementById('map');
-            const options = {
-                center: new kakao.maps.LatLng(mapCenter.lat, mapCenter.lng),
-                level: mapZoom,
-            };
-            const newMap = new kakao.maps.Map(container, options);
-            setMap(newMap);
-            createMarkers(newMap, markerdata);
-        } else {
-            setTimeout(mapscript, 1000);
-        }
+        const { kakao } = window;
+        const container = document.getElementById('map');
+        const options = {
+            center: new kakao.maps.LatLng(mapCenter.lat, mapCenter.lng),
+            level: mapZoom,
+        };
+        const newMap = new kakao.maps.Map(container, options);
+        setMap(newMap);
+        createMarkers(newMap, markerdata);
     };
 
     const createMarkers = (mapInstance, data) => {
+        const { kakao } = window;
         const newMarkers = data.flatMap((category) => {
             if (Array.isArray(category)) { // 배열인지 확인
                 return category.map((el) => {
@@ -76,6 +89,7 @@ function Map() {
     };
 
     const createMarkerImage = (src) => {
+        const { kakao } = window;
         const imageSrc = src;
         const imageSize = new kakao.maps.Size(44, 55);
         return new kakao.maps.MarkerImage(imageSrc, imageSize);
