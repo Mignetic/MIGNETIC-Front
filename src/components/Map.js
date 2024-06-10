@@ -25,14 +25,15 @@ function Map() {
     const [activeMarker, setActiveMarker] = useState(null);
 
     useEffect(() => {
-        if (!map) return;
-        updateMap();
-    }, [filteredMarkerData]);
-
-    useEffect(() => {
         setFilteredMarkerData(markerdata);
         mapscript();
     }, []);
+
+    useEffect(() => {
+        if (map) {
+            updateMap();
+        }
+    }, [filteredMarkerData, map]);
 
     const mapscript = () => {
         if (window.kakao) {
@@ -43,7 +44,6 @@ function Map() {
             };
             const newMap = new kakao.maps.Map(container, options);
             setMap(newMap);
-            updateMap(newMap);
         } else {
             setTimeout(mapscript, 1000);
         }
@@ -55,10 +55,8 @@ function Map() {
         return new kakao.maps.MarkerImage(imageSrc, imageSize);
     };
 
-    const updateMap = (newMap) => {
-        if (!map && !newMap) return;
-
-        const mapInstance = map || newMap;
+    const updateMap = () => {
+        if (!map) return;
 
         markers.forEach(marker => marker.setMap(null));
 
@@ -67,7 +65,7 @@ function Map() {
                 return category.map((el) => {
                     const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : convenienceStore;
                     const marker = new kakao.maps.Marker({
-                        map: mapInstance,
+                        map: map,
                         position: new kakao.maps.LatLng(el.lat, el.lng),
                         image: createMarkerImage(imageSrc),
                     });
@@ -83,9 +81,8 @@ function Map() {
             }
         });
 
-
         const schoolMarker = new kakao.maps.Marker({
-            map: mapInstance,
+            map: map,
             position: new kakao.maps.LatLng(37.4667835831981, 126.932529286133),
             image: createMarkerImage(school),
         });
