@@ -69,7 +69,6 @@
 }
 
 .type-name {
-    width: 585px;
     height: 169px;
     background-color: #ffffff;
     border-radius: 100px;
@@ -82,6 +81,7 @@
 }
 
 .type-name > .type-name-main {
+    width: 585px;
     margin: 0;
     padding: 0;
     margin-top: 12px;
@@ -92,6 +92,22 @@
         -2px 2px 0 #000,
         2px 2px 0 #000;
 }
+
+.type-name > .type-name-friend-good-bad{
+    margin: 0;
+    padding: 45px;
+
+    width: 433px;
+    margin-top: 12px;
+    font-size: 120px;
+    color: #FD83FD;
+    text-shadow: -2px -2px 0 #000,
+        2px -2px 0 #000,
+        -2px 2px 0 #000,
+        2px 2px 0 #000;
+
+}
+
 .stars {
     width: 78px;
     height: 81px;
@@ -144,6 +160,43 @@
     gap: 49px;
 }
 
+.friend-type {
+    width: 606px;
+    height: 693px;
+    background-color: rgba(255, 255, 255, 0.250);
+    border: 4px solid black;
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    position: relative;
+}
+
+.friend-type > {
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-self: center;
+}
+
+.type-name-friend {
+    /* width: 516px; */
+    margin: 5px;
+}
+
+.type-name-friend-good-bad{
+}
+
+.type-name-friend-blue {
+    color: #90F1FA;
+}
+
+.heart {
+    margin-top: 65px;
+    margin-bottom: 10px;
+}
+
 .good-bad-friend-type {
     display: flex;
     flex-direction: row;
@@ -173,19 +226,6 @@
     margin-left: 9px;
 }
 
-.type-name-friend-good-bad{
-    margin: 0;
-    padding: 0;
-    margin-top: 12px;
-    font-size: 120px;
-    color: #FD83FD;
-    text-shadow: -2px -2px 0 #000,
-        2px -2px 0 #000,
-        -2px 2px 0 #000,
-        2px 2px 0 #000;
-
-}
-
 .type-good-bad-description{
     margin: 0;
     padding: 0;
@@ -206,39 +246,6 @@
     font-family: 'AppleSDGothicNeoB';
     font-weight: bold;
     font-size: 40px;
-}
-
-.friend-type {
-    width: 606px;
-    height: 693px;
-    background-color: rgba(255, 255, 255, 0.250);
-    border: 4px solid black;
-    border-radius: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: center; 
-    text-align: center;
-    position: relative;
-}
-
-.friend-type > {
-    flex-direction: column;
-    text-align: center;
-    justify-content: center;
-    align-self: center;
-}
-
-.type-name-friend {
-    width: 516px;
-    margin: 5px;
-}
-
-.type-name-friend-blue > p {
-    color: #90F1FA;
-}
-
-.heart {
-    margin-top: 65px;
 }
 
 .finding-friend-graph {

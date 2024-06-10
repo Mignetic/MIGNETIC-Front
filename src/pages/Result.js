@@ -29,19 +29,37 @@ function Result() {
     const badFriend = "Getter";
     // 백에서 값 전달
 
-
     useEffect(() => {
-        const interval = setInterval(() => {
-            setTypeNameIndex(prevIndex => {
-                // 다음 인덱스로 변경
-                const nextIndex = prevIndex + 1;
-                // 배열의 끝까지 도달하면 첫 번째 인덱스로 돌아감
-                return nextIndex < types.length ? nextIndex : 0;
-            });
-        }, 200);
+        let interval;
+        let timeout;
+        let remainingTime = 3000; // 총 시간 (밀리초 단위)
+        const intervalStep = 200;
+        let intervalDuration = intervalStep;
 
-        // 3초 후에 타입 이름을 고정값으로 변경
-        const timeout = setTimeout(() => {
+        const updateInterval = () => {
+            if (remainingTime <= 1000) {
+                intervalDuration = 500; // 1초 남았을 때 속도를 500ms로 느리게
+            } else {
+                intervalDuration = intervalStep;
+            }
+        };
+
+        const startInterval = () => {
+            interval = setInterval(() => {
+                setTypeNameIndex(prevIndex => {
+                    const nextIndex = prevIndex + 1;
+                    return nextIndex < types.length ? nextIndex : 0;
+                });
+                remainingTime -= intervalDuration;
+                updateInterval();
+                clearInterval(interval);
+                startInterval();
+            }, intervalDuration);
+        };
+
+        startInterval();
+
+        timeout = setTimeout(() => {
             clearInterval(interval);
             setTypeNameIndex(defaultTypeNameIndex); // 고정값으로 변경
         }, 3000);
@@ -95,8 +113,6 @@ function Result() {
         document.body.style.backgroundRepeat = 'no-repeat';
     }, []);
 
-
-
     const navigate = useNavigate();
 
     const handleTest = () => {
@@ -105,6 +121,9 @@ function Result() {
     const handleHotPlace = () => {
         navigate('/hotplace');
     };
+
+
+
     return (
         <div className='result'>
             <img src={logoimg} className="logoimg" />
@@ -145,7 +164,7 @@ function Result() {
                             <div className='friend-type good-friend-type'>
                                 <img src={heartPink} className='heart heart-pink' />
                                 <div className='type-name'>
-                                    <p className=' type-name-friend-good-bad'>{goodFriend}</p>
+                                    <p className='type-name-friend-good-bad'>{goodFriend}</p>
                                 </div>
                                 <p className='type-good-bad-description'>간단한 한줄 설명</p>
                                 <p className='type-details good-type-details'>
