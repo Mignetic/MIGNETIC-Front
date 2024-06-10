@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { markerdata } from '../components/markerData'; // markerData import
+import { markerdata } from '../components/markerData';
 
 import '../css/Map.css';
 
@@ -21,19 +21,11 @@ function Map() {
     const [mapZoom, setMapZoom] = useState(2);
     const [mapCenter, setMapCenter] = useState({ lat: 37.4667835831981, lng: 126.932529286133 });
     const [markers, setMarkers] = useState([]);
-    const [filteredMarkerData, setFilteredMarkerData] = useState(markerdata);
     const [activeMarker, setActiveMarker] = useState(null);
 
     useEffect(() => {
-        setFilteredMarkerData(markerdata);
         mapscript();
     }, []);
-
-    useEffect(() => {
-        if (map) {
-            updateMap();
-        }
-    }, [filteredMarkerData, map]);
 
     const mapscript = () => {
         if (window.kakao) {
@@ -44,28 +36,19 @@ function Map() {
             };
             const newMap = new kakao.maps.Map(container, options);
             setMap(newMap);
+            createMarkers(newMap, markerdata);
         } else {
             setTimeout(mapscript, 1000);
         }
     };
 
-    const createMarkerImage = (src) => {
-        const imageSrc = src;
-        const imageSize = new kakao.maps.Size(44, 55);
-        return new kakao.maps.MarkerImage(imageSrc, imageSize);
-    };
-
-    const updateMap = () => {
-        if (!map) return;
-
-        markers.forEach(marker => marker.setMap(null));
-
-        const newMarkers = filteredMarkerData.flatMap((category) => {
+    const createMarkers = (mapInstance, data) => {
+        const newMarkers = data.flatMap((category) => {
             if (Array.isArray(category)) { // 배열인지 확인
                 return category.map((el) => {
                     const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : convenienceStore;
                     const marker = new kakao.maps.Marker({
-                        map: map,
+                        map: mapInstance,
                         position: new kakao.maps.LatLng(el.lat, el.lng),
                         image: createMarkerImage(imageSrc),
                     });
@@ -81,31 +64,42 @@ function Map() {
             }
         });
 
+        // 학교 마커 생성
         const schoolMarker = new kakao.maps.Marker({
-            map: map,
+            map: mapInstance,
             position: new kakao.maps.LatLng(37.4667835831981, 126.932529286133),
             image: createMarkerImage(school),
         });
 
+        // 마커 상태 업데이트
         setMarkers([...newMarkers, schoolMarker]);
+    };
+
+    const createMarkerImage = (src) => {
+        const imageSrc = src;
+        const imageSize = new kakao.maps.Size(44, 55);
+        return new kakao.maps.MarkerImage(imageSrc, imageSize);
     };
 
     const handleButtonClick = (buttonValue) => {
         if (activeButton === buttonValue) {
-            setFilteredMarkerData(markerdata);
-            closeActiveMarker();
             setActiveButton(null);
+            setMapMarkers(markerdata);
         } else {
             setActiveButton(buttonValue);
-            setFilteredMarkerData(markerdata.map(category => {
+            const filteredData = markerdata.map(category => {
                 if (Array.isArray(category)) {
                     return category.filter(data => data.value === buttonValue);
                 }
                 return category;
-            }));
-            closeActiveMarker();
-            updateMap();
+            });
+            setMapMarkers(filteredData);
         }
+    };
+
+    const setMapMarkers = (data) => {
+        markers.forEach(marker => marker.setMap(null)); // 모든 마커 제거
+        createMarkers(map, data); // 새로운 마커 생성
     };
 
     const closeActiveMarker = () => {
