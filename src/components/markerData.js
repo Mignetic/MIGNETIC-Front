@@ -283,6 +283,120 @@ export const markerdata = [
                 { developer: "유희주", review: "리뷰 2" },
             ]
         },
+        {
+            title: "아이스크림할인점와와-미림점",
+            lat: 37.4647192811721,
+            lng: 126.931752998371,
+            value: "디저트",
+            image: "",
+            details: [
+                "미인브레드에 대한 설명",
+                "디저트 종류, 추천 메뉴 등"
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "왕가탕후루-서울대벤처타운역점",
+            lat: 37.4710112878923,
+            lng: 126.933932907945,
+            value: "디저트",
+            image: "",
+            details: [
+                "미인브레드에 대한 설명",
+                "디저트 종류, 추천 메뉴 등"
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "디저트상점",
+            lat: 37.4707284091674,
+            lng: 126.934001888571,
+            value: "디저트",
+            image: "",
+            details: [
+                "미인브레드에 대한 설명",
+                "디저트 종류, 추천 메뉴 등"
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "코코호도-신림점",
+            lat: 37.4707284091674,
+            lng: 126.934001888571,
+            value: "디저트",
+            image: "",
+            details: [
+                "미인브레드에 대한 설명",
+                "디저트 종류, 추천 메뉴 등"
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "근덕이삼척꽈배기",
+            lat: 37.4702062059858,
+            lng: 126.934203793347,
+            value: "디저트",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F5ADC118CA09647D5B4AAD2D05B03B654",
+            details: [
+                "미인브레드에 대한 설명",
+                "디저트 종류, 추천 메뉴 등"
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "파리바게뜨-신림남부점",
+            lat: 37.4707959698684,
+            lng: 126.933813834355,
+            value: "디저트",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F8B89C600D1D84863AFA18F11EB204F40",
+            details: [
+                "미인브레드에 대한 설명",
+                "디저트 종류, 추천 메뉴 등"
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "싸고 맛있다. 굿굿" },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
     ],
 
 
@@ -448,6 +562,25 @@ export const markerdata = [
             lng: 126.934697716154,
             value: "카페",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F2FFD4CC469C54251B3A6A4F34042920D",
+            details: [
+                "미림분식에 대한 설명",
+                "메뉴, 가격 등",
+            ],
+            reviews: [
+                { developer: "권지수", review: "리뷰 1" },
+                { developer: "김수연", review: "리뷰 2" },
+                { developer: "노승주", review: "리뷰 2" },
+                { developer: "방윤서", review: "리뷰 2" },
+                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "유희주", review: "리뷰 2" },
+            ]
+        },
+        {
+            title: "카페스토어",
+            lat: 37.4691132959984,
+            lng: 126.933427806334,
+            value: "카페",
+            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F36370DACB03E407D93BE7C1B63801E84",
             details: [
                 "미림분식에 대한 설명",
                 "메뉴, 가격 등",
