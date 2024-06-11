@@ -45,6 +45,10 @@
     background-color: #fff;
     border-radius: 11px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 .click-marker {
     position: absolute;
@@ -99,7 +103,12 @@
     margin-top: 37px;
     padding-left: 62px;
 
+    font-weight: bold;
     font-size: 24px;
+}
+
+.developer-collection{
+    /* margin-bottom: 10px; */
 }
 
 .developer{
@@ -109,7 +118,7 @@
     background-color: #E3FFFA;
     padding: 0px 39px   ;
     flex-direction: column;
-
+    margin-bottom: 10%;
 }
 
 .developer-name-review{
@@ -150,7 +159,10 @@
     position: relative;
 
     z-index: 20;
+    /* filter: grayscale(100); */
 }
+
+
 
 .btns {
     margin: 0;

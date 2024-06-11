@@ -3,7 +3,7 @@ import { markerdata } from '../components/markerData';
 
 import '../css/Map.css';
 
-import markerbtn from '../images/marker-btn.png';
+import markerbtn from '../images/marker-btn-revers.png';
 
 import restaurant from '../images/restaurant.png';
 import cafe from '../images/cafe.png';
@@ -50,6 +50,7 @@ function Map() {
             level: mapZoom,
         };
         const newMap = new kakao.maps.Map(container, options);
+        newMap.setMaxLevel(3); // 줌 레벨 최대치 3
         setMap(newMap);
         createMarkers(newMap, markerdata);
     };
@@ -58,8 +59,11 @@ function Map() {
         const { kakao } = window;
         const newMarkers = data.flatMap((category) => {
             if (Array.isArray(category)) { // 배열인지 확인
+                // console.log(category)
                 return category.map((el) => {
+                    
                     const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : convenienceStore;
+                    console.log(el.title, imageSrc, el.lat, el.lng)
                     const marker = new kakao.maps.Marker({
                         map: mapInstance,
                         position: new kakao.maps.LatLng(el.lat, el.lng),
@@ -99,21 +103,44 @@ function Map() {
         if (activeButton === buttonValue) {
             setActiveButton(null);
             setMapMarkers(markerdata);
+            setMapCenter({ lat: 37.4667835831981, lng: 126.932529286133 }); // 기본 위치로 설정
         } else {
             setActiveButton(buttonValue);
             const filteredData = markerdata.map(category => {
                 if (Array.isArray(category)) {
-                    return category.filter(data => data.value === buttonValue);
+                    return category.filter(data => data.value === buttonValue && data.reviews && data.reviews.length > 0);
                 }
                 return category;
             });
             setMapMarkers(filteredData);
+            updateMapCenter(filteredData);
         }
     };
 
     const setMapMarkers = (data) => {
         markers.forEach(marker => marker.setMap(null)); // 모든 마커 제거
         createMarkers(map, data); // 새로운 마커 생성
+    };
+
+    const updateMapCenter = (data) => {
+        const latLngs = data.flatMap(category => 
+            category.map(el => ({ lat: el.lat, lng: el.lng }))
+        );
+        
+        if (latLngs.length > 0) {
+            const latSum = latLngs.reduce((sum, latLng) => sum + latLng.lat, 0);
+            const lngSum = latLngs.reduce((sum, latLng) => sum + latLng.lng, 0);
+            const newCenter = {
+                lat: latSum / latLngs.length,
+                lng: lngSum / latLngs.length,
+            };
+            setMapCenter(newCenter);
+            if (map && window.kakao) {
+                const { kakao } = window;
+                map.setCenter(new kakao.maps.LatLng(newCenter.lat, newCenter.lng));
+                map.setLevel(3);
+            }
+        }
     };
 
     const closeActiveMarker = () => {
@@ -179,16 +206,18 @@ function Map() {
                                         ))}
                                     </ul>
                                 </div>
-                                <p className="recommendation"> 추천글 </p>
+                                <p className="recommendation"> 개발자의 추천글 </p>
                                 <div className="developer-collection">
                                     <div className="developer">
-                                        {activeMarker.reviews.map((review, index) => (
-                                            <div key={index} className="developer-name-review">
-                                                <p className="developer-name">{review.developer}</p>
-                                                <p className="developer-review">{review.review}</p>
-                                                <hr className="developer-hr" />
-                                            </div>
-                                        ))}
+                                        {activeMarker.reviews
+                                            .filter(review => review && review.review.length > 0) // 리뷰가 null이거나 길이가 0인 것은 필터링
+                                            .map((review, index) => (
+                                                <div key={index} className="developer-name-review">
+                                                    <p className="developer-name">{review.developer}</p>
+                                                    <p className="developer-review">{review.review}</p>
+                                                    <hr className="developer-hr" />
+                                                </div>
+                                            ))}
                                     </div>
                                 </div>
                             </div>
