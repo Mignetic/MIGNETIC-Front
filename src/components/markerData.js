@@ -14,7 +14,7 @@ export const markerdata = [
             ],
             reviews: [
                 { developer: "권지수", review: "매점 맛있습니당~" },
-                { developer: "김수연", review: "리뷰 2" },
+                { developer: "김수연", review: "미림 파이팅!!!!" },
                 { developer: "노승주", review: "드디어 미림 탈출 *^^*" },
                 { developer: "방윤서", review: "조금 아쉬운 점이 있지만 나쁘지 않음 4/5★★★★☆" },
                 { developer: "양지아", review: "급식이 재미있고 수업이 맛있어요" },
@@ -93,8 +93,8 @@ export const markerdata = [
             ],
             reviews: [
                 { developer: "권지수", review: "유부초밥 맛있습니다~" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
+                { developer: "김수연", review: "" },
+                { developer: "노승주", review: "" },
                 { developer: "방윤서", review: "유부보따리가 남사친이라면?" },
                 { developer: "양지아", review: "유부초밥 념념 굿." },
                 { developer: "유희주", review: "유부초밥이 아주 커요 굿굿~" },
@@ -153,7 +153,7 @@ export const markerdata = [
                 { developer: "김수연", review: "피자 치킨 조합 굿굿" },
                 { developer: "노승주", review: "주인 할아버지 할머니가 짱 친절하심~~" },
                 { developer: "방윤서", review: "치킨 오히메사마~" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
+                { developer: "양지아", review: "야레야레 못말리는 치킨히메사마" },
                 { developer: "유희주", review: "피나치공 굿굿!" },
             ]
         },
@@ -168,9 +168,9 @@ export const markerdata = [
                 "서울 관악구 호암로 600",
             ],
             reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
+                { developer: "권지수", review: "" },
+                { developer: "김수연", review: "" },
+                { developer: "노승주", review: "" },
                 { developer: "방윤서", review: "예스브랜드" },
                 { developer: "양지아", review: "개인적으로 감자튀김이 맛있어서 좋았다." },
                 { developer: "유희주", review: "위에 저 사람 뭐예요?" },
@@ -188,8 +188,8 @@ export const markerdata = [
             ],
             reviews: [
                 { developer: "권지수", review: "아플 때 먹으러 가세요" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 3" },
+                { developer: "김수연", review: "" },
+                { developer: "노승주", review: "" },
                 { developer: "방윤서", review: "본죽 안본죽" },
                 { developer: "양지아", review: "낙지죽이 맛있다." },
                 { developer: "유희주", review: "이 사람 또 있네;;" },
@@ -234,26 +234,6 @@ export const markerdata = [
             ]
         },
         {
-            title: "바로심김밥-2호점",
-            lat: 37.4704190975676,
-            lng: 126.93449718467,
-            value: "음식점",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FBFCC878B009B405D95380F980BD73B05",
-            details: [
-                "바로심김밥에 대한 설명",
-                "서울 관악구 신림로23길 16",
-            ],
-            reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
-                { developer: "방윤서", review: "김밥먹고싶다" },
-                { developer: "양지아", review: "안가봐서 모르겠다." },
-                { developer: "유희주", review: "참치김밥 먹고 싶다" },
-            ],
-
-        },
-        {
             title: "진마라탕",
             lat: 37.4704190975676,
             lng: 126.93449718467,
@@ -264,9 +244,9 @@ export const markerdata = [
                 "서울 관악구 신림로23길 16",
             ],
             reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
+                { developer: "권지수", review: "" },
+                { developer: "김수연", review: "" },
+                { developer: "노승주", review: "" },
                 { developer: "방윤서", review: "쏘핫" },
                 { developer: "양지아", review: "마라수혈하기 좋다." },
                 { developer: "유희주", review: "마라탕 수혈하러 갈게요~" },
@@ -347,10 +327,10 @@ export const markerdata = [
                 "서울 관악구 호암로26가길 2"
             ],
             reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
+                { developer: "권지수", review: "" },
+                { developer: "김수연", review: "" },
                 { developer: "노승주", review: "윤환쌤이 여기서 케이크 사드심" },
-                { developer: "방윤서", review: "친구거 뺏어먹기 좋음" },
+                { developer: "방윤서", review: "친구꺼 뺏어먹기 좋음" },
                 { developer: "양지아", review: "마카롱이 맛있다 냠냠." },
                 { developer: "유희주", review: "지나갈 때마다 단 냄새가~" },
             ]
@@ -367,8 +347,8 @@ export const markerdata = [
             ],
             reviews: [
                 { developer: "권지수", review: "맛있습니당" },
-                { developer: "김수연", review: "리뷰 2" },
-                {developer: "노승주", review: "호도도도도도" },
+                { developer: "김수연", review: "" },
+                { developer: "노승주", review: "호도도도도도" },
                 { developer: "방윤서", review: "김지호도" },
                 { developer: "양지아", review: "싸고 맛있다. 굿굿" },
                 { developer: "유희주", review: "맛있어용" },
@@ -385,9 +365,9 @@ export const markerdata = [
                 "서울특별시 관악구 대학동 246-51"
             ],
             reviews: [
-                { developer: "권지수", review: "리뷰 1" },
+                { developer: "권지수", review: "" },
                 { developer: "김수연", review: "쫀득하니 맛있다!" },
-                { developer: "노승주", review: "리뷰 2" },
+                { developer: "노승주", review: "" },
                 { developer: "방윤서", review: "도나쓰~" },
                 { developer: "양지아", review: "꽈배기배기배기배기배기배기진" },
                 { developer: "유희주", review: "꽈배기 맛집~" },
@@ -436,25 +416,6 @@ export const markerdata = [
                 { developer: "방윤서", review: "항상 흥민씨랑 눈마주침" },
                 { developer: "양지아", review: "테이크아웃 해서 가져갈 때 편하다" },
                 { developer: "유희주", review: "가격 굿~" },
-            ]
-        },
-        {
-            title: "카페여기",
-            lat: 37.46895586338,
-            lng: 126.934509878763,
-            value: "카페",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F90290364D1554CCEA934EB6C87D4A84D",
-            details: [
-                "카페여기에 대한 설명",
-                "커피 종류, 분위기 등"
-            ],
-            reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
-                { developer: "방윤서", review: "cafeHere" },
-                { developer: "양지아", review: "" },
-                { developer: "유희주", review: "여기 이상한 사람 또 있어요" },
             ]
         },
         {
@@ -527,7 +488,7 @@ export const markerdata = [
             reviews: [
                 { developer: "권지수", review: "프라푸치노 종류 다 맛있어용" },
                 { developer: "김수연", review: "학교와는 멀지만 싸고 맛있다!" },
-                { developer: "노승주", review: "리뷰 3" },
+                { developer: "노승주", review: "" },
                 { developer: "방윤서", review: "여기 초코가 찐임" },
                 { developer: "양지아", review: "생초코라떼가 정말 맛있었다. 민초로 바꿔도 굿굿" },
                 { developer: "유희주", review: "딸기라떼 주세요" },
@@ -550,82 +511,6 @@ export const markerdata = [
                 { developer: "방윤서", review: "여기 모르면 간첩" },
                 { developer: "양지아", review: "모든 메뉴 찍먹해봐도 좋아용" },
                 { developer: "유희주", review: "청사과 요거트 다들 드세요" },
-            ]
-        },
-        {
-            title: "쥬씨-서울대녹두거리점",
-            lat: 37.4704190975676,
-            lng: 126.93449718467,
-            value: "카페",
-            image: "",
-            details: [
-                "쥬씨에 대한 설명",
-                "서울 관악구 신림로23길 16",
-            ],
-            reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
-                { developer: "방윤서", review: "쥬씨쥬씨~" },
-                { developer: "양지아", review: "음료 외에도 다양한 디저트가 있다. 굿굿" },
-                { developer: "유희주", review: "생과일 음료가 아주 맛나요~" },
-            ]
-        },
-        {
-            title: "카페앤밀치포리",
-            lat: 37.4699396268561,
-            lng: 126.934257496956,
-            value: "카페",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocalfiy%2FEDC93343D3F64DF9BF9662906A674343",
-            details: [
-                "카페앤밀치포리에 대한 설명",
-                "서울 관악구 호암로24길 17",
-            ],
-            reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
-                { developer: "방윤서", review: "여긴진짜뭐임" },
-                { developer: "양지아", review: "" },
-                { developer: "유희주", review: "괜찮네여" },
-            ]
-        },
-        {
-            title: "발루토",
-            lat: 37.4697812930938,
-            lng: 126.934697716154,
-            value: "카페",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F2FFD4CC469C54251B3A6A4F34042920D",
-            details: [
-                "발루토에 대한 설명",
-                "서울 관악구 신림로23길 28",
-            ],
-            reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
-                { developer: "방윤서", review: "발루토? 손루토도 있나? 나루토도 있나? 킼ㅋ킼" },
-                { developer: "양지아", review: "" },
-                { developer: "유희주", review: "발루토 이름이 멋있네요" },
-            ]
-        },
-        {
-            title: "카페스토어",
-            lat: 37.4691132959984,
-            lng: 126.933427806334,
-            value: "카페",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F36370DACB03E407D93BE7C1B63801E84",
-            details: [
-                "카페스토어에 대한 설명",
-                "서울 관악구 호암로22길 11",
-            ],
-            reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "리뷰 2" },
-                { developer: "방윤서", review: "여기가 어딘데" },
-                { developer: "양지아", review: "" },
-                { developer: "유희주", review: "카페 좋네요" },
             ]
         },
     ],
@@ -652,25 +537,6 @@ export const markerdata = [
                 { developer: "방윤서", review: "기숙사 있을때 여기서 택배 진짜 많이 받음" },
                 { developer: "양지아", review: "등교할 때 밥 못 먹고 왔으면 사서 가기 좋다." },
                 { developer: "유희주", review: "종류가 많아요" },
-            ]
-        },
-        {
-            title: "GS25-관악미림점",
-            lat: 37.4654296936867,
-            lng: 126.932476470896,
-            value: "편의점",
-            image: "",
-            details: [
-                "",
-                "서울 관악구 호암로18가길 1",
-            ],
-            reviews: [
-                { developer: "권지수", review: "리뷰 1" },
-                { developer: "김수연", review: "리뷰 2" },
-                { developer: "노승주", review: "1학년 때 딱 한번 갔는데 솔의 눈 1+1 개꿀" },
-                { developer: "방윤서", review: "사람없어서 좋음" },
-                { developer: "양지아", review: "" },
-                { developer: "유희주", review: "리뷰 2" },
             ]
         },
         {
@@ -713,3 +579,4 @@ export const markerdata = [
         },
     ],
 ];
+
