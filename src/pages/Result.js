@@ -225,7 +225,7 @@ function Result() {
                 </div>
                 <div className='btn-container'>
                     <button className='retry-btn' onClick={handleTest}>검사 다시하기</button>
-                    <button className='hotplace-btn' onClick={handleHotPlace}>친구와 핫플 보기</button>
+                    <button className='hotplace-btn' onClick={handleHotPlace}>핫플레이스 보기</button>
                 </div>
             </div>
             <div className='footer'>

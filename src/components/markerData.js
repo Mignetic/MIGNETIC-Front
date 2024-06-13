@@ -423,9 +423,10 @@ export const markerdata = [
             lat: 37.4700018524971,
             lng: 126.935010092037,
             value: "카페",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Fcfile75.uf.daum.net%2Fimage%2F2419513F55F8ED922A71B8",
             details: [
                 "학생들에게 부담없는 가격이라 좋다. 아이스크림도 판매하고 있다.",
+                "출처 : https://place.map.kakao.com/1921033815 요기요 제공 사진.",
                 "서울특별시 관악구 신림로23길 21"
             ],
             reviews: [
@@ -442,9 +443,10 @@ export const markerdata = [
             lat: 37.4699036443046,
             lng: 126.933555523701,
             value: "카페",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FED4D2297C9904BCE9A8C0A320A584DE5",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F7AC52625F3A24202AA8A5D2E2A1B2770",
             details: [
                 "더 커피 알에 대한 설명",
+                "출처 : https://place.map.kakao.com/958098955 요기요 제공 사진",
                 "서울 관악구 호암로24길 6",
             ],
             reviews: [
@@ -525,7 +527,7 @@ export const markerdata = [
             lat: 37.46559178791,
             lng: 126.9316965907,
             value: "편의점",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FFAE0C3F95FC84922903140B06CD07B29",
             details: [
                 "학교에서 올라가면 바로 보이는 편의점이다. 가끔 등교할 때 학교 친구를 마주칠 수 있다.",
                 "서울 관악구 호암로 538",
@@ -544,7 +546,7 @@ export const markerdata = [
             lat: 37.467791159268,
             lng: 126.932171736051,
             value: "편의점",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Fcfile173.uf.daum.net%2Fimage%2F997E9C4F5AD578922EB9F7",
             details: [
                 "학교 아래로 내려가면 나오는 큰 편의점이다. 근처에서 퇴근하시는 선생님을 마주칠 수 있다.",
                 "서울 관악구 호암로20길 1",
@@ -563,7 +565,7 @@ export const markerdata = [
             lat: 37.4687162250645,
             lng: 126.934727920635,
             value: "편의점",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Fcfile173.uf.daum.net%2Fimage%2F997E9C4F5AD578922EB9F7",
             details: [
                 "관악 동원점과 이름이 비슷하여 헷갈릴 수 있다.",
                 "서울 관악구 신림로23길 49",
