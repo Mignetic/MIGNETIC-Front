@@ -59,11 +59,9 @@ function Map() {
         const { kakao } = window;
         const newMarkers = data.flatMap((category) => {
             if (Array.isArray(category)) { // 배열인지 확인
-                // console.log(category)
                 return category.map((el) => {
-                    
-                    const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : convenienceStore;
-                    console.log(el.title, imageSrc, el.lat, el.lng)
+                    const imageSrc = el.value === '음식점' ? restaurant : el.value === '카페' ? cafe : el.value === '디저트' ? dessert : el.value === '학교' ? school : convenienceStore;
+                    console.log(el.title, imageSrc, el.lat, el.lng);
                     const marker = new kakao.maps.Marker({
                         map: mapInstance,
                         position: new kakao.maps.LatLng(el.lat, el.lng),
@@ -81,15 +79,8 @@ function Map() {
             }
         });
 
-        // 학교 마커 생성
-        const schoolMarker = new kakao.maps.Marker({
-            map: mapInstance,
-            position: new kakao.maps.LatLng(37.4667835831981, 126.932529286133),
-            image: createMarkerImage(school),
-        });
-
         // 마커 상태 업데이트
-        setMarkers([...newMarkers, schoolMarker]);
+        setMarkers(newMarkers);
     };
 
     const createMarkerImage = (src) => {
