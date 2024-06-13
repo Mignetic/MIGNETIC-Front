@@ -13,6 +13,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 
 function Result() {
+    const [studentData, setStudentData] = useState([])
+
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
     const graphNum = ['9개', '8개', '4개', '2개'];
     // 그래프 숫자 값 전달 받기
@@ -28,6 +30,15 @@ function Result() {
     // 백에서 값 전달해줘야 함
     const badFriend = "Getter";
     // 백에서 값 전달
+
+    useEffect(() => {
+        fetch('/api/result')
+            .then(response => response.json())
+            .then(data => setStudentData(data))
+            .catch(error => console.error('Error fetching student data:', error));
+    }, []);
+    console.log('백엔드 테스트 : ', studentData)
+
 
     useEffect(() => {
         let interval;
