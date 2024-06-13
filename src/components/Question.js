@@ -1,9 +1,10 @@
+import React, { useState, useRef, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios'; 
 import ask from '../images/test-askbtn.png';
-import ask2 from '../images/test-askbtn2.png'
+import ask2 from '../images/test-askbtn2.png';
 import arrowBtn from '../images/icons/test-arrowBtn.png';
 import '../css/Question.css';
-import { useLocation, useNavigate } from 'react-router-dom';
-import React, { useState, useRef, useEffect } from 'react';
 
 const questions_student = [
     {
@@ -143,42 +144,53 @@ function questionList(array) {
     return array
 }
 
-function Question() {
-    const location = useLocation()
-    const navigate = useNavigate()
-    const types = location.state?.types
+function Question({ types, studentName, studentSubject, outsiderType, isPrivacyChecked }) {
+    const navigate = useNavigate();
 
-    let questionssss = []
-    if (types === 'student') questionssss = questions_student
-    else if (types === 'teacher') questionssss = questions_teacher
-    else if (types === 'outsider') questionssss = questions_outsider
+    let questions = [];
+    if (types === 'student') questions = questions_student;
+    else if (types === 'teacher') questions = questions_teacher;
+    else if (types === 'outsider') questions = questions_outsider;
 
-    const shuffledQuestions = questionList([...questionssss])
+    const shuffledQuestions = questionList([...questions]);
 
-    const [selectedAnswers, setSelectedAnswers] = useState(Array(shuffledQuestions.length).fill(null))
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
-
-    const questionRefs = useRef([])
+    const [selectedAnswers, setSelectedAnswers] = useState(Array(shuffledQuestions.length).fill(null));
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+    const questionRefs = useRef([]);
 
     const handleAnswerClick = (questionIndex, answerIndex) => {
-        const updatedAnswers = [...selectedAnswers]
-        updatedAnswers[questionIndex] = answerIndex
-        setSelectedAnswers(updatedAnswers)
+        const updatedAnswers = [...selectedAnswers];
+        updatedAnswers[questionIndex] = answerIndex;
+        setSelectedAnswers(updatedAnswers);
 
         if (questionIndex < shuffledQuestions.length - 1) {
             setCurrentQuestionIndex(questionIndex + 1);
             questionRefs.current[questionIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-    }
+    };
 
     const handleNextBtn = () => {
         const allAnswered = selectedAnswers.every(answer => answer !== null);
         if (allAnswered) {
-            navigate('/result');
+            const postData = {
+                types,
+                studentName,
+                studentSubject,
+                outsiderType,
+                selectedAnswers
+            };
+
+            axios.post('/api/saveAnswers', postData)
+                .then(response => {
+                    navigate('/result', { state: { types, studentName, studentSubject, outsiderType, selectedAnswers } });
+                })
+                .catch(error => {
+                    alert('Failed to save answers: ' + error.message);
+                });
         } else {
             alert('모든 질문에 답해주세요.');
         }
-    }
+    };
 
     useEffect(() => {
         if (currentQuestionIndex > 0) {
@@ -193,7 +205,6 @@ function Question() {
                     className={`Question ${currentQuestionIndex === questionIndex ? 'active' : ''}`}
                     key={questionIndex}
                     ref={(el) => (questionRefs.current[questionIndex] = el)}
-
                 >
                     <div className='askContainer'>
                         <img src={item.question.length >= 20 ? ask : ask2} alt="ask" />
@@ -205,20 +216,22 @@ function Question() {
                             <button
                                 key={answerIndex}
                                 className={selectedAnswers[questionIndex] === answerIndex ? 'clicked' : ''}
-                                onClick={() => handleAnswerClick(questionIndex, answerIndex)}>
+                                onClick={() => handleAnswerClick(questionIndex, answerIndex)}
+                            >
                                 {answer}
                             </button>
                         ))}
                     </div>
-
                     <hr />
                 </div>
             ))}
             <div className='nextContainer'>
-                <button className='nextBtn' onClick={handleNextBtn} >다음<img src={arrowBtn} /></button>
+                <button className='nextBtn' onClick={handleNextBtn}>
+                    다음<img src={arrowBtn} alt="arrow" />
+                </button>
             </div>
         </div>
-    )
+    );
 }
 
 export default Question;

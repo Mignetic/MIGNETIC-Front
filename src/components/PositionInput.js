@@ -48,7 +48,15 @@ function PositionInput() {
             return
         }
 
-        navigate('/test', { state: { types } })
+        navigate('/test', { 
+            state: { 
+                types, 
+                studentName, 
+                studentSubject, 
+                outsiderType, 
+                isPrivacyChecked 
+            } 
+        })
     }
     
     return (
