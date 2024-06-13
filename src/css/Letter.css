@@ -32,15 +32,17 @@
 }
 
 .letterInputText{
+    font-family: 'AppleSDGothicNeo';
     width: 730px;
     height: 310px;
     resize: none;
     position: absolute;
     z-index: 5;
     background-color: transparent;
-    border: 0;
+    border: none;
+    outline: none;
     margin-top: 80px;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
 }
 
 .letterbtn{
