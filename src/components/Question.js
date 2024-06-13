@@ -106,7 +106,7 @@ const questions_outsider = [
     },
     {
         question: "더 원하는 것은?",
-        answers: ["100억부재 유병재", "무일푼 차은우"]
+        answers: ["100억 부자 유병재", "무일푼 차은우"]
     },
     {
         question: "더 뽑고 싶은 것은?",
