@@ -276,7 +276,7 @@
 }
 
 .friend-name-container {
-    width: 1137px;
+    width: 1291px;
     height: 705px;
     gap: 172px;
     display: flex;
@@ -383,7 +383,7 @@
 }
 
 .friend-graph-bg {
-    width: 1137px;
+    width: 1291px;
     height: 705px;
     border-radius: 30px;
     border: 4px solid black;
