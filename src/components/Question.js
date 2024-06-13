@@ -134,46 +134,53 @@ const questions_outsider = [
     }
 ]
 
-function Question({ onSubmitAnswers }) {
-    const [selectedAnswers, setSelectedAnswers] = useState(Array(10).fill(null)); // 선택한 답변들을 상태로 관리
-    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0); // 현재 질문 인덱스를 상태로 관리
+function questionList(array) {
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array[i].length; j++) {
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+    }
+    return array
+}
 
-    const questionRefs = useRef([]); // 각 질문의 DOM 레퍼런스를 저장할 useRef
+function Question() {
+    const location = useLocation()
+    const navigate = useNavigate()
+    const types = location.state?.types
 
-    // 사용자 타입에 따라 다른 질문 세트 선택
-    const types = 'student'; // 예시로 학생 타입으로 설정
+    let questionssss = []
+    if (types === 'student') questionssss = questions_student
+    else if (types === 'teacher') questionssss = questions_teacher
+    else if (types === 'outsider') questionssss = questions_outsider
 
-    let questions = [];
-    if (types === 'student') questions = questions_student;
-    else if (types === 'teacher') questions = questions_teacher;
-    else if (types === 'outsider') questions = questions_outsider;
+    const shuffledQuestions = questionList([...questionssss])
 
-    // 답변 클릭 처리 함수
+    const [selectedAnswers, setSelectedAnswers] = useState(Array(shuffledQuestions.length).fill(null))
+    const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0)
+
+    const questionRefs = useRef([])
+
     const handleAnswerClick = (questionIndex, answerIndex) => {
-        const updatedAnswers = [...selectedAnswers];
-        updatedAnswers[questionIndex] = answerIndex;
-        setSelectedAnswers(updatedAnswers);
+        const updatedAnswers = [...selectedAnswers]
+        updatedAnswers[questionIndex] = answerIndex
+        setSelectedAnswers(updatedAnswers)
 
-        // 다음 질문으로 이동
-        if (questionIndex < questions.length - 1) {
+        if (questionIndex < shuffledQuestions.length - 1) {
             setCurrentQuestionIndex(questionIndex + 1);
             questionRefs.current[questionIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-            // 모든 질문에 대한 답변이 완료되면 onSubmitAnswers 콜백 함수 호출
-            onSubmitAnswers(selectedAnswers);
         }
-    };
+    }
 
-    // 다음 질문 버튼 클릭 처리 함수
     const handleNextBtn = () => {
-        // 마지막 질문에서만 다음 버튼 클릭 가능
-        if (currentQuestionIndex === questions.length - 1) {
-            onSubmitAnswers(selectedAnswers);
+        const allAnswered = selectedAnswers.every(answer => answer !== null);
+        if (allAnswered) {
+            navigate('/result');
+        } else {
+            alert('모든 질문에 답해주세요.');
         }
-    };
+    }
 
     useEffect(() => {
-        // 현재 질문이 변경될 때 해당 질문의 DOM을 화면 중앙으로 스크롤
         if (currentQuestionIndex > 0) {
             questionRefs.current[currentQuestionIndex].scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -181,14 +188,15 @@ function Question({ onSubmitAnswers }) {
 
     return (
         <div>
-            {questions.map((item, questionIndex) => (
+            {shuffledQuestions.map((item, questionIndex) => (
                 <div
                     className={`Question ${currentQuestionIndex === questionIndex ? 'active' : ''}`}
                     key={questionIndex}
                     ref={(el) => (questionRefs.current[questionIndex] = el)}
+
                 >
                     <div className='askContainer'>
-                        <img src={item.question.length >= 20 ? ask : ask2}/>
+                        <img src={item.question.length >= 20 ? ask : ask2} alt="ask" />
                         <p>{item.question}</p>
                     </div>
 
@@ -207,10 +215,10 @@ function Question({ onSubmitAnswers }) {
                 </div>
             ))}
             <div className='nextContainer'>
-                <button className='nextBtn' onClick={handleNextBtn}>다음<img src={arrowBtn}/></button>
+                <button className='nextBtn' onClick={handleNextBtn} >다음<img src={arrowBtn} /></button>
             </div>
         </div>
-    );
+    )
 }
 
 export default Question;

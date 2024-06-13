@@ -1,64 +1,56 @@
-import React, { useState } from 'react';
-import { useNavigate, useLocation } from 'react-router-dom';
-import '../css/PositionInput.css';
-import bgImg from '../images/testPosition-bg.png';
-import btn from '../images/select-btn.png';
-import Header from '../components/Header';
+import Header from '../components/Header'
+import { useNavigate, useLocation } from 'react-router-dom'
+import React, { useState } from 'react'
+import '../css/PositionInput.css'
+import bgImg from '../images/testPosition-bg.png'
+import btn from '../images/select-btn.png'
 
 function PositionInput() {
-    document.body.style.backgroundImage = `url(${bgImg})`;
-    const navigate = useNavigate();
-    const location = useLocation();
+    document.body.style.backgroundImage = `url(${bgImg})`
+    const navigate = useNavigate()
+    const location = useLocation()
 
-    const position1 = location.state?.position1 || 'school';
-    const type1 = ['school', 'outsider'].includes(position1) ? position1 : 'school';
+    const position1 = location.state?.position1 || 'school'
+    const type1 = ['school', 'outsider'].includes(position1) ? position1 : 'school'
 
-    const position2 = location.state?.position2 || 'student';
-    const type2 = ['student', 'teacher'].includes(position2) ? position2 : 'student';
+    const position2 = location.state?.position2 || 'student'
+    const type2 = ['student', 'teacher'].includes(position2) ? position2 : 'student'
 
     const inputPlaceholder = (type2) => {
-        if (type2 === 'student') return '학년';
-        else if (type2 === 'teacher') return '과목';
-    };
+        if (type2 === 'student') return '학년'
+        else if (type2 === 'teacher') return '과목'
+    }
 
-    let types;
-    if (type1 === 'school') types = type2 === 'student' ? 'student' : 'teacher';
-    else if (type1 === 'outsider') types = 'outsider';
+    let types
+    if (type1 === 'school') types = type2 === 'student' ? 'student' : 'teacher'
+    else if (type1 === 'outsider') types = 'outsider'
 
-    const [studentName, setStudentName] = useState('');
-    const [studentSubject, setStudentSubject] = useState('');
-    const [outsiderType, setOutsiderType] = useState('');
-    const [isPrivacyChecked, setIsPrivacyChecked] = useState(false);
+    const [studentName, setStudentName] = useState('')
+    const [studentSubject, setStudentSubject] = useState('')
+    const [outsiderType, setOutsiderType] = useState('')
+    const [isPrivacyChecked, setIsPrivacyChecked] = useState(false)
 
     const handleSubmit = () => {
         if (!studentName) {
-            alert('이름을 작성해주세요.');
-            return;
+            alert('이름을 작성해주세요.')
+            return
         }
         if (type1 === 'school' && !studentSubject) {
-            alert(inputPlaceholder(type2) + '을 작성해주세요.');
-            return;
+            alert(inputPlaceholder(type2) + '을 작성해주세요.')
+            return
         }
         if (type1 === 'outsider' && !outsiderType) {
-            alert('외부인 유형을 선택해주세요.');
-            return;
+            alert('외부인 유형을 선택해주세요.')
+            return
         }
         if (!isPrivacyChecked) {
-            alert('개인정보동의를 체크해주세요.');
-            return;
+            alert('개인정보동의를 체크해주세요.')
+            return
         }
 
-        const data = {
-            name: studentName,
-            stuID: type1 === 'school' ? studentSubject : null,
-            relation: type1 === 'outsider' ? outsiderType : null,
-            type: types
-        };
-
-        // '/test'로 이동하며 데이터 전달
-        navigate('/test', { state: { data } });
-    };
-
+        navigate('/test', { state: { types } })
+    }
+    
     return (
         <div>
             <Header position={'basic'} />
