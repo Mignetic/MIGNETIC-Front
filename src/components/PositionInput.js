@@ -54,8 +54,7 @@ function PositionInput() {
         let dataToTest = {
             position1,
             position2: type2, // Use type2 which is 'official' for outsiders
-            name,
-            isPrivacyChecked
+            name
         };
 
         if (type2 === 'student') {

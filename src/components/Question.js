@@ -1,10 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import axios from 'axios'; 
 import ask from '../images/test-askbtn.png';
-import ask2 from '../images/test-askbtn2.png';
+import ask2 from '../images/test-askbtn2.png'
 import arrowBtn from '../images/icons/test-arrowBtn.png';
 import '../css/Question.css';
+import { useLocation, useNavigate } from 'react-router-dom';
+import React, { useState, useRef, useEffect } from 'react';
+import axios from 'axios';
 
 const questions_student = [
     {
@@ -107,7 +107,7 @@ const questions_outsider = [
     },
     {
         question: "더 원하는 것은?",
-        answers: ["100억 부자 유병재", "무일푼 차은우"]
+        answers: ["100억부재 유병재", "무일푼 차은우"]
     },
     {
         question: "더 뽑고 싶은 것은?",
@@ -134,14 +134,13 @@ const questions_outsider = [
         answers: ["나 빼고 다 천재인 팀에서 숨쉬듯 자괴감 느끼기", "내가 유일한 희망인 팀에서 혼자 밭 가는 소처럼 일하기"]
     }
 ]
-
-function Question({ types, name, stuID, subject, relation, isPrivacyChecked }) {
+function Question({ types, name, stuID, subject, relation }) {
     const navigate = useNavigate();
 
     let questions = [];
     if (types === 'student') questions = questions_student;
     else if (types === 'teacher') questions = questions_teacher;
-    else if (['parent', 'friend', 'company'].includes(types)) questions = questions_outsider;
+    else if (types === 'official') questions = questions_outsider;
 
     const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -158,7 +157,7 @@ function Question({ types, name, stuID, subject, relation, isPrivacyChecked }) {
         }
     };
 
-    const handleNextBtn = () => {
+    const handleNextBtn = async () => {
         const allAnswered = selectedAnswers.every(answer => answer !== null);
         if (allAnswered) {
             const postData = {
@@ -167,19 +166,18 @@ function Question({ types, name, stuID, subject, relation, isPrivacyChecked }) {
                 stuID,
                 subject,
                 relation,
-                isPrivacyChecked,
                 selectedAnswers
             };
-
-            // 서버로 데이터 전송
-            axios.post('/api/saveData', postData)
-                .then(response => {
-                    console.log(response.data);
-                    navigate('/result');
-                })
-                .catch(error => {
-                    console.error('There was an error saving the data!', error);
-                });
+    
+            try {
+                // 서버로 데이터 전송
+                await axios.post('http://localhost:3000/api/saveAnswers', postData);
+                // 결과 페이지로 이동
+                navigate('/result');
+            } catch (error) {
+                console.error('데이터 전송 오류:', error);
+                alert('데이터 전송 오류가 발생했습니다. 다시 시도해주세요.');
+            }
         } else {
             alert('모든 질문에 답해주세요.');
         }

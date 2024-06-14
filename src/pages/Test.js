@@ -14,7 +14,7 @@ function Test() {
     document.body.style.backgroundSize = 'cover';
 
     const location = useLocation();
-    const { position1, position2, name, stuID, subject, relation, isPrivacyChecked } = location.state;
+    const { position1, position2, name, stuID, subject, relation } = location.state;
 
     let types;
     let dataToTest = {};
@@ -22,8 +22,7 @@ function Test() {
         types = position2 === 'student' ? 'student' : 'teacher';
         dataToTest = {
             types,
-            name,
-            isPrivacyChecked
+            name
         };
         if (position2 === 'student') {
             dataToTest.stuID = stuID;
@@ -35,8 +34,7 @@ function Test() {
         dataToTest = {
             types,
             name,
-            relation, 
-            isPrivacyChecked
+            relation
         };
     }
 
@@ -56,8 +54,9 @@ function Test() {
                 <Question
                     types={types}
                     name={name}
-                    relation={relation}
-                    isPrivacyChecked={isPrivacyChecked}
+                    stuID={stuID} // 학생인 경우에만 전달
+                    subject={subject} // 선생님인 경우에만 전달
+                    relation={relation} // 관계자인 경우에만 전달
                 />
             </div>
             <Footer position={'test'} />
