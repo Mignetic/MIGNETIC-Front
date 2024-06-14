@@ -11,6 +11,8 @@ import Footer from '../components/Footer';
 import ResultType from '../components/ResultType';
 
 function Result() {
+    const [studentData, setStudentData] = useState([])
+
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
     const graphNum = ['9개', '8개', '4개', '2개']; // 그래프 숫자 값 전달 받기
     const graphName = ['권지수', '김수연', '김희영', '노승주']; // 그래프에 들어가는 친구 이름 작성
@@ -21,6 +23,15 @@ function Result() {
 
     const goodFriend = "Setter"; // 백에서 값 전달
     const badFriend = "Getter"; // 백에서 값 전달
+
+    useEffect(() => {
+        fetch('/api/result')
+            .then(response => response.json())
+            .then(data => setStudentData(data))
+            .catch(error => console.error('Error fetching student data:', error));
+    }, []);
+    console.log('백엔드 테스트 : ', studentData)
+
 
     useEffect(() => {
         let interval;
