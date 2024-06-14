@@ -1,33 +1,26 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
 import bgImg from '../images/result-bg.png';
 import logoimg from '../images/icons/logo.png';
 import stars from '../images/stars.png';
 import tipimg from '../images/icons/result-graph-tip.png';
-import heartPink from '../images/heart-pink.png'
-import heartBlue from '../images/heart-blue.png'
-
+import heartPink from '../images/heart-pink.png';
+import heartBlue from '../images/heart-blue.png';
 import '../css/Result.css';
 import Footer from '../components/Footer';
 import ResultType from '../components/ResultType';
 
-import React, { useEffect, useRef, useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
-
 function Result() {
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
-    const graphNum = ['9개', '8개', '4개', '2개'];
-    // 그래프 숫자 값 전달 받기
-    const graphName = ['권지수', '김수연', '김희영', '노승주'];
-    // 그래프에 들어가는 친구 이름 작성
+    const graphNum = ['9개', '8개', '4개', '2개']; // 그래프 숫자 값 전달 받기
+    const graphName = ['권지수', '김수연', '김희영', '노승주']; // 그래프에 들어가는 친구 이름 작성
     const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
     const types = ['False', 'True', 'Try', 'Catch', 'Setter', 'Getter'];
     const [typeNameIndex, setTypeNameIndex] = useState(0);
     const defaultTypeNameIndex = 0; // 기본 타입 인덱스
-    // 백에서 index 값 넘겨주기
 
-    const goodFriend = "Setter";
-    // 백에서 값 전달해줘야 함
-    const badFriend = "Getter";
-    // 백에서 값 전달
+    const goodFriend = "Setter"; // 백에서 값 전달
+    const badFriend = "Getter"; // 백에서 값 전달
 
     useEffect(() => {
         let interval;
@@ -118,11 +111,19 @@ function Result() {
     const handleTest = () => {
         navigate('/testselect');
     };
+
     const handleHotPlace = () => {
         navigate('/hotplace');
     };
 
-
+    useEffect(() => {
+        // 로컬 스토리지에서 postData 가져오기
+        const storedData = localStorage.getItem('postData');
+        if (storedData) {
+            const postData = JSON.parse(storedData);
+            console.log(postData); // 콘솔에 출력
+        }
+    }, []);
 
     return (
         <div className='result'>

@@ -135,26 +135,15 @@ const questions_outsider = [
     }
 ]
 
-function questionList(array) {
-    for (let i = 0; i < array.length; i++) {
-        for (let j = 0; j < array[i].length; j++) {
-            [array[i], array[j]] = [array[j], array[i]];
-        }
-    }
-    return array
-}
-
-function Question({ types, studentName, studentSubject, outsiderType, isPrivacyChecked }) {
+function Question({ types, name, stuID, subject, relation, isPrivacyChecked }) {
     const navigate = useNavigate();
 
     let questions = [];
     if (types === 'student') questions = questions_student;
     else if (types === 'teacher') questions = questions_teacher;
-    else if (types === 'outsider') questions = questions_outsider;
+    else if (['parent', 'friend', 'company'].includes(types)) questions = questions_outsider;
 
-    const shuffledQuestions = questionList([...questions]);
-
-    const [selectedAnswers, setSelectedAnswers] = useState(Array(shuffledQuestions.length).fill(null));
+    const [selectedAnswers, setSelectedAnswers] = useState(Array(questions.length).fill(null));
     const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
     const questionRefs = useRef([]);
 
@@ -163,7 +152,7 @@ function Question({ types, studentName, studentSubject, outsiderType, isPrivacyC
         updatedAnswers[questionIndex] = answerIndex;
         setSelectedAnswers(updatedAnswers);
 
-        if (questionIndex < shuffledQuestions.length - 1) {
+        if (questionIndex < questions.length - 1) {
             setCurrentQuestionIndex(questionIndex + 1);
             questionRefs.current[questionIndex + 1].scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
@@ -174,18 +163,22 @@ function Question({ types, studentName, studentSubject, outsiderType, isPrivacyC
         if (allAnswered) {
             const postData = {
                 types,
-                studentName,
-                studentSubject,
-                outsiderType,
+                name,
+                stuID,
+                subject,
+                relation,
+                isPrivacyChecked,
                 selectedAnswers
             };
 
-            axios.post('/api/saveAnswers', postData)
+            // 서버로 데이터 전송
+            axios.post('/api/saveData', postData)
                 .then(response => {
-                    navigate('/result', { state: { types, studentName, studentSubject, outsiderType, selectedAnswers } });
+                    console.log(response.data);
+                    navigate('/result');
                 })
                 .catch(error => {
-                    alert('Failed to save answers: ' + error.message);
+                    console.error('There was an error saving the data!', error);
                 });
         } else {
             alert('모든 질문에 답해주세요.');
@@ -200,7 +193,7 @@ function Question({ types, studentName, studentSubject, outsiderType, isPrivacyC
 
     return (
         <div>
-            {shuffledQuestions.map((item, questionIndex) => (
+            {questions.map((item, questionIndex) => (
                 <div
                     className={`Question ${currentQuestionIndex === questionIndex ? 'active' : ''}`}
                     key={questionIndex}

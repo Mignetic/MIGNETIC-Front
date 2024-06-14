@@ -1,15 +1,12 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import '../css/Test.css';
-import '../css/common/Index.css';
-
-import bgImg from '../images/test-bg.png';
-import testbox from '../images/icons/test-textbox.png';
-import arrow from '../images/icons/test-arrow.png';
-
 import Header from '../components/Header';
 import Question from '../components/Question';
 import Footer from '../components/Footer';
+import '../css/Test.css';
+import bgImg from '../images/test-bg.png';
+import testbox from '../images/icons/test-textbox.png';
+import arrow from '../images/icons/test-arrow.png';
 
 function Test() {
     document.body.style.backgroundImage = `url(${bgImg})`;
@@ -17,11 +14,31 @@ function Test() {
     document.body.style.backgroundSize = 'cover';
 
     const location = useLocation();
-    const { types, studentName, studentSubject, outsiderType, isPrivacyChecked } = location.state || {};
+    const { position1, position2, name, stuID, subject, relation, isPrivacyChecked } = location.state;
 
-    const handleAnswersSubmitted = (answers) => {
-        console.log('Selected Answers:', answers);
-    };
+    let types;
+    let dataToTest = {};
+    if (position1 === 'school') {
+        types = position2 === 'student' ? 'student' : 'teacher';
+        dataToTest = {
+            types,
+            name,
+            isPrivacyChecked
+        };
+        if (position2 === 'student') {
+            dataToTest.stuID = stuID;
+        } else if (position2 === 'teacher') {
+            dataToTest.subject = subject;
+        }
+    } else if (position1 === 'outsider') {
+        types = 'official'; 
+        dataToTest = {
+            types,
+            name,
+            relation, 
+            isPrivacyChecked
+        };
+    }
 
     return (
         <div>
@@ -38,11 +55,9 @@ function Test() {
                 <img src={arrow} className='arrowImg' alt="arrow" />
                 <Question
                     types={types}
-                    studentName={studentName}
-                    studentSubject={studentSubject}
-                    outsiderType={outsiderType}
+                    name={name}
+                    relation={relation}
                     isPrivacyChecked={isPrivacyChecked}
-                    onAnswersSubmitted={handleAnswersSubmitted}
                 />
             </div>
             <Footer position={'test'} />
