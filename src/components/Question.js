@@ -160,6 +160,13 @@ function Question({ types, name, stuID, subject, relation }) {
     const handleNextBtn = async () => {
         const allAnswered = selectedAnswers.every(answer => answer !== null);
         if (allAnswered) {
+            if(relation === 'student'){
+                relation = 0;
+            }else if(relation === 1){
+                relation = 1;
+            }else{
+                relation = 2;
+            }
             const postData = {
                 types,
                 name,
