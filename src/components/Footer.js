@@ -26,8 +26,8 @@ function Footer({ position }) {
                     <br />
                     TEAM [ PEPPER ]<br />
                     DESIGN | 방윤서 유희주<br />
-                    FRONT | 김수연 양지아 유희주<br />
-                    BACK | 권지수 노승주 방윤서<br />
+                    FRONT &nbsp;| 김수연 양지아 유희주<br />
+                    BACK &nbsp;&nbsp;&nbsp;&nbsp;| 권지수 노승주 방윤서<br />
                 </div>
                 <div className='footerTestImg'>
                     <img src={gihubIcon} />
