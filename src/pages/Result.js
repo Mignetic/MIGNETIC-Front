@@ -11,7 +11,9 @@ import Footer from '../components/Footer';
 import ResultType from '../components/ResultType';
 
 function Result() {
-    const [studentData, setStudentData] = useState([])
+    const [studentData, setStudentData] = useState({});
+    const [bestMatch, setBestMatch] = useState({});
+    const [highestSimilarity, setHighestSimilarity] = useState(0); 
 
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
     const graphNum = ['9개', '8개', '4개', '2개']; // 그래프 숫자 값 전달 받기
@@ -24,13 +26,19 @@ function Result() {
     const goodFriend = "Setter"; // 백에서 값 전달
     const badFriend = "Getter"; // 백에서 값 전달
 
+    // 서버 연동 코드
     useEffect(() => {
         fetch('/api/result')
             .then(response => response.json())
-            .then(data => setStudentData(data))
+            .then(data => {
+                setStudentData(data.studentData)
+                setBestMatch(data.bestMatch)
+                setHighestSimilarity(data.highestSimilarity)
+            })
             .catch(error => console.error('Error fetching student data:', error));
     }, []);
-    console.log('백엔드 테스트 : ', studentData)
+    console.log('STUDENT_DATA : ', studentData)
+    console.log('TYPE : ', bestMatch)
 
 
     useEffect(() => {
