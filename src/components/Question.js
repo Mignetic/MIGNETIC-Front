@@ -160,11 +160,11 @@ function Question({ types, name, stuID, subject, relation }) {
     const handleNextBtn = async () => {
         const allAnswered = selectedAnswers.every(answer => answer !== null);
         if (allAnswered) {
-            if(relation === 'student'){
+            if (relation === 'parent') {
                 relation = 0;
-            }else if(relation === 1){
+            } else if (relation === 'friend') {
                 relation = 1;
-            }else{
+            } else {
                 relation = 2;
             }
             const postData = {
@@ -175,10 +175,13 @@ function Question({ types, name, stuID, subject, relation }) {
                 relation,
                 selectedAnswers
             };
-    
+
             try {
-                // 서버로 데이터 전송
-                await axios.post('http://localhost:3000/api/saveAnswers', postData);
+                const response = await axios.post('http://localhost:3000/api/saveAnswers', postData);
+                // 세션에 id, type 저장
+                sessionStorage.setItem('id', response.data.id);
+                sessionStorage.setItem('type', types);
+                console.log(sessionStorage.getItem('id'), sessionStorage.getItem('type'));
                 // 결과 페이지로 이동
                 navigate('/result');
             } catch (error) {
