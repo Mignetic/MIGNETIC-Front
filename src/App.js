@@ -8,8 +8,6 @@ import LetterWrite from './pages/LetterWrite'
 import Board from './pages/Board'
 import ShowLetter from './pages/ShowLetter'
 import Result from './pages/Result'
-
-
 import PositionInput from './components/PositionInput'
 
 function App() {
@@ -21,9 +19,9 @@ function App() {
           <Route path='/testselect' element={<TestSelect />}></Route>
           <Route path='/test' element={<Test />}></Route>
           <Route path='/hotplace' element={<Hotplace />}></Route>
-          <Route path='/letterwrite' element={<LetterWrite />}></Route>
+          <Route path='/letterwrite/:graphName' element={<LetterWrite />}></Route>
           <Route path='/board' element={<Board />}></Route>
-          <Route path='/showletter' element={<ShowLetter/>}></Route>
+          <Route path='/showletter' element={<ShowLetter />}></Route>
           <Route path='/result' element={<Result />}></Route>
           <Route path='/positioninput' element={<PositionInput />}></Route>
         </Routes>
@@ -31,4 +29,5 @@ function App() {
     </BrowserRouter>
   );
 }
+
 export default App;

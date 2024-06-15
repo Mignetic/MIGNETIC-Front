@@ -188,6 +188,13 @@ function Question({ types, name, stuID, subject, relation }) {
                 console.error('데이터 전송 오류:', error);
                 alert('데이터 전송 오류가 발생했습니다. 다시 시도해주세요.');
             }
+            axios.post('http://localhost:3001/api/saveAnswers', postData)
+                .then(response => {
+                    navigate('/result', { state: { types, studentName, studentSubject, outsiderType, selectedAnswers } });
+                })
+                .catch(error => {
+                    alert('Failed to save answers: ' + error.message);
+                });
         } else {
             alert('모든 질문에 답해주세요.');
         }
