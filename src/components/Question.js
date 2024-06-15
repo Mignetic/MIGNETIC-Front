@@ -177,7 +177,7 @@ function Question({ types, name, stuID, subject, relation }) {
             };
 
             try {
-                const response = await axios.post('http://localhost:3000/api/saveAnswers', postData);
+                const response = await axios.post('http://localhost:3307/api/info/saveAnswers', postData);
                 // 세션에 id, type 저장
                 sessionStorage.setItem('id', response.data.id);
                 sessionStorage.setItem('type', types);
