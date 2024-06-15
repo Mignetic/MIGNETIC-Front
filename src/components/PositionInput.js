@@ -4,6 +4,8 @@ import Header from '../components/Header';
 import '../css/PositionInput.css';
 import bgImg from '../images/testPosition-bg.png';
 import btn from '../images/select-btn.png';
+import heartIcon from '../images/icons/heart.svg'; // Path to your heart icon image
+
 
 function PositionInput() {
     document.body.style.backgroundImage = `url(${bgImg})`;
@@ -147,12 +149,17 @@ function PositionInput() {
                 ) : null}
                 <div className='privacyContainer'>
                     개인정보동의
-                    <input
-                        className='inputCheck'
-                        type='checkbox'
-                        checked={isPrivacyChecked}
-                        onChange={(e) => setIsPrivacyChecked(e.target.checked)}
-                    />
+                    <label className='checkboxContainer'>
+                        <input
+                            className='inputCheck'
+                            type='checkbox'
+                            checked={isPrivacyChecked}
+                            onChange={(e) => setIsPrivacyChecked(e.target.checked)}
+                        />
+                        <span className='checkmark'>
+                            {isPrivacyChecked && <img src={heartIcon} alt='heart icon' className='heartIcon' />}
+                        </span>
+                    </label>
                 </div>
                 <button className='testSubmitBtn' onClick={handleSubmit}>
                     <img src={btn} alt='select button' />
