@@ -16,7 +16,7 @@ function LetterWrite() {
 
     const handleTransmission = () => {
         if (window.confirm("편지를 전송하시겠습니까?")) {
-            axios.post('http://localhost:3001/api/letter', { toName, fromName, letterContent })
+            axios.post('http://localhost:3000/api/letter', { toName, fromName, letterContent })
                 .then(response => {
                     alert("전송 완료!");
                     console.log(response.data);

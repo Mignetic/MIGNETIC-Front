@@ -6,8 +6,6 @@ import stars from '../images/stars.png';
 import tipimg from '../images/icons/result-graph-tip.png';
 import heartPink from '../images/heart-pink.png';
 import heartBlue from '../images/heart-blue.png';
-import heartPink from '../images/heart-pink.png'
-import heartBlue from '../images/heart-blue.png'
 import '../css/Result.css';
 import Footer from '../components/Footer';
 import ResultType from '../components/ResultType';
@@ -42,26 +40,17 @@ function Result() {
     console.log('STUDENT_DATA : ', studentData)
     console.log('TYPE : ', bestMatch)
 
-    const graphNum = ['9개', '8개', '4개', '2개'];
-    const graphName = ['권지수', '김수연', '김희영', '노승주'];
-    const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
-    const types = ['False', 'True', 'Try', 'Catch', 'Setter', 'Getter'];
-    const [typeNameIndex, setTypeNameIndex] = useState(0);
-    const defaultTypeNameIndex = 0;
-
-    const goodFriend = "Setter";
-    const badFriend = "Getter";
 
     useEffect(() => {
         let interval;
         let timeout;
-        let remainingTime = 3000;
+        let remainingTime = 3000; // 총 시간 (밀리초 단위)
         const intervalStep = 200;
         let intervalDuration = intervalStep;
 
         const updateInterval = () => {
             if (remainingTime <= 1000) {
-                intervalDuration = 500;
+                intervalDuration = 500; // 1초 남았을 때 속도를 500ms로 느리게
             } else {
                 intervalDuration = intervalStep;
             }
@@ -84,7 +73,7 @@ function Result() {
 
         timeout = setTimeout(() => {
             clearInterval(interval);
-            setTypeNameIndex(defaultTypeNameIndex);
+            setTypeNameIndex(defaultTypeNameIndex); // 고정값으로 변경
         }, 3000);
 
         return () => {
@@ -145,6 +134,7 @@ function Result() {
     const handleHotPlace = () => {
         navigate('/hotplace');
     };
+
     useEffect(() => {
         // 로컬 스토리지에서 postData 가져오기
         const storedData = localStorage.getItem('postData');
@@ -153,6 +143,7 @@ function Result() {
             console.log(postData); // 콘솔에 출력
         }
     }, []);
+
     return (
         <div className='result'>
             <img src={logoimg} className="logoimg" />
@@ -233,7 +224,7 @@ function Result() {
                                 {graphRefs.map((ref, index) => (
                                     <div className={`friend-graph friend-graph-${index + 1}`} key={index}>
                                         <p className={`answer answer-num-${index + 1}`}>{graphNum[index]}</p>
-                                        <Link to={`/letterwrite/${graphName[index]}`}>
+                                        <Link to='/letterwrite'>
                                             <div className={`graph graph-${index + 1}`} ref={ref}></div>
                                         </Link>
                                         <p className={`friend-name friend-name-${index + 1}`}>{graphName[index]}</p>
