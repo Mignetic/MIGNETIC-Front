@@ -13,7 +13,6 @@ import ResultType from '../components/ResultType';
 function Result() {
     const [studentData, setStudentData] = useState({});
     const [bestMatch, setBestMatch] = useState({});
-    const [highestSimilarity, setHighestSimilarity] = useState(0); 
 
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
     const graphNum = ['9개', '8개', '4개', '2개']; // 그래프 숫자 값 전달 받기
@@ -28,17 +27,32 @@ function Result() {
 
     // 서버 연동 코드
     useEffect(() => {
-        fetch('/api/result')
-            .then(response => response.json())
-            .then(data => {
-                setStudentData(data.studentData)
-                setBestMatch(data.bestMatch)
-                setHighestSimilarity(data.highestSimilarity)
-            })
-            .catch(error => console.error('Error fetching student data:', error));
-    }, []);
-    console.log('STUDENT_DATA : ', studentData)
-    console.log('TYPE : ', bestMatch)
+        // 세션 스토리지에서 id 가져오기
+        const sessionId = sessionStorage.getItem('id');
+        // bestMatch에서 type 가져오기
+        const sessionType = sessionStorage.getItem('type');
+
+        // 데이터가 없을 경우 fetch 요청을 보내지 않음
+        if (!sessionId || !sessionType) {
+            return;
+        }
+
+        fetch('/api/result', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ id: sessionId, type: sessionType }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            setStudentData(data.studentData)
+            setBestMatch(data.bestMatch)
+            goodFriend = data.bestType
+            badFriend = data.worstType
+        })
+        .catch(error => console.error('Error fetching student data:', error));
+    }, [bestMatch.type]);
 
 
     useEffect(() => {
