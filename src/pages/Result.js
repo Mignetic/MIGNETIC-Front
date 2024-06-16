@@ -13,17 +13,22 @@ import ResultType from '../components/ResultType';
 function Result() {
     const [studentData, setStudentData] = useState({});
     const [bestMatch, setBestMatch] = useState({});
+    const [types, setTypes] = useState(['False', 'True', 'Try', 'Catch', 'Setter', 'Getter']);
 
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
     const graphNum = ['9개', '8개', '4개', '2개']; // 그래프 숫자 값 전달 받기
     const graphName = ['권지수', '김수연', '김희영', '노승주']; // 그래프에 들어가는 친구 이름 작성
     const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
-    const types = ['False', 'True', 'Try', 'Catch', 'Setter', 'Getter'];
     const [typeNameIndex, setTypeNameIndex] = useState(0);
     const defaultTypeNameIndex = 0; // 기본 타입 인덱스
 
-    const goodFriend = "Setter"; // 백에서 값 전달
-    const badFriend = "Getter"; // 백에서 값 전달
+    const [goodFriend, setGoodFriend] = useState(); // 백에서 값 전달
+    const [badFriend, setBadFriend] = useState(); // 백에서 값 전달
+
+    //첫글자 대문자 만들기
+    function capitalizeFirstLetter(str) {
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
 
     // 서버 연동 코드
     useEffect(() => {
@@ -48,9 +53,16 @@ function Result() {
         .then(data => {
             setStudentData(data.studentData)
             setBestMatch(data.bestMatch)
-            goodFriend = data.bestType
-            badFriend = data.worstType
+            setGoodFriend(capitalizeFirstLetter(data.bestType))
+            setBadFriend(capitalizeFirstLetter(data.worstType))
+            // types 배열의 0번 인덱스 업데이트
+            setTypes(prevTypes => {
+                const updatedTypes = [...prevTypes];
+                updatedTypes[0] = capitalizeFirstLetter(data.bestMatch); // 0번 인덱스에 bestMatch 값 할당
+                return updatedTypes;
+            });
         })
+
         .catch(error => console.error('Error fetching student data:', error));
     }, [bestMatch.type]);
 
