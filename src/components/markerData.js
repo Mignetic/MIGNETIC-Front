@@ -33,6 +33,7 @@ export const markerdata = [
             details: [
                 "미림 건너편에 있는 분식집, 학교에서 회식하러 자주 온다.",
                 "서울특별시 관악구 신림동 298-3",
+                "출처: Young Ji(eat_play_lube)님의 미림분식 리뷰 이미지",
             ],
             reviews: [
                 { developer: "권지수", review: "볶음밥 꼭 드세요!" },
@@ -48,10 +49,11 @@ export const markerdata = [
             lat: 37.4690769280705,
             lng: 126.936937258574,
             value: "음식점",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F62241B1606474C8DB4BA6F49C2824699",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FA79718F97FCB4FC482AA49D45633C52B",
             details: [
                 "학생들의 혈중 마라수치를 지키기 위해 틈틈히 섭취해야 한다.",
                 "서울특별시 관악구 대학6길 14",
+                "출처: https://place.map.kakao.com/916788472 (카카오맵) 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "학교에서 걸어서 15분이면 갑니다 동아리 할 때 가보세요" },
@@ -64,13 +66,14 @@ export const markerdata = [
         },
         {
             title: "이름없는파스타-대학동점",
-            lat: 37.4704190975676,
-            lng: 126.93449718467,
+            lat: 37.4703405,
+            lng: 126.934658,
             value: "음식점",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flocalfiy%2Fsearchregister_2006687744",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F304793CDE9AC48FCB651968339C97C5A",
             details: [
-                "이름없는 파스타에 대한 설명",
+                "맛있고 양많고 다다익선 파스타집!",
                 "서울 관악구 신림로23길 16",
+                "출처: https://place.map.kakao.com/667838641 (카카오맵) 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "리조또 맛있습니다 자리는 별로 없으니까 빨리 가세요" },
@@ -88,8 +91,9 @@ export const markerdata = [
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2FC8109F86B67F470EA1CEDD7745C7A81C",
             details: [
-                "정직유부에 대한 설명",
+                "유부초밥이 정직한 정직유부집!",
                 "서울, 관악구 대학6길 52",
+                "출처: https://place.map.kakao.com/41169658 (카카오맵) 포토이미지",
             ],
             reviews: [
                 { developer: "권지수", review: "유부초밥 맛있습니다~" },
@@ -109,6 +113,7 @@ export const markerdata = [
             details: [
                 "학교 정문에서 올라가면 나오는 버스 정류장 옆에 있는 가게이다.",
                 "서울 관악구 호암로 534",
+                "출처: https://place.map.kakao.com/11674815 (카카오맵) 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "무난하게 먹기 좋음" },
@@ -124,10 +129,11 @@ export const markerdata = [
             lat: 37.4704190975676,
             lng: 126.93449718467,
             value: "음식점",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F42CACF45FC25496F889BBA7B0C093C02",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F9F0A5F3CAC754FB29E548C8F63A89131",
             details: [
                 "가성비 있고 간편하게 먹을 수 있어서 좋다.",
                 "서울 관악구 신림로23길 16",
+                "출처: (카카오맵) 롯데리아 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "아이스크림이 맛있음" },
@@ -143,10 +149,11 @@ export const markerdata = [
             lat: 37.4701820435583,
             lng: 126.9340146908,
             value: "음식점",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Fcfile173.uf.daum.net%2Fimage%2F215E473F522EB0CB27A8A7",
             details: [
-                "피나치공에 대한 설명",
+                "피자나라에 공주가 등장했다!!! 피자나라에 가본적 있는가..? 이곳으로 와라!",
                 "서울 관악구 호암로26가길 11",
+                "출처: (카카오맵) 피자나라 치킨공주 포토이미지",
             ],
             reviews: [
                 { developer: "권지수", review: "매장식사 말고 포장 추천합니다" },
@@ -159,13 +166,14 @@ export const markerdata = [
         },
         {
             title: "노브랜드버거-신림남부점",
-            lat: 37.4706738459539,
-            lng: 126.933747810471,
+            lat: 37.470620,
+            lng: 126.93374,
             value: "음식점",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F12F5BDC8E4474E2196F9026F59687A97",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F50229915494742B8A20589E64DDE27FC",
             details: [
-                "노브랜드 버거에 대한 설명",
+                "감튀가 맛있다! 샐러드도 맛있고 굿굿!!",
                 "서울 관악구 호암로 600",
+                "출처: (카카오맵) 노브랜드 버거 포토이미지",
             ],
             reviews: [
                 { developer: "권지수", review: "" },
@@ -178,13 +186,14 @@ export const markerdata = [
         },
         {
             title: "본죽-신림녹두거리점",
-            lat: 37.4705519009333,
-            lng: 126.933679525738,
+            lat: 37.47055485,
+            lng: 126.9336150,
             value: "음식점",
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Fcfile73.uf.daum.net%2Fimage%2F252E9D4B553767C42EDFB5",
             details: [
-                "본죽 대한 설명",
+                "속이 안 좋을 때 사먹기 좋다! 특히 장조림이랑 먹으면 맛있따! ",
                 "서울 관악구 호암로 598",
+                "출처: (카카오맵) 본죽 포토이미지",
             ],
             reviews: [
                 { developer: "권지수", review: "아플 때 먹으러 가세요" },
@@ -202,7 +211,7 @@ export const markerdata = [
             value: "음식점",
             image: "",
             details: [
-                "김밥천국에 대한 설명",
+                "김밥이 맛있는 김밥 천국!  다들 먹어본 맛이 무섭다!!",
                 "서울 관악구 호암로24길 1",
             ],
             reviews: [
@@ -221,7 +230,7 @@ export const markerdata = [
             value: "음식점",
             image: "",
             details: [
-                "김밥천국에 대한 설명",
+                "근본 김밥집, 라면도 맛있다 굿굿~",
                 "서울 관악구 호암로 534",
             ],
             reviews: [
@@ -235,13 +244,14 @@ export const markerdata = [
         },
         {
             title: "진마라탕",
-            lat: 37.4704190975676,
-            lng: 126.93449718467,
+            lat: 37.4704862,
+            lng: 126.934748,
             value: "음식점",
-            image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F4B782E164BE04A8895F19728EBD74430",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FA9EDAA6A020847098D2619FBDFED502D",
             details: [
                 "학생들의 혈중 마라수치를 지키기 위해 틈틈히 섭취해야 한다.",
                 "서울 관악구 신림로23길 16",
+                "출처: (카카오맵) 진마라탕 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "" },
@@ -264,10 +274,11 @@ export const markerdata = [
             lat: 37.4709457968065,
             lng: 126.934116438944,
             value: "디저트",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F05CE4C8452544908A08D429F1F35A723",
             details: [
                 "돈이 넉넉하지 않은 학생들이 사먹기에 좋은 빵집. 싸고 맛있다.",
-                "디저트 종류, 추천 메뉴 등"
+                "디저트 종류, 추천 메뉴 등",
+                "출처: (카카오맵) 미인브레드 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "빵 종류 많고 맛있습니당" },
@@ -302,10 +313,11 @@ export const markerdata = [
             lat: 37.4710112878923,
             lng: 126.933932907945,
             value: "디저트",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F734830ED5CEE4DCEB5C665E2E674650E",
             details: [
                 "탕후루 외에도 망고사고도 팔고 있어 가보는걸 추천한다. 하지만 건강을 위해 적당히 먹자.",
-                "서울 관악구 호암로26길 1"
+                "서울 관악구 호암로26길 1",
+                "출처: (카카오맵) 왕가탕후루 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "스테비아토마토 맛있어요" },
@@ -321,10 +333,11 @@ export const markerdata = [
             lat: 37.4707284091674,
             lng: 126.934001888571,
             value: "디저트",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F913A94EF5845423A99280221BD8C2FB3",
             details: [
-                "마카롱이나 케이크를 파는 가게이다. 케이크가 정말 귀엽다.",
-                "서울 관악구 호암로26가길 2"
+                "마카롱이나 케이크등 디저트를 전문적으로 판매하는 가게이다. 케이크가 정말 귀엽다.",
+                "서울 관악구 호암로26가길 2",
+                "출처: (카카오맵) 디저트상점 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "" },
@@ -362,7 +375,8 @@ export const markerdata = [
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.kakaocdn.net%2Ffiy_reboot%2Fplace%2F5ADC118CA09647D5B4AAD2D05B03B654",
             details: [
                 "꽈배기나 찹쌀도나츠를 판매하는 곳이다.",
-                "서울특별시 관악구 대학동 246-51"
+                "서울특별시 관악구 대학동 246-51",
+                "출처: (카카오맵) 근덕이삼척꽈배기 포토이미지",
             ],
             reviews: [
                 { developer: "권지수", review: "" },
@@ -381,7 +395,8 @@ export const markerdata = [
             image: "https://img1.kakaocdn.net/cthumb/local/R736x0.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F8B89C600D1D84863AFA18F11EB204F40",
             details: [
                 "보통 스승의 날이나 선생님 생신때 통학하는 친구가 케이크를 사오는 곳이다. 직원분들이 매우 친절하다.",
-                "서울특별시 관악구 호암로 602"
+                "서울특별시 관악구 호암로 602",
+                "출처: (카카오맵) 파리바게트 요기요 제공 사진",
             ],
             reviews: [
                 { developer: "권지수", review: "여름에 팥빙수 드시러 가세요" },
@@ -406,7 +421,7 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "메가커피에 대한 설명",
+                "디저트, 음료 둘다 맛있는 카페이다. 가격도 괜찮아서 자주 간다",
                 "서울특별시 관악구 호암로26가길 2"
             ],
             reviews: [
@@ -434,7 +449,7 @@ export const markerdata = [
                 { developer: "김수연", review: "학교와는 멀지만 수다떨기 좋다" },
                 { developer: "노승주", review: "엑소 크림소다 나왔을 때 엑소 컵홀더 받으러 감" },
                 { developer: "방윤서", review: "백종원아저씨 안녕하세요" },
-                { developer: "양지아", review: "땡모반 맛있어용" },
+                { developer: "양지아", review: "밀크쉐이크 냠냠굿굿~" },
                 { developer: "유희주", review: "음료 다 맛있음!" },
             ]
         },
@@ -445,7 +460,7 @@ export const markerdata = [
             value: "카페",
             image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2F7AC52625F3A24202AA8A5D2E2A1B2770",
             details: [
-                "더 커피 알에 대한 설명",
+                "빙수나 핫도그 등 다양한 음료와 디저트를 판매하는 곳이다.",
                 "출처 : https://place.map.kakao.com/958098955 요기요 제공 사진",
                 "서울 관악구 호암로24길 6",
             ],
@@ -465,7 +480,7 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "후후라운지에 대한 설명",
+                "개발자 비밀스팟입니다 특별히 당신에게만 허락해드림",
                 "서울 관악구 호암로26가길 8",
             ],
             reviews: [
@@ -484,7 +499,7 @@ export const markerdata = [
             value: "카페",
             image: "",
             details: [
-                "컴포즈에 대한 설명",
+                "전설의 생초코릿라떼를 판매하는 컴포즈 커피이다. 냠냠~",
                 "서울 관악구 호암로24길 32",
             ],
             reviews: [
@@ -530,7 +545,9 @@ export const markerdata = [
             image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FFAE0C3F95FC84922903140B06CD07B29",
             details: [
                 "학교에서 올라가면 바로 보이는 편의점이다. 가끔 등교할 때 학교 친구를 마주칠 수 있다.",
-                "서울 관악구 호암로 538",
+                "서울 관악구 호암로 538",,
+                "출처 : https://place.map.kakao.com/331047497 GS25 포토이미지",
+                
             ],
             reviews: [
                 { developer: "권지수", review: "과자파티 할 때 가면 좋아요" },
@@ -550,6 +567,8 @@ export const markerdata = [
             details: [
                 "학교 아래로 내려가면 나오는 큰 편의점이다. 근처에서 퇴근하시는 선생님을 마주칠 수 있다.",
                 "서울 관악구 호암로20길 1",
+                "출처 : https://place.map.kakao.com/16086677 CU 포토이미지",
+                
             ],
             reviews: [
                 { developer: "권지수", review: "자리가 많고 먹을게 많다" },
@@ -568,7 +587,8 @@ export const markerdata = [
             image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Fcfile173.uf.daum.net%2Fimage%2F997E9C4F5AD578922EB9F7",
             details: [
                 "관악 동원점과 이름이 비슷하여 헷갈릴 수 있다.",
-                "서울 관악구 신림로23길 49",
+                "서울 관악구 신림로23길 49",,
+                "출처 : https://place.map.kakao.com/16075022 CU 포토이미지",
             ],
             reviews: [
                 { developer: "권지수", review: "시아준수" },
@@ -581,4 +601,6 @@ export const markerdata = [
         },
     ],
 ];
+
+
 
