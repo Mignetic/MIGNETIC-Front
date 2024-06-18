@@ -11,19 +11,18 @@ import Footer from '../components/Footer';
 import ResultType from '../components/ResultType';
 
 function Result() {
-    const [studentData, setStudentData] = useState({});
-    const [bestMatch, setBestMatch] = useState({});
+    const [studentData, setStudentData] = useState();
+    const [bestMatch, setBestMatch] = useState();
     const [types, setTypes] = useState(['False', 'True', 'Try', 'Catch', 'Setter', 'Getter']);
 
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
-    const graphNum = ['9개', '8개', '4개', '2개']; // 그래프 숫자 값 전달 받기
-    const graphName = ['권지수', '김수연', '김희영', '노승주']; // 그래프에 들어가는 친구 이름 작성
-    const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
     const [typeNameIndex, setTypeNameIndex] = useState(0);
+    const [graphNum, setGraphNum] = useState([]);
     const defaultTypeNameIndex = 0; // 기본 타입 인덱스
 
     const [goodFriend, setGoodFriend] = useState(); // 백에서 값 전달
     const [badFriend, setBadFriend] = useState(); // 백에서 값 전달
+    const [topFourFriends, setTopFourFriends] = useState([]);
 
     //첫글자 대문자 만들기
     function capitalizeFirstLetter(str) {
@@ -55,16 +54,21 @@ function Result() {
             setBestMatch(data.bestMatch)
             setGoodFriend(capitalizeFirstLetter(data.bestType))
             setBadFriend(capitalizeFirstLetter(data.worstType))
-            // types 배열의 0번 인덱스 업데이트
+            setTopFourFriends(data.topFourFriends)
             setTypes(prevTypes => {
                 const updatedTypes = [...prevTypes];
                 updatedTypes[0] = capitalizeFirstLetter(data.bestMatch); // 0번 인덱스에 bestMatch 값 할당
                 return updatedTypes;
             });
+            const similarity = data.topFourFriends.map(friend => friend.similarity);
+            setGraphNum(similarity);
         })
 
         .catch(error => console.error('Error fetching student data:', error));
-    }, [bestMatch.type]);
+    }, [bestMatch]);
+
+    console.log(topFourFriends)
+    const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
 
     useEffect(() => {
         let interval;
@@ -113,7 +117,7 @@ function Result() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const index = graphRefs.findIndex(ref => ref.current === entry.target);
-                if (index !== -1) {
+                if (index !== -1 && graphHeights[index]) {
                     requestAnimationFrame(() => {
                         entry.target.style.height = graphHeights[index];
                         entry.target.style.transition = 'height 1s ease';
@@ -123,25 +127,21 @@ function Result() {
             }
         });
     };
-
+    
     useEffect(() => {
         window.scrollTo(0, 0);
-
+    
         const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
         graphRefs.forEach(ref => {
             if (ref.current) {
                 observer.observe(ref.current);
             }
         });
-
+    
         return () => {
-            graphRefs.forEach(ref => {
-                if (ref.current) {
-                    observer.unobserve(ref.current);
-                }
-            });
+            observer.disconnect();
         };
-    }, []);
+    }, [graphHeights]); // graphHeights 값이 변경될 때마다 observer를 업데이트
 
     useEffect(() => {
         document.body.style.backgroundImage = `url(${bgImg})`;
@@ -248,11 +248,15 @@ function Result() {
                             <div className='friend-graph-container'>
                                 {graphRefs.map((ref, index) => (
                                     <div className={`friend-graph friend-graph-${index + 1}`} key={index}>
-                                        <p className={`answer answer-num-${index + 1}`}>{graphNum[index]}</p>
-                                        <Link to={`/letterwrite/${graphName[index]}`}>
+                                        {topFourFriends[index]?.name ? (
+                                            <p className={`answer answer-num-${index + 1}`}>
+                                                {topFourFriends[index]?.similarity}개
+                                            </p>
+                                        ) : null}
+                                        <Link to='/letterwrite'>
                                             <div className={`graph graph-${index + 1}`} ref={ref}></div>
                                         </Link>
-                                        <p className={`friend-name friend-name-${index + 1}`}>{graphName[index]}</p>
+                                        <p className={`friend-name friend-name-${index + 1}`}>{topFourFriends[index]?.name}</p>
                                     </div>
                                 ))}
                             </div>
