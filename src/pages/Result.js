@@ -24,6 +24,10 @@ function Result() {
     const [badFriend, setBadFriend] = useState(); // 백에서 값 전달
     const [topFourFriends, setTopFourFriends] = useState([]);
 
+    const [explain, setExplain] = useState({});
+    const [bestExplain, setBestExplain] = useState({});
+    const [worstExplain, setWorstExplain] = useState({});
+
     //첫글자 대문자 만들기
     function capitalizeFirstLetter(str) {
         return str.charAt(0).toUpperCase() + str.slice(1);
@@ -62,12 +66,14 @@ function Result() {
             });
             const similarity = data.topFourFriends.map(friend => friend.similarity);
             setGraphNum(similarity);
+            setExplain(data.explainResult[0])
+            setBestExplain(data.bestExplainResult[0])
+            setWorstExplain(data.worstExplainResult[0])
         })
 
         .catch(error => console.error('Error fetching student data:', error));
     }, [bestMatch]);
 
-    console.log(topFourFriends)
     const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
 
     useEffect(() => {
@@ -190,17 +196,17 @@ function Result() {
                 </div>
                 <div className='type-description'>
                     <div className='type-li-container'>
-                        <li className='type-li'>여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기  <br></br>
-                            여기는 타입의 설명을 쭉 쓰기
+                        <li className='type-li'>
+                            {explain.hashtag} <br/>
+                            {explain.intro}
                         </li>
-                        <li className='type-li'>여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기  <br></br>
-                            여기는 타입의 설명을 쭉 쓰기
+                        <li className='type-li'>
+                            장점 <br/>
+                            {explain.strength}
+                        </li>
+                        <li className='type-li'>
+                            단점 <br/>
+                            {explain.weakness}
                         </li>
                     </div>
                     <div className='good-bad-friend-type'>
@@ -211,11 +217,9 @@ function Result() {
                                 <div className='type-name'>
                                     <p className='type-name-friend-good-bad'>{goodFriend}</p>
                                 </div>
-                                <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                                <p className='type-good-bad-description'>{bestExplain.hashtag}</p>
                                 <p className='type-details good-type-details'>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
+                                    {bestExplain.intro}
                                 </p>
                             </div>
                         </div>
@@ -226,11 +230,9 @@ function Result() {
                                 <div className='type-name '>
                                     <p className='type-name-friend-good-bad type-name-friend-blue'>{badFriend}</p>
                                 </div>
-                                <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                                <p className='type-good-bad-description'>{worstExplain.hashtag}</p>
                                 <p className='type-details bad-type-details'>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
+                                    {worstExplain.intro}
                                 </p>
                             </div>
                         </div>
@@ -253,7 +255,7 @@ function Result() {
                                                 {topFourFriends[index]?.similarity}개
                                             </p>
                                         ) : null}
-                                        <Link to='/letterwrite'>
+                                        <Link to={`/letterwrite/${topFourFriends[index]?.name}`}>
                                             <div className={`graph graph-${index + 1}`} ref={ref}></div>
                                         </Link>
                                         <p className={`friend-name friend-name-${index + 1}`}>{topFourFriends[index]?.name}</p>
