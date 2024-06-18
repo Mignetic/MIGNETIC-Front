@@ -1,32 +1,58 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import '../css/Letter.css';
 import envelope from '../images/envelope.png';
 
 function LetterWrite() {
     const { graphName } = useParams();
-    const [toName, setToName] = useState(graphName || '');
+    const navigate = useNavigate();
+    const [toName, setToName] = useState('');
     const [fromName, setFromName] = useState('');
     const [letterContent, setLetterContent] = useState('');
 
     useEffect(() => {
-        setToName(graphName);
+        const fetchData = async () => {
+            const id = sessionStorage.getItem('id');
+            const type = sessionStorage.getItem('type');
+            
+            if (id && type) {
+                try {
+                    const response = await axios.get(`http://localhost:3000/api/letter/${type}/${id}`);
+                    setFromName(response.data.name);
+                } catch (error) {
+                    console.error('Error fetching user data:', error);
+                }
+            }
+        };
+
+        fetchData();
+    }, []);
+
+    useEffect(() => {
+        if (graphName) {
+            setToName(graphName);
+        }
     }, [graphName]);
 
     const handleTransmission = () => {
-        if (window.confirm("편지를 전송하시겠습니까?")) {
-            axios.post('http://localhost:3000/api/letter', { toName, fromName, letterContent })
+        if (!fromName || !letterContent) {
+            alert('Please fill in all fields.');
+            return;
+        }
+
+        if (window.confirm("Do you want to send the letter?")) {
+            axios.post('http://localhost:3000/api/letter/saveLetter', { toName, fromName, letterContent })
                 .then(response => {
-                    alert("전송 완료!");
-                    console.log(response.data);
+                    alert("Letter sent successfully!");
                     setToName('');
                     setFromName('');
                     setLetterContent('');
+                    navigate('/Board');
                 })
                 .catch(error => {
-                    console.error('편지 저장 오류:', error);
-                    alert("전송 실패!");
+                    console.error('Error saving letter:', error);
+                    alert("Failed to send letter.");
                 });
         }
     };
@@ -39,22 +65,24 @@ function LetterWrite() {
                     type='text'
                     value={toName}
                     onChange={(e) => setToName(e.target.value)}
-                    placeholder="받는 사람 이름"
+                    placeholder="Recipient's Name"
+                    style={{ display: 'none' }}
                 />
                 <input
                     type='text'
                     value={fromName}
                     onChange={(e) => setFromName(e.target.value)}
-                    placeholder="보내는 사람 이름"
+                    placeholder="Sender's Name"
+                    style={{ display: 'none' }}
                 />
                 <textarea
                     className='letterInputText'
                     value={letterContent}
                     onChange={(e) => setLetterContent(e.target.value)}
-                    placeholder="여기에 편지를 써요"
+                    placeholder="Write your letter here"
                 ></textarea>
                 <button className='letterbtn' onClick={handleTransmission}>
-                    전송하기
+                    Send
                 </button>
             </div>
             <div className='envelope'>

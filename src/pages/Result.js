@@ -40,7 +40,6 @@ function Result() {
     console.log('STUDENT_DATA : ', studentData)
     console.log('TYPE : ', bestMatch)
 
-
     useEffect(() => {
         let interval;
         let timeout;
@@ -224,7 +223,7 @@ function Result() {
                                 {graphRefs.map((ref, index) => (
                                     <div className={`friend-graph friend-graph-${index + 1}`} key={index}>
                                         <p className={`answer answer-num-${index + 1}`}>{graphNum[index]}</p>
-                                        <Link to='/letterwrite'>
+                                        <Link to={`/letterwrite/${graphName[index]}`}>
                                             <div className={`graph graph-${index + 1}`} ref={ref}></div>
                                         </Link>
                                         <p className={`friend-name friend-name-${index + 1}`}>{graphName[index]}</p>

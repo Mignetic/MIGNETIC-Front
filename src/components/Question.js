@@ -2,7 +2,7 @@ import ask from '../images/test-askbtn.png';
 import ask2 from '../images/test-askbtn2.png'
 import arrowBtn from '../images/icons/test-arrowBtn.png';
 import '../css/Question.css';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import React, { useState, useRef, useEffect } from 'react';
 import axios from 'axios';
 
@@ -90,7 +90,7 @@ const questions_teacher = [
         question: "더 싫은 상황은?",
         answers: ["생기부 쓰고 있는데 컴퓨터 꺼지기", "시험 출제 중에 컴퓨터 꺼지기"]
     }
-]
+];
 
 const questions_outsider = [
     {
@@ -133,7 +133,8 @@ const questions_outsider = [
         question: "더 싫은 상황은?",
         answers: ["나 빼고 다 천재인 팀에서 숨쉬듯 자괴감 느끼기", "내가 유일한 희망인 팀에서 혼자 밭 가는 소처럼 일하기"]
     }
-]
+];
+
 function Question({ types, name, stuID, subject, relation }) {
     const navigate = useNavigate();
 
@@ -160,19 +161,13 @@ function Question({ types, name, stuID, subject, relation }) {
     const handleNextBtn = async () => {
         const allAnswered = selectedAnswers.every(answer => answer !== null);
         if (allAnswered) {
-            if (relation === 'parent') {
-                relation = 0;
-            } else if (relation === 'friend') {
-                relation = 1;
-            } else {
-                relation = 2;
-            }
+            const relationMap = { parent: 0, friend: 1, other: 2 };
             const postData = {
                 types,
                 name,
                 stuID,
                 subject,
-                relation,
+                relation: relationMap[relation],
                 selectedAnswers
             };
 
@@ -182,7 +177,7 @@ function Question({ types, name, stuID, subject, relation }) {
                 sessionStorage.setItem('id', response.data.id);
                 sessionStorage.setItem('type', types);
                 console.log(sessionStorage.getItem('id'), sessionStorage.getItem('type'));
-                // 결과 페이지로 이동
+                // letterWrite 페이지로 이동
                 navigate('/result');
             } catch (error) {
                 console.error('데이터 전송 오류:', error);
