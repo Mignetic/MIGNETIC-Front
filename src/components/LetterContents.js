@@ -1,28 +1,59 @@
-import { useNavigate } from 'react-router-dom'
+// 수정된 클라이언트 측 코드
 
-import '../css/LetterContents.css'
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import '../css/LetterContents.css';
+import Logo from '../images/icons/logo.png';
 
-import Logo from '../images/icons/logo.png'
+function LetterContents() {
+    const navigate = useNavigate();
+    const [letterData, setLetterData] = useState({
+        toName: '',
+        fromName: '',
+        letterContent: ''
+    });
 
-function LetterContents(){
-    const navigate = useNavigate()
+    useEffect(() => {
+        fetchLetterContent();
+    }, []);
+
+    const fetchLetterContent = async () => {
+        try {
+            
+            const response = await axios.get(`http://localhost:3000/api/letter/lastLetter`);
+            console.log("AA",response);
+            setLetterData({
+                toName: response.data.toName,
+                fromName: response.data.fromName,
+                letterContent: response.data.content
+            });
+
+        } catch (error) {
+            console.error('편지 내용을 가져오는 중 오류 발생:', error);
+            // 오류 처리 로직 추가
+        }
+    };
 
     const backBoardLetters = () => {
-        navigate('/Board')
-    }
+        navigate('/Board');
+    };
 
-
-    return(
+    return (
         <div className="contentBackground">
-            <div class="logoContainer"><img src={Logo} class=".boardLogo"/></div>
-            <div className="letterContentsPaper">
-                <div className="letterTo"><p>To. 받는 사람 이름</p></div>
-                <div className="letterContents">여기는 편지의 내용을 보여주세요</div>
-                <div className="letterFrom">From. 보낸 사람 이름</div>
+            <div className="logoContainer">
+                <img src={Logo} alt="Logo" className="boardLogo" />
             </div>
-            <button className="backBoard" onClick={backBoardLetters}><p>이전 화면</p></button>
+            <div className="letterContentsPaper">
+                <div className="letterTo">To. {letterData.toName}</div>
+                <div className="letterContents">{letterData.letterContent}</div>
+                <div className="letterFrom">From. {letterData.fromName}</div>
+            </div>
+            <button className="backBoard" onClick={backBoardLetters}>
+                <p>이전 화면</p>
+            </button>
         </div>
-    )
+    );
 }
 
-export default LetterContents
+export default LetterContents;
