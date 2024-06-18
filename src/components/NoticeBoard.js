@@ -1,49 +1,52 @@
-import Logo from '../images/icons/logo.png'
-import letterImg from '../images/icons/letterImg.png'
-
-import '../css/NoticeBoard.css'
-
-import { useNavigate } from 'react-router-dom'
-
+import React, { useState, useEffect } from 'react';
+import Logo from '../images/icons/logo.png';
+import letterImg from '../images/icons/letterImg.png';
+import { useNavigate } from 'react-router-dom';
+import '../css/NoticeBoard.css';
 
 function NoticeBoard() {
-
     const navigate = useNavigate();
+    const [latestLetter, setLatestLetter] = useState(null);
 
-    const ShowLetter = () =>{
+    useEffect(() => {
+        fetchLatestLetter();
+    }, []);
 
-        navigate('/showletter')
+    const fetchLatestLetter = () => {
+        fetch('http://localhost:3000/api/letter-board/latest')
+            .then(response => response.json())
+            .then(data => {
+                setLatestLetter(data);
+            })
+            .catch(error => {
+                console.error('최신 편지 가져오기 실패:', error);
+            });
+    };
 
-    }
-
-    // 보낸 사람, 편지 내용, 받는 사람 배열 코드
+    const ShowLetter = () => {
+        navigate('/showletter');
+    };
 
     return (
-        <div class="noticeBoardBackground">
-            <div class="logoContainer"><img src={Logo} class=".boardLogo"/></div>
-            <div class="boardLetter">
-                <div className='boardLetterImg'>
-                    <div className='letterFront'><img src={letterImg}/></div>
-                    <div className='letterBack' onClick={ShowLetter}><p className='leftP'>To.승주</p><p className='rightP'>from.승주</p></div>
-                </div>
-
-                {/* 이거는 서버 요청 오면 편지 그리는 코드 */}
-                {/* {letters.map((letter, index) => (
-                    <div key={index} className='boardLetterImg'>
-                        <div className='letterFront'>
-                        <img src={letterImg} alt="Letter Front" />
-                        </div>
-                        <div className='letterBack'>
-                        <p className='leftP'>To.{letter.to}</p>
-                        {letter.from && <p className='rightP'>from.{letter.from}</p>}
+        <div className="noticeBoardBackground">
+            <div className="logoContainer">
+                <img src={Logo} className="boardLogo" alt="로고" />
+            </div>
+            <div className="boardLetter">
+                {latestLetter ? (
+                    <div className='boardLetterImg'>
+                        <div className='letterFront'><img src={letterImg} alt="편지 이미지" /></div>
+                        <div className='letterBack' onClick={ShowLetter}>
+                            <p className='leftP'>To.{latestLetter.toName}</p>
+                            <p className='rightP'>from.{latestLetter.fromName}</p>
                         </div>
                     </div>
-                ))} */}
+                ) : (
+                    <p>최신 편지가 없습니다.</p>
+                )}
             </div>
-            
-        </div>        
-    )
-   
+        </div>
+    );
 }
 
-export default NoticeBoard
+export default NoticeBoard;
