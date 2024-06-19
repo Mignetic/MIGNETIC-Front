@@ -37,18 +37,15 @@ function LetterWrite() {
 
     const handleTransmission = () => {
         if (!fromName || !letterContent) {
-            alert('Please fill in all fields.');
+            alert('편지 내용을 입력해주세요.');
             return;
         }
 
-        if (window.confirm("Do you want to send the letter?")) {
+        if (window.confirm("짝궁에게 편지를 보내시겠습니까?")) {
             axios.post('http://localhost:3000/api/letter/saveLetter', { toName, fromName, letterContent })
                 .then(response => {
-                    alert("Letter sent successfully!");
-                    setToName('');
-                    setFromName('');
-                    setLetterContent('');
-                    navigate('/');
+                    alert("두근두근! 짝궁에게 편지가 보내졌어요~!");
+                    navigate('/Board');
                 })
                 .catch(error => {
                     console.error('Error saving letter:', error);

@@ -4,27 +4,24 @@ import letterImg from '../images/icons/letterImg.png';
 import { useNavigate } from 'react-router-dom';
 import '../css/NoticeBoard.css';
 
-function NoticeBoard() {
+function NoticeBoard({ letters }) {
+    const [showPopup, setShowPopup] = useState(false);
     const navigate = useNavigate();
-    const [latestLetter, setLatestLetter] = useState(null);
 
     useEffect(() => {
-        fetchLatestLetter();
-    }, []);
+        if (letters.length > 0) {
+            setShowPopup(true);
+            const timer = setTimeout(() => setShowPopup(false), 3000); // 3초 후에 사라지게 설정
+            return () => clearTimeout(timer);
+        }
+        console.log("dd");
+    }, [letters]);
 
-    const fetchLatestLetter = () => {
-        fetch('http://localhost:3000/api/letter-board/latest')
-            .then(response => response.json())
-            .then(data => {
-                setLatestLetter(data);
-            })
-            .catch(error => {
-                console.error('최신 편지 가져오기 실패:', error);
-            });
-    };
+    
 
-    const ShowLetter = () => {
-        navigate('/showletter');
+    const ShowLetter = (vId) => {
+        navigate(`/showletter?id=${vId}`);
+        // alert("idd"+vId);
     };
 
     return (
@@ -32,17 +29,27 @@ function NoticeBoard() {
             <div className="logoContainer">
                 <img src={Logo} className="boardLogo" alt="로고" />
             </div>
+            {showPopup && (
+                <div className="letterPopup">
+                    <img src={letterImg} alt="편지 이미지" className="popupImg" />
+                </div>
+            )}
             <div className="boardLetter">
-                {latestLetter ? (
-                    <div className='boardLetterImg'>
-                        <div className='letterFront'><img src={letterImg} alt="편지 이미지" /></div>
-                        <div className='letterBack' onClick={ShowLetter}>
-                            <p className='leftP'>To.{latestLetter.toName}</p>
-                            <p className='rightP'>from.{latestLetter.fromName}</p>
+                {letters.length > 0 ? (
+                    letters.map((letter, index) => (
+                        <div key={index} className='boardLetterImg'>
+                            <div className='letterFront'>
+                                <img src={letterImg} alt="편지 이미지" />
+                            </div>
+                            {/* <div className='letterBack' onClick={ShowLetter} onClick={() => ShowLetter("heeyeon")}> */}
+                            <div className='letterBack' onClick={() => ShowLetter(letter.id)}>
+                                <p className='leftP'>To. {letter.toName}</p>
+                                <p className='rightP'>From. {letter.fromName}</p>
+                            </div>
                         </div>
-                    </div>
+                    ))
                 ) : (
-                    <p>최신 편지가 없습니다.</p>
+                    <p className="noLetters">편지가 없습니다.</p>
                 )}
             </div>
         </div>

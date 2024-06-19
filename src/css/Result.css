@@ -178,6 +178,16 @@
     position: relative;
 }
 
+.good-friend-type{
+    display: flex;
+    flex-direction: column;
+}
+
+.bad-friend-type{
+    
+    display: flex;
+    flex-direction: column;
+}
 .friend-type > {
     flex-direction: column;
     text-align: center;

@@ -60,3 +60,20 @@
 .letterPaper input[type='text'] {
     display: none;
 }
+
+
+.animate {
+    animation: growAndShrink 1s ease-out forwards;
+}
+
+@keyframes growAndShrink {
+    0% {
+        transform: scale(0);
+    }
+    50% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
