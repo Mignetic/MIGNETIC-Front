@@ -14,10 +14,7 @@ function NoticeBoard({ letters }) {
             const timer = setTimeout(() => setShowPopup(false), 3000); // 3초 후에 사라지게 설정
             return () => clearTimeout(timer);
         }
-        console.log("dd");
     }, [letters]);
-
-    
 
     const ShowLetter = (vId) => {
         navigate(`/showletter?id=${vId}`);
