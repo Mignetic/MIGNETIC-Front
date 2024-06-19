@@ -109,7 +109,7 @@ export const markerdata = [
             lat: 37.4652824557525,
             lng: 126.931670647461,
             value: "음식점",
-            image: "",
+            image: "https://img1.kakaocdn.net/cthumb/local/R0x420.q50/?fname=http%3A%2F%2Ft1.daumcdn.net%2Fplace%2FAA7186F0D5AE4786AF4FC9F26F743603",
             details: [
                 "학교 정문에서 올라가면 나오는 버스 정류장 옆에 있는 가게이다.",
                 "서울 관악구 호암로 534",
@@ -209,10 +209,11 @@ export const markerdata = [
             lat: 37.4701811117837,
             lng: 126.933477729467,
             value: "음식점",
-            image: "",
+            image: "https://i.namu.wiki/i/J04XIludQJq8w3wFsitN7fk0szaNAH2zNrBqye1DQsSqBsvwGLvIAtcmwMyJmWNlWdUmP_LGYqkVwyWpJk3U-l0RDB0lvBD-if9uPsh-Bf7ljGk2U082CgVdNw5haVgiGH8Ytn-KrCJ2QW50WFAEv8FDV-W2acoj_X8AKYxS_Rw.svg",
             details: [
                 "김밥이 맛있는 김밥 천국!  다들 먹어본 맛이 무섭다!!",
                 "서울 관악구 호암로24길 1",
+                "출처 : 김밥천국 나무위키",
             ],
             reviews: [
                 { developer: "권지수", review: "떡볶이 추천합니다" },
@@ -228,10 +229,11 @@ export const markerdata = [
             lat: 37.4652824557525,
             lng: 126.931670647461,
             value: "음식점",
-            image: "",
+            image: "https://i.namu.wiki/i/J04XIludQJq8w3wFsitN7fk0szaNAH2zNrBqye1DQsSqBsvwGLvIAtcmwMyJmWNlWdUmP_LGYqkVwyWpJk3U-l0RDB0lvBD-if9uPsh-Bf7ljGk2U082CgVdNw5haVgiGH8Ytn-KrCJ2QW50WFAEv8FDV-W2acoj_X8AKYxS_Rw.svg",
             details: [
                 "근본 김밥집, 라면도 맛있다 굿굿~",
                 "서울 관악구 호암로 534",
+                "출처 : 김밥천국 나무위키",
             ],
             reviews: [
                 { developer: "권지수", review: "맛있어요~~~" },
@@ -353,10 +355,11 @@ export const markerdata = [
             lat: 37.4707284091674,
             lng: 126.934001888571,
             value: "디저트",
-            image: "",
+            image: "https://cocohodo.co.kr/wp-content/uploads/Social-Share-Default-Image.png",
             details: [
                 "호두과자가 먹고 싶을 때 조금만 사서 먹기 좋다.",
-                "서울특별시 관악구 신림동 호암로26가길 2"
+                "서울특별시 관악구 신림동 호암로26가길 2",
+                "출처 : https://cocohodo.co.kr/ (코코호도 공홈)",
             ],
             reviews: [
                 { developer: "권지수", review: "맛있습니당" },
@@ -419,10 +422,11 @@ export const markerdata = [
             lat: 37.4707284091674,
             lng: 126.934001888571,
             value: "카페",
-            image: "",
+            image: "https://img.79plus.co.kr/megahp/common/img/bi_logo1.png",
             details: [
                 "디저트, 음료 둘다 맛있는 카페이다. 가격도 괜찮아서 자주 간다",
-                "서울특별시 관악구 호암로26가길 2"
+                "서울특별시 관악구 호암로26가길 2",
+                "출처 : https://www.mega-mgccoffee.com/about/bi/ (메가커피 공홈)"
             ],
             reviews: [
                 { developer: "권지수", review: "메가 아메리카노 맛있음" },
@@ -478,10 +482,11 @@ export const markerdata = [
             lat: 37.4704836216592,
             lng: 126.93387119754,
             value: "카페",
-            image: "",
+            image: "https://cdn.imweb.me/upload/S20210611cfc465c177bae/7d093b3507dfb.png",
             details: [
                 "개발자 비밀스팟입니다 특별히 당신에게만 허락해드림",
                 "서울 관악구 호암로26가길 8",
+                "출처 : https://www.huhulounge.com/23 (후후라운지 공홈)",
             ],
             reviews: [
                 { developer: "권지수", review: "망고컵빙수!!!" },
@@ -497,10 +502,11 @@ export const markerdata = [
             lat: 37.4694889314205,
             lng: 126.934890483767,
             value: "카페",
-            image: "",
+            image: "https://composecoffee.com/files/attach/xeicon/default_image.png?t=1694744460",
             details: [
                 "전설의 생초코릿라떼를 판매하는 컴포즈 커피이다. 냠냠~",
                 "서울 관악구 호암로24길 32",
+                "출처 : https://composecoffee.com/ (컴포즈커피 공홈)",
             ],
             reviews: [
                 { developer: "권지수", review: "프라푸치노 종류 다 맛있어용" },
@@ -516,10 +522,11 @@ export const markerdata = [
             lat: 37.4690082526952,
             lng: 126.933935349053,
             value: "카페",
-            image: "",
+            image: "https://i.namu.wiki/i/J04XIludQJq8w3wFsitN7XE1WaZ0t9stOtaxxqCtggJNsE1Mw-RXZihi11MeYenlHKG4_4KgW5zk9PZEG7KjduTmDcMYI6l-uerWKn4PhKASWEY_-OK7SeoHRlw1ha-RH79z96qDZy0OzaqV7BFTu7AhT4lks3kCcMuOj2ZRxGc.svg",
             details: [
                 "미림인들이 석식먹고 이용을 자주 하는 카페. 단 사람이 많이 몰려 메뉴가 늦게 나올 수 있다.",
                 "서울 관악구 호암로22길 21",
+                "출처 : 아마스빈 나무위키 로고",
             ],
             reviews: [
                 { developer: "권지수", review: "사람 많아요" },
