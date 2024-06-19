@@ -1,41 +1,40 @@
 .noticeBoardBackground {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; 
-    height: 100%; 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .logoContainer {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 50px;
 }
-.logoContainer img{
-   width: 650px;
-   height: auto;
-    
+
+.logoContainer img {
+  width: 650px;
+  height: auto;
 }
 
 .boardLetter {
-    position: relative;
-    width: 80%;
-    height: 1250px;
-    top: 240px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 20px; 
-    justify-items: center; 
-    align-items: center; 
-    overflow: auto;
-    
+  position: relative;
+  width: 80%;
+  top: 10%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
+  overflow: auto;
 }
+
 .boardLetterImg {
   display: inline-grid;
   color: white;
@@ -43,6 +42,7 @@
   transform: perspective(800px) rotateY(0deg);
   transform-style: preserve-3d;
   margin: 30px;
+  cursor: pointer;
 }
 
 .boardLetterImg:hover {
@@ -50,8 +50,13 @@
 }
 
 .boardLetterImg > * {
-  grid-area: 1 / 1 / 1 / 1; 
+  grid-area: 1 / 1 / 1 / 1;
   backface-visibility: hidden;
+}
+
+.letterFront img {
+  width: 350px;
+  height: auto;
 }
 
 .letterBack {
@@ -62,28 +67,50 @@
   transform: rotateY(180deg);
 }
 
-.letterBack p{
+.letterBack p {
   font-size: 2.5rem;
   color: #000;
 }
 
-.leftP{
+.leftP {
   margin-left: 20px;
 }
 
-.rightP{
+.rightP {
   margin-right: 20px;
   text-align: right;
 }
 
-/* .boardLetterImg {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-} */
+.noLetters {
+  font-size: 1.5rem;
+  color: #333;
+}
 
-.boardLetterImg img {
-    width: 350px;
-    height: auto;
-    /* margin: 30px; */
+.letterPopup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+  z-index: 1000;
+  animation: popupAnimation 3s forwards;
+}
+
+@keyframes popupAnimation {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+
+.popupImg {
+  width: 700px;
+  height: auto;
 }

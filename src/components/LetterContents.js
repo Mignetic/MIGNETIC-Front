@@ -1,7 +1,5 @@
-// 수정된 클라이언트 측 코드
-
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate , useSearchParams} from 'react-router-dom';
 import axios from 'axios';
 import '../css/LetterContents.css';
 import Logo from '../images/icons/logo.png';
@@ -18,20 +16,20 @@ function LetterContents() {
         fetchLetterContent();
     }, []);
 
+    const [searchParams, setSearchParams] = useSearchParams(); // 1
+    
+
     const fetchLetterContent = async () => {
         try {
-            
-            const response = await axios.get(`http://localhost:3000/api/letter/lastLetter`);
-            console.log("AA",response);
+            console.log("TTT3",searchParams.get('id'));
+            const response = await axios.get(`http://localhost:3000/api/letter/get?id=${searchParams.get('id')}`);
             setLetterData({
                 toName: response.data.toName,
                 fromName: response.data.fromName,
                 letterContent: response.data.content
             });
-
         } catch (error) {
-            console.error('편지 내용을 가져오는 중 오류 발생:', error);
-            // 오류 처리 로직 추가
+            console.error('Error fetching letter content:', error);
         }
     };
 

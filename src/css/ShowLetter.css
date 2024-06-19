@@ -1,0 +1,18 @@
+.show-letter-container {
+    background-size: cover;
+    background-attachment: fixed;
+    height: 100vh; /* 화면 전체 높이로 설정 */
+    overflow: hidden; /* 내용물이 넘치는 경우 스크롤을 숨김 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.letter-contents {
+    max-height: 80vh; /* 내용물의 최대 높이를 설정하여 스크롤이 가능하도록 함 */
+    overflow-y: auto; /* 필요시 수직 스크롤을 추가 */
+    background-color: rgba(255, 255, 255, 0.8); /* 내용물 배경을 투명하게 설정 */
+    padding: 20px; /* 내용물의 여백 추가 */
+    border-radius: 10px; /* 내용물에 모서리 둥글게 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 그림자 추가 */
+}
