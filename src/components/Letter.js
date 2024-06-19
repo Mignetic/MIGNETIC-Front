@@ -76,10 +76,10 @@ function LetterWrite() {
                     className='letterInputText'
                     value={letterContent}
                     onChange={(e) => setLetterContent(e.target.value)}
-                    placeholder="Write your letter here"
+                    placeholder="편지를 작성해주세요"
                 ></textarea>
                 <button className='letterbtn' onClick={handleTransmission}>
-                    전송
+                    Send
                 </button>
             </div>
             <div className='envelope'>
