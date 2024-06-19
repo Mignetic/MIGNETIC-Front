@@ -79,7 +79,7 @@ function LetterWrite() {
                     placeholder="Write your letter here"
                 ></textarea>
                 <button className='letterbtn' onClick={handleTransmission}>
-                    Send
+                    전송
                 </button>
             </div>
             <div className='envelope'>

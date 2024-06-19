@@ -11,19 +11,22 @@ import Footer from '../components/Footer';
 import ResultType from '../components/ResultType';
 
 function Result() {
-    const [studentData, setStudentData] = useState({});
-    const [bestMatch, setBestMatch] = useState({});
+    const [studentData, setStudentData] = useState();
+    const [bestMatch, setBestMatch] = useState();
     const [types, setTypes] = useState(['False', 'True', 'Try', 'Catch', 'Setter', 'Getter']);
 
     const graphRefs = [useRef(null), useRef(null), useRef(null), useRef(null)];
-    const graphNum = ['9개', '8개', '4개', '2개']; // 그래프 숫자 값 전달 받기
-    const graphName = ['권지수', '김수연', '김희영', '노승주']; // 그래프에 들어가는 친구 이름 작성
-    const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
     const [typeNameIndex, setTypeNameIndex] = useState(0);
+    const [graphNum, setGraphNum] = useState([]);
     const defaultTypeNameIndex = 0; // 기본 타입 인덱스
 
     const [goodFriend, setGoodFriend] = useState(); // 백에서 값 전달
     const [badFriend, setBadFriend] = useState(); // 백에서 값 전달
+    const [topFourFriends, setTopFourFriends] = useState([]);
+
+    const [explain, setExplain] = useState({});
+    const [bestExplain, setBestExplain] = useState({});
+    const [worstExplain, setWorstExplain] = useState({});
 
     //첫글자 대문자 만들기
     function capitalizeFirstLetter(str) {
@@ -55,16 +58,23 @@ function Result() {
             setBestMatch(data.bestMatch)
             setGoodFriend(capitalizeFirstLetter(data.bestType))
             setBadFriend(capitalizeFirstLetter(data.worstType))
-            // types 배열의 0번 인덱스 업데이트
+            setTopFourFriends(data.topFourFriends)
             setTypes(prevTypes => {
                 const updatedTypes = [...prevTypes];
                 updatedTypes[0] = capitalizeFirstLetter(data.bestMatch); // 0번 인덱스에 bestMatch 값 할당
                 return updatedTypes;
             });
+            const similarity = data.topFourFriends.map(friend => friend.similarity);
+            setGraphNum(similarity);
+            setExplain(data.explainResult[0])
+            setBestExplain(data.bestExplainResult[0])
+            setWorstExplain(data.worstExplainResult[0])
         })
 
         .catch(error => console.error('Error fetching student data:', error));
-    }, [bestMatch.type]);
+    }, [bestMatch]);
+
+    const graphHeights = graphNum.map(num => `${parseInt(num) * 60}px`);
 
     useEffect(() => {
         let interval;
@@ -113,7 +123,7 @@ function Result() {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 const index = graphRefs.findIndex(ref => ref.current === entry.target);
-                if (index !== -1) {
+                if (index !== -1 && graphHeights[index]) {
                     requestAnimationFrame(() => {
                         entry.target.style.height = graphHeights[index];
                         entry.target.style.transition = 'height 1s ease';
@@ -123,25 +133,21 @@ function Result() {
             }
         });
     };
-
+    
     useEffect(() => {
         window.scrollTo(0, 0);
-
+    
         const observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
         graphRefs.forEach(ref => {
             if (ref.current) {
                 observer.observe(ref.current);
             }
         });
-
+    
         return () => {
-            graphRefs.forEach(ref => {
-                if (ref.current) {
-                    observer.unobserve(ref.current);
-                }
-            });
+            observer.disconnect();
         };
-    }, []);
+    }, [graphHeights]); // graphHeights 값이 변경될 때마다 observer를 업데이트
 
     useEffect(() => {
         document.body.style.backgroundImage = `url(${bgImg})`;
@@ -190,17 +196,17 @@ function Result() {
                 </div>
                 <div className='type-description'>
                     <div className='type-li-container'>
-                        <li className='type-li'>여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기  <br></br>
-                            여기는 타입의 설명을 쭉 쓰기
+                        <li className='type-li'>
+                            {explain.hashtag} <br/>
+                            {explain.intro}
                         </li>
-                        <li className='type-li'>여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기 <br></br>
-                            여기는 타입의 설명을 쭉 쓰기 여기는 타입의 설명을 쭉 쓰기  <br></br>
-                            여기는 타입의 설명을 쭉 쓰기
+                        <li className='type-li'>
+                            장점 <br/>
+                            {explain.strength}
+                        </li>
+                        <li className='type-li'>
+                            단점 <br/>
+                            {explain.weakness}
                         </li>
                     </div>
                     <div className='good-bad-friend-type'>
@@ -211,11 +217,9 @@ function Result() {
                                 <div className='type-name'>
                                     <p className='type-name-friend-good-bad'>{goodFriend}</p>
                                 </div>
-                                <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                                <p className='type-good-bad-description'>{bestExplain.hashtag}</p>
                                 <p className='type-details good-type-details'>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
+                                    {bestExplain.intro}
                                 </p>
                             </div>
                         </div>
@@ -226,11 +230,9 @@ function Result() {
                                 <div className='type-name '>
                                     <p className='type-name-friend-good-bad type-name-friend-blue'>{badFriend}</p>
                                 </div>
-                                <p className='type-good-bad-description'>간단한 한줄 설명</p>
+                                <p className='type-good-bad-description'>{worstExplain.hashtag}</p>
                                 <p className='type-details bad-type-details'>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
-                                    유형설명설명설명<br></br>
+                                    {worstExplain.intro}
                                 </p>
                             </div>
                         </div>
@@ -248,11 +250,15 @@ function Result() {
                             <div className='friend-graph-container'>
                                 {graphRefs.map((ref, index) => (
                                     <div className={`friend-graph friend-graph-${index + 1}`} key={index}>
-                                        <p className={`answer answer-num-${index + 1}`}>{graphNum[index]}</p>
-                                        <Link to={`/letterwrite/${graphName[index]}`}>
+                                        {topFourFriends[index]?.name ? (
+                                            <p className={`answer answer-num-${index + 1}`}>
+                                                {topFourFriends[index]?.similarity}개
+                                            </p>
+                                        ) : null}
+                                        <Link to={`/letterwrite/${topFourFriends[index]?.name}`}>
                                             <div className={`graph graph-${index + 1}`} ref={ref}></div>
                                         </Link>
-                                        <p className={`friend-name friend-name-${index + 1}`}>{graphName[index]}</p>
+                                        <p className={`friend-name friend-name-${index + 1}`}>{topFourFriends[index]?.name}</p>
                                     </div>
                                 ))}
                             </div>
